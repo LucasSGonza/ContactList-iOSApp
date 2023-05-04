@@ -1,0 +1,21 @@
+Motivo para utilizar versionadores de código (como o Git):
+
+-> organizar, distribuir e gerenciar várias versões de um software de forma eficiente
+
+===================
+
+Estrutura Inicial do Git:
+
+1. Repositório => local ou nuvem
+
+2. git clone => Para começar deve-se ser feito um clone do projeto (repositório) em nossa máquina
+
+3. git commit => junta as alterações para preparar para o envio
+
+4. git push => envia ao repositório remoto Git
+
+-- 
+
+Estrutura Normal do Git:
+
+1. git pull => busca e baixa o conteudo do repositorio remoto (substitui o git clone)
