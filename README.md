@@ -15,7 +15,7 @@
 
 <h3>Estrutura Inicial do Git:</h1>
 <ol>
-  <li><b>git clone</b> => Para começar deve-se ser feito um clone do projeto (repositório) em nossa máquina
+  <li><b>git clone</b> => cria um clone do projeto (repositório) em nossa máquina local
   <li><b>git add .</b> => realiza a inclusão ou modificação dos arquivos no diretório local, preparando ele para ser entregue ao servidor remoto (commit -> push)
   <li><b>git commit</b> => confirma e salva as alterações para preparar para o envio (git commit -m 'mensagem', para formalizar os commits
   <li><b>git push</b> => envia ao repositório remoto Git (sobe as alterações ao repositorio no GitHub)
