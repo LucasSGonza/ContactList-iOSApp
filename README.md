@@ -5,7 +5,7 @@
 
 <hr>
 
-<h2>Dicas sobre Git:</h2>
+<h2>Dicas sobre Git <img src='https://git-scm.com/images/logos/downloads/Git-Icon-1788C.svg' width=30px>:</h2>
 
 <h3>Motivo para utilizar versionadores de código (como o Git):</h3>
 
