@@ -45,6 +45,7 @@
       link: https://blog.betrybe.com/git/git-branch/#1
   <li><b>git checkout</b> => alterar a branch ou restaurar arquivos (da pra usar o 'git checkout -b <nome branch>' para criar e já entrar nessa nova branch (ramificação) criada)<br>
 link: https://blog.betrybe.com/git/git-checkout/#1
+  <li><b>git status</b> => dá todas as informações necessárias sobre a branch atual.
 </ul>
 
 <hr>
