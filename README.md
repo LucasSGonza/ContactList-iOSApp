@@ -60,4 +60,5 @@ link: https://blog.betrybe.com/git/git-checkout/#1
   <li>https://replit.com/~
   <li>https://updatedcode.wordpress.com/2016/06/13/3-swift-colecoes-e-tuplas/
   <li>https://www.hackingwithswift.com/example-code/system/how-do-you-read-from-the-command-line
+  <li>https://developer.apple.com/documentation/swift/array/foreach(_:)
 </ul>
