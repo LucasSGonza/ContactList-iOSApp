@@ -58,4 +58,5 @@ link: https://blog.betrybe.com/git/git-checkout/#1
   <li>https://comandosgit.github.io/
   <li>https://www.freecodecamp.org/portuguese/news/10-comandos-do-git-que-todo-desenvolvedor-deveria-conhecer/
   <li>https://replit.com/~
+  <li>https://updatedcode.wordpress.com/2016/06/13/3-swift-colecoes-e-tuplas/
 </ul>
