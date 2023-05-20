@@ -57,7 +57,7 @@ link: https://blog.betrybe.com/git/git-checkout/#1
 <ul>
   <li>https://comandosgit.github.io/
   <li>https://www.freecodecamp.org/portuguese/news/10-comandos-do-git-que-todo-desenvolvedor-deveria-conhecer/
-  <li>https://replit.com/~
+  <li>https://replit.com/@LucasSGonza
   <li>https://updatedcode.wordpress.com/2016/06/13/3-swift-colecoes-e-tuplas/
   <li>https://www.hackingwithswift.com/example-code/system/how-do-you-read-from-the-command-line
   <li>https://developer.apple.com/documentation/swift/array/foreach(_:)
