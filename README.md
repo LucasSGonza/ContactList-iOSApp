@@ -50,10 +50,12 @@ link: https://blog.betrybe.com/git/git-checkout/#1
   <li><b>git rm</b> => remove arquivos
   <li><b>git mv</b> => move arquivos
 </ul>
-	</details>
+</details>
+	
 <hr>
+	
 <details>
-	<summary><h3>Links úteis:</h3></summary>
+<summary><h3>Links úteis:</h3></summary>
 <ul>
   <li>https://comandosgit.github.io/
   <li>https://www.freecodecamp.org/portuguese/news/10-comandos-do-git-que-todo-desenvolvedor-deveria-conhecer/
@@ -66,12 +68,13 @@ link: https://blog.betrybe.com/git/git-checkout/#1
   <li>https://www.codecademy.com/learn/learn-swift/modules/learn-swift-hello-world/cheatsheet
 </ul>
 </details>
+	
 <hr>
     
 <details>
-	<summary>Swift:</summary>
+<summary>Swift:</summary>
 
-Links:
+<h3>Links:</h3>
 
 https://www.codingame.com/playgrounds/66493/swift---variaveis-tipos-tuplas-enumeracoes-e-operadores
 
@@ -89,7 +92,7 @@ https://www.codecademy.com/learn/learn-swift/modules/learn-swift-hello-world/che
 
 ——————————————————————————————
 
-Características
+<h3>Características</h3>
 
 - tipagem => tipo da variável é definido baseado no 1º valor que ela receber. Uma vez definido o tipo, este não poderá ser modificado
 
@@ -104,8 +107,9 @@ Características
 - usar ‘ _ ‘ (underline) significa que o valor não é necessário ser citado. Exemplo:
 	for _ in 0…2 { print(‘Ola Mundo’) } —> irá simplesmente realizar o código do loop 3x
 
-	func calcMedia (_ nota1: Double, _ nota2: Double ) { //codigo } —> 
-		nesse caso, por padrao as funções em swift utilizam de ‘label’ (tag/identificador) para cada 				parâmetro, ou seja, utlizando o ‘ _ ‘, vc retira a necessidade de, quando for chamar a função, ter que 		colocar as labels (no caso os nomes utilizados, no exemplo citado sendo nota1, nota2)
+	func calcMedia (_ nota1: Double, _ nota2: Double ) { //codigo }
+	
+	nesse caso, por padrao as funções em swift utilizam de ‘label’ (tag/identificador) para cada parâmetro, ou seja, utlizando o ‘ _ ‘, vc retira a necessidade de, quando for chamar a função, ter que colocar as labels (no caso os nomes utilizados, no exemplo citado sendo nota1, nota2)
 
 -  ‘ ?? ‘ —> utiliza-se quando a variável é do tipo opcional, dessa forma, após as ??, coloca-se um valor padrão para a mesma.
 
@@ -126,7 +130,7 @@ Características
 
 ——————————————————————————————
 
-Sobre a linguagem
+<h3>Sobre a linguagem</h3>
 
 Tipos de variáveis:
 * Var => variable variável (valor pode ser alterado)
