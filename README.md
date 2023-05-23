@@ -69,7 +69,7 @@ link: https://blog.betrybe.com/git/git-checkout/#1
 <hr>
     
 <details>
-Swift:
+	<summary>Swift:</summary>
 
 Links:
 
