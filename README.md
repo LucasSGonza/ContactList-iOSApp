@@ -68,8 +68,8 @@ link: https://blog.betrybe.com/git/git-checkout/#1
 
 <hr>
     
-    <p>
-      Swift:
+<details>
+Swift:
 
 Links:
 
@@ -361,4 +361,4 @@ COISAS A FAZER:
 * https://macmagazine.com.br/post/2015/08/12/quaddro-macmagazine-swift-na-pratica-7-closures/
 
 ————
-    </p>
+    </details>
