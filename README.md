@@ -4,8 +4,8 @@
 </p>
 
 <hr>
-
-<h2>Dicas sobre Git <img src='https://git-scm.com/images/logos/downloads/Git-Icon-1788C.svg' width=30px>:</h2>
+<details>
+<summary><h2>Dicas sobre Git <img src='https://git-scm.com/images/logos/downloads/Git-Icon-1788C.svg' width=30px>:</h2></summary
 
 <h3>Motivo para utilizar versionadores de código (como o Git):</h3>
 
@@ -50,10 +50,10 @@ link: https://blog.betrybe.com/git/git-checkout/#1
   <li><b>git rm</b> => remove arquivos
   <li><b>git mv</b> => move arquivos
 </ul>
-
+	</details>
 <hr>
-    
-<h3>Links úteis:</h3>
+<details>
+	<summary><h3>Links úteis:</h3></summary>
 <ul>
   <li>https://comandosgit.github.io/
   <li>https://www.freecodecamp.org/portuguese/news/10-comandos-do-git-que-todo-desenvolvedor-deveria-conhecer/
@@ -65,7 +65,7 @@ link: https://blog.betrybe.com/git/git-checkout/#1
   <li>https://www.youtube.com/playlist?list=PLJ0AcghBBWShgIH122uw7H9T9-NIaFpP-
   <li>https://www.codecademy.com/learn/learn-swift/modules/learn-swift-hello-world/cheatsheet
 </ul>
-
+</details>
 <hr>
     
 <details>
