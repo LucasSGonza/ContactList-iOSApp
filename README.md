@@ -62,4 +62,5 @@ link: https://blog.betrybe.com/git/git-checkout/#1
   <li>https://www.hackingwithswift.com/example-code/system/how-do-you-read-from-the-command-line
   <li>https://developer.apple.com/documentation/swift/array/foreach(_:)
   <li>https://www.youtube.com/playlist?list=PLJ0AcghBBWShgIH122uw7H9T9-NIaFpP-
+  <li>https://www.codecademy.com/learn/learn-swift/modules/learn-swift-hello-world/cheatsheet
 </ul>
