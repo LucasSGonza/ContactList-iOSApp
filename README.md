@@ -354,11 +354,29 @@ closure:							function
 
 ————
 
-COISAS A FAZER:
+Opcionais:
 	
-* ler mais sobre opcionais
+-> Uma condição dada aos tipos de varíaveis na qual permite a ausência de valor (nil)
+-> resumidademente, permite valores nulos (tipo nulo [nil]) a variáveis , com tipos declarados (String, Int, Double, ...), visto que normalmente isso não seria permitido (ex: atribuir nil a uma variável que espera um valor Int)
+	
+* sintaxe => ? , ex: Int?
+	
+* Como esse tipo de variável permite valores nulos, é necessário fazer algo para que, caso tente acessar um valor nulo, o programa nao dê problema. Para isso, existem 2 respostas padrão:
+	
+	- Definir um valor padrão, caso ainda esteja como nil => ?? valor padrão , ex: var numbers = total ?? 60 
+	(funciona como um if: caso tenha valor, seguirá utilizando o valor normalmente. Caso ainda esteja nil, utiliza o valor padrão)
+	
+	- Forçar um unwrapp na variável => 
+	. usado quando temos certeza de que a variável, mesmo que opcional, terá um valor informado (e não será nil) durante a compilação
+	. utiliza ! ao fim da variável
 
-* https://www.youtube.com/watchv=Lkv4bYzuH_Y&list=PLZPWdr0WUuJ93mjCDaxLM8ZOi_5BwG7iC&index=13
+* CUIDADO => caso seja passado um nil e seja usado ! para forçar, o programa dará fatal error. Para não acontecer este problema, existem maneiras de verificar se realmente é possível forçar um desembrulo da variável:
+	
+- if let => faz uma verificação if para ver se a variável possuí valor.
+- guard let =>
 
+* QUANDO USAR => semelhante ao NOT NULL em SQL, ou seja, geralmente utilizado após verificar se é necessário ou não existir um valor. In fact, esse é um dos motivos para existir esse tipo, visto que serve para tratar, por exemplo, valores nulos vindo de um BD, visto que no BD podem existir campos que permitem serem nulos, fazendo com que em nosso sistema realizassemos a mesma lógica, definindo algumas variáveis como <i>opcionais</i>.
+	
 ————
+	
     </details>
