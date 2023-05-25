@@ -301,11 +301,6 @@ let r = 0..<5 // exclusive (não incluí o limite)
 	for item in items { 		// Do this 	}
 
 nessa sintaxe, deixa mais claro a possibilidade de utilizar do for para iterar uma Array, da mesma forma que um forEach(). A vantagem do for, seria da possibilidade de iterar por uma Array de Array’s, ou seja, cada item da Array a ser iterada é uma outra Array
-
-	
-<b>for ('normal')</b>
-* sintaxe igual as outras linguagens --> for var x = 1; x <= 10; x++ { }
-* sintaxe padrão --> for <i>variavel</i>; <i>condição de repetição</i>; <i>ação após cada iteração</i>
 	
 https://www.programiz.com/swift-programming/for-in-loop
 https://www.appypie.com/loops-swift-how-to
