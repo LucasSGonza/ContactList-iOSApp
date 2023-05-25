@@ -72,7 +72,7 @@ link: https://blog.betrybe.com/git/git-checkout/#1
 <hr>
     
 <details>
-<summary><h3>Swift:</h3></summary>
+<summary><h3>Swift <img src="https://img.shields.io/badge/swift-F54A2A?style=for-the-badge&logo=swift&logoColor=white" width: "20px">:</h3></summary>
 
 <h3>Links:</h3>
 
