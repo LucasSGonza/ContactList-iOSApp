@@ -355,14 +355,10 @@ closure:							function
 ————
 
 COISAS A FAZER:
+	
+* ler mais sobre opcionais
 
 * https://www.youtube.com/watchv=Lkv4bYzuH_Y&list=PLZPWdr0WUuJ93mjCDaxLM8ZOi_5BwG7iC&index=13
-
-* https://macmagazine.com.br/post/2015/07/22/quaddro-macmagazine-swift-na-pratica-5-controle-de-fluxo-looping/
-
-* https://macmagazine.com.br/post/2015/08/05/quaddro-macmagazine-swift-na-pratica-6-funcoes/
-
-* https://macmagazine.com.br/post/2015/08/12/quaddro-macmagazine-swift-na-pratica-7-closures/
 
 ————
     </details>
