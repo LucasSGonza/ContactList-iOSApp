@@ -432,9 +432,19 @@ https://www.youtube.com/watch?v=tKSNjg9Cb_g&list=PLZPWdr0WUuJ93mjCDaxLM8ZOi_5BwG
 	
 * Trabalham com REFERÊNCIA, ou seja, cada instância será um local da memória diferente, portanto deve-se atentar ao modo de como será instanciado um objeto (visto que pode ser feita REFERÊNCIA ao mesmo local de memória). De modo geral, o processo é o seguinte: 
 	1. instânciar um objeto (ex: let jogador1 = Jogador())
-	2. caso eu queira instanciar um novo objeto da class Jogador, eu devo instanciar novamente um novo   		objeto, e não tentar faze o seguinte: 
+	2. caso eu queira instanciar um novo objeto da class Jogador, eu devo instanciar novamente um novo objeto, e não tentar fazer o seguinte: 
 	let jogador2 = jogador1 
-	--> nesse caso, tanto jogador1 quanto jogador2 estao fazendo REFERÊNCIA ao 	mesmo espaço de 	    memória e, portanto, ao mesmo objeto. Logo, qualquer alteração das propriedades desse objeto serão 		   observadas em ambas as variáveis. 
+	--> nesse caso, tanto jogador1 quanto jogador2 estao fazendo REFERÊNCIA ao mesmo espaço de memória e, portanto, ao mesmo objeto. Logo, qualquer alteração das propriedades desse objeto serão observadas em ambas as variáveis. 
+	
+-> Tanto em Struct quanto em Class, deve-se atentar a 2 casos (pelo que eu ja vi agr ja deu cagada kk):
+	- Caso nao definir um valor inicial para um atributo, deve ser criado um metodo inicializador (construtor)
+	- Aparentemente nao pode criar um metodo construtor vazio
+	- Se nao quiser criar um metodo construtor, deve-se definir um valor inicial para cada atributo (geralmente é tipo "", 0, ...)
+	
+-> Método Inicializador (igual o método construtor de Java)
+	- sintaxe: 	init (parameters) {
+			   statements	
+		        }
 	
 ————
 	
