@@ -81,10 +81,6 @@ https://www.codingame.com/playgrounds/66493/swift---variaveis-tipos-tuplas-enume
 
 https://macmagazine.com.br/post/2015/06/24/quaddro-macmagazine-vamos-aprender-swift/
 
-https://macmagazine.com.br/post/2015/07/01/quaddro-macmagazine-swift-na-pratica-2-operadores/
-
-https://macmagazine.com.br/post/2015/07/08/quaddro-macmagazine-swift-na-pratica-3-string-e-collection-types/
-
 https://tiagoaguiar.co/xcode-shortcuts-teclas-de-atalho#:~:text=cmd%20%2B%20%5B%20%3A%3A%20unindent&text=Um%20bom%20desenvolvedor%20de%20software,atalho%20dentro%20do%20seu%20Xcode
 
 https://www.tutorialspoint.com/swift-program-to-get-input-from-the-user#
@@ -231,6 +227,7 @@ https://www.codecademy.com/learn/learn-swift/modules/learn-swift-dictionaries/ch
 * Funciona muito semelhante a uma Array, mas utiliza do conceito de chave-valor (key-value), semelhante a um JSON
 * É necessário definir na criação o tipo da chave e do valor
 * Possuí métodos da mesma forma que Array, possuindo alguns métodos até idênticos, mas no geral os métodos realmente “são os mesmos” que na Array, mas atualizados para a sintaxe do dictionary.
+* Os retornos dos valores sempre são como Opcionais
 
 * Usos gerais:
 
@@ -373,11 +370,28 @@ Opcionais:
 
 * CUIDADO => caso seja passado um nil e seja usado ! para forçar, o programa dará fatal error. Para não acontecer este problema, existem maneiras de verificar se realmente é possível forçar um desembrulo da variável:
 	
-- if let => faz uma verificação if para ver se a variável possuí valor.
-- guard let =>
+- <b>if let</b><i>variavel</i> => faz uma verificação if para ver se a variável possuí valor.
+	
+- <b>guard let</b><i>variavel</i> => muito semelhante ao 'if let' mas realiza as operações em ordem trocada: primeiro verifica o erro, para ent seguir com o sucesso (true)
 
 * QUANDO USAR => semelhante ao NOT NULL em SQL, ou seja, geralmente utilizado após verificar se é necessário ou não existir um valor. In fact, esse é um dos motivos para existir esse tipo, visto que serve para tratar, por exemplo, valores nulos vindo de um BD, visto que no BD podem existir campos que permitem serem nulos, fazendo com que em nosso sistema realizassemos a mesma lógica, definindo algumas variáveis como <i>opcionais</i>.
 	
+————
+	
+Type Casting:
+	
+* utilizado para detecer o tipo dos objetos (como o TypeOf em JS), mas também se determinada classe faz parte de uma determinada hierarquia, por exemplo.
+	
+* 2 operadores => IS , AS (relativamente intuitivos)
+	
+- IS => funciona como um if, no caso como se fosse uma afirmação, que retornará um booleano
+	ex: nota is Double //true
+	    nome is Int //false
+	
+- AS => funciona como uma atribuição (como em SQL), no caso indicando um tipo para a variável/objeto caso este não esteja explícito. É utilizado juntamente dos operadores '!' e '?', assim como nas opcionais
+	ex: nome as! String //forçar o desempacotamento (usado quando se tem certeza do tipo da variável)
+	    email as? String   //tentará mudar o tipo para String, mas retornará nil caso não consiga
+
 ————
 	
     </details>
