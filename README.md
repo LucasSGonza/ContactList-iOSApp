@@ -357,7 +357,7 @@ Opcionais:
 -> Uma condição dada aos tipos de varíaveis na qual permite a ausência de valor (nil)
 -> resumidademente, permite valores nulos (tipo nulo [nil]) a variáveis , com tipos declarados (String, Int, Double, ...), visto que normalmente isso não seria permitido (ex: atribuir nil a uma variável que espera um valor Int)
 	
-* sintaxe => ? , ex: Int?
+* sintaxe =>  var variavel: tipoVariavel? , ex: let nota: Int?
 	
 * Como esse tipo de variável permite valores nulos, é necessário fazer algo para que, caso tente acessar um valor nulo, o programa nao dê problema. Para isso, existem 2 respostas padrão:
 	
@@ -370,9 +370,9 @@ Opcionais:
 
 * CUIDADO => caso seja passado um nil e seja usado ! para forçar, o programa dará fatal error. Para não acontecer este problema, existem maneiras de verificar se realmente é possível forçar um desembrulo da variável:
 	
-- <b>if let</b><i>variavel</i> => faz uma verificação if para ver se a variável possuí valor.
+-> <b>if let</b> <i>variavel</i> => faz uma verificação if para ver se a variável possuí valor.
 	
-- <b>guard let</b><i>variavel</i> => muito semelhante ao 'if let' mas realiza as operações em ordem trocada: primeiro verifica o erro, para ent seguir com o sucesso (true)
+-> <b>guard let</b> <i>variavel</i> => muito semelhante ao 'if let' mas realiza as operações em ordem trocada: primeiro verifica o erro, para ent seguir com o sucesso (true)
 
 * QUANDO USAR => semelhante ao NOT NULL em SQL, ou seja, geralmente utilizado após verificar se é necessário ou não existir um valor. In fact, esse é um dos motivos para existir esse tipo, visto que serve para tratar, por exemplo, valores nulos vindo de um BD, visto que no BD podem existir campos que permitem serem nulos, fazendo com que em nosso sistema realizassemos a mesma lógica, definindo algumas variáveis como <i>opcionais</i>.
 	
@@ -392,6 +392,50 @@ Type Casting:
 	ex: nome as! String //forçar o desempacotamento (usado quando se tem certeza do tipo da variável)
 	    email as? String   //tentará mudar o tipo para String, mas retornará nil caso não consiga
 
+————
+
+https://www.youtube.com/watch?v=pgHzqTXwkLI&t=6s
+	
+Enum:
+
+* Basicamente é uma lista de itens. Contudo, cada item é um 'case' (o mesmo utilizado em swift), logo, podem ser atribuídos códigos para cada case utilizando um switch (fora da estrutura do enum)
+	
+* O tipo do enum não precisa necessariamente ser especificado, além dele poder armazenar valores de qualquer tipo e os tipos destes valores poderem ser diferentes para cada membro do enum (logo, deve-se avaliar se vale a pena limitar o tipo do enum ou de seus case's)
+	
+	- Life hack: se definir a enum para Int e nos cases não definirmos uma sequencia, os valores serão auto-incrementais (ex: enum Dia: Int { case Domingo = 1, Segunda, Terça, .... } Dia.Segunda.rawValue //2
+	
+* <i>Raw Value</i> => 'método' para pegar o valor do case
+* Ao inves do rawValue, pode ser mais adequado utilizar um switch
+	
+* Motivos para utilizar;
+ - Reduzir linhas de códigos ao simplesmente pegar o case e seu rawValue
+ - Definir nomes para variáveis que serão utilizadas várias vezes (agilizando seus acessos)
+	
+* É do tipo 'Reference Type', assim como as 'Class'
+	
+————
+	
+https://www.youtube.com/watch?v=tKSNjg9Cb_g&list=PLZPWdr0WUuJ93mjCDaxLM8ZOi_5BwG7iC&index=6
+	
+<b>Struct:</b>
+
+* Muito semelhante ao conceito de classes de Java e JS, mas é mais simples, visto que o Struct não permite herança, além de existir um 'class' em Swift, ent deve-se tomar cuidado para não misturar os conceitos
+	
+* Outra diferença para as classes, é que o Struct trabalha com o tipo VALOR. Nesse sentido, é possível criar apenas uma instância de objeto e dps criar novas variáveis e atribuir o VALOR sendo o primeiro objeto instanciado.
+	
+* Em resumo, os objetos do tipo Struct, não são necessariamente únicos, pois podem ser feitas CÓPIAS de um único objeto criado
+* Logo, é do tipo 'Value Type', assim como Arrays, Dictionarys, Tuplas
+	
+<b>Class:</b>
+
+* De forma geral, são os mesmos conceitos, técnicas e lógicas de classes das vistas em Java.
+	
+* Trabalham com REFERÊNCIA, ou seja, cada instância será um local da memória diferente, portanto deve-se atentar ao modo de como será instanciado um objeto (visto que pode ser feita REFERÊNCIA ao mesmo local de memória). De modo geral, o processo é o seguinte: 
+	1. instânciar um objeto (ex: let jogador1 = Jogador())
+	2. caso eu queira instanciar um novo objeto da class Jogador, eu devo instanciar novamente um novo   		objeto, e não tentar faze o seguinte: 
+	let jogador2 = jogador1 
+	--> nesse caso, tanto jogador1 quanto jogador2 estao fazendo REFERÊNCIA ao 	mesmo espaço de 	    memória e, portanto, ao mesmo objeto. Logo, qualquer alteração das propriedades desse objeto serão 		   observadas em ambas as variáveis. 
+	
 ————
 	
     </details>
