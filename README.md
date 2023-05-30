@@ -66,6 +66,7 @@ link: https://blog.betrybe.com/git/git-checkout/#1
   <li>https://developer.apple.com/documentation/swift/array/foreach(_:)
   <li>https://www.youtube.com/playlist?list=PLJ0AcghBBWShgIH122uw7H9T9-NIaFpP-
   <li>https://www.codecademy.com/learn/learn-swift/modules/learn-swift-hello-world/cheatsheet
+  <li>https://app.becas-santander.com/pt-BR/program/bolsas-santander-santander-bootcamp-2023
 </ul>
 </details>
 	
