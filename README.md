@@ -408,8 +408,8 @@ Enum:
 * Ao inves do rawValue, pode ser mais adequado utilizar um switch
 	
 * Motivos para utilizar;
- - Reduzir linhas de códigos ao simplesmente pegar o case e seu rawValue
- - Definir nomes para variáveis que serão utilizadas várias vezes (agilizando seus acessos)
+ -> Reduzir linhas de códigos ao simplesmente pegar o case e seu rawValue
+ -> Definir nomes para variáveis que serão utilizadas várias vezes (agilizando seus acessos)
 	
 * É do tipo 'Reference Type', assim como as 'Class'
 	
