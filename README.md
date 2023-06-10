@@ -128,9 +128,9 @@ https://www.codecademy.com/learn/learn-swift/modules/learn-swift-hello-world/che
 
 <h3>Sobre a linguagem</h3>
 
-Tipos de variáveis:
-* Var => variable variável (valor pode ser alterado)
-* Let => variable constante (valor não pode ser alterado)
+* Tipos de variáveis:
+	* Var => variable variável (valor pode ser alterado)
+	* Let => variable constante (valor não pode ser alterado)
 
 <hr>
 
@@ -152,17 +152,20 @@ ex:
 <hr>
 
 <h3>Conversão de dados (type casting):</h3>
-* Sintaxe: tipoDado(variável);
+<p>
+Sintaxe: tipoDado(variável);
 Ex:
 Let x = 10;
 Let name = String(x)
 print(name) —> “10”
-
+</p>
+	
 * Como dito la nas “Características”, a tipagem é ‘automática’, mas definir o tipo da variável da 3º forma é de certa forma mais didática, facilitando o entendimento do código.
 
 <hr>
 
 <h3>Operadores Lógicos:</h3>
+	
 * No geral, igual as outras linguagens (<,>,//, ==, !=, !, +=, -=, …, &&, ||)
 
 https://docs.swift.org/swift-book/documentation/the-swift-programming-language/basicoperators/ <br>
@@ -171,12 +174,13 @@ https://docs.swift.org/swift-book/documentation/the-swift-programming-language/b
 
 <h3>Condições:</h3>
 * If, if/else, else if, switch => igual as outras linguagens
-* Operador ternário:
-Sintaxe => expressão ? valor-seTrue : valor-seFalse;
+	
+* Operador ternário: sintaxe => 	expressão ? valor-seTrue : valor-seFalse;
 
 <hr>
 
 <h3>Comentarios:</h3>
+	
 * Igual Java ( // ou /* */ )
 
 <hr>
