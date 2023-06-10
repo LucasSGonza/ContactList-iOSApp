@@ -79,7 +79,7 @@ link: https://blog.betrybe.com/git/git-checkout/#1
 
 https://www.codingame.com/playgrounds/66493/swift---variaveis-tipos-tuplas-enumeracoes-e-operadores
 
-https://macmagazine.com.br/post/2015/06/24/quaddro-macmagazine-vamos-aprender-swift/
+https://macmagazine.com.br/sobre/quaddro-macmagazine/
 
 https://tiagoaguiar.co/xcode-shortcuts-teclas-de-atalho#:~:text=cmd%20%2B%20%5B%20%3A%3A%20unindent&text=Um%20bom%20desenvolvedor%20de%20software,atalho%20dentro%20do%20seu%20Xcode
 
