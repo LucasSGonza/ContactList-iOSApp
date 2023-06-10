@@ -89,7 +89,7 @@ https://www.codecademy.com/learn/learn-swift/modules/learn-swift-hello-world/che
 
 * tipagem => tipo da variável é definido baseado no 1º valor que ela receber. Uma vez definido o tipo, este não poderá ser modificado
 
-*' ; ' é opcional
+* ' ; ' é opcional
 
 *  "Xcode" => IDE oficial desenvolvida pela apple para desenvolvimento de SWIFT
 
