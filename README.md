@@ -518,8 +518,8 @@ OBS:
 <b>Polimorsfismo</b>
 
 * Novamente, funciona a partir do mesmo princípio das outras linguagens, então é a propriedade que permite a subClasse (classeFilha) sobrescrever métodos e propriedades de uma superClasse (classePai)	
-* Tanto em Swift quanto em Java utiliza-se da mesma palavra reservada: <i>override<\i>
-* Novamente igual em Java, em Swift existe a palavra reservada <i>final<\i> para definir como "final"/irretocável um atributo ou método
+* Tanto em Swift quanto em Java utiliza-se da mesma palavra reservada: <i>override</i>
+* Novamente igual em Java, em Swift existe a palavra reservada <i>final</i> para definir como "final"/irretocável um atributo ou método
 	
 ————
 	
