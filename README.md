@@ -13,7 +13,7 @@
 
 <hr>
 
-<h3>Estrutura Inicial do Git:<\h3>
+<h3>Estrutura Inicial do Git:</h3>
 <ol>
   <li><b>git clone</b> => cria um clone do projeto (repositório) em nossa máquina local
   <li><b>git add .</b> => realiza a inclusão ou modificação dos arquivos no diretório local, preparando ele para ser entregue ao servidor remoto (commit -> push)
@@ -23,14 +23,14 @@
 
 <hr>
 
-<h3>Estrutura Normal do Git:<\h3>
+<h3>Estrutura Normal do Git:</h3>
 <ol>
   <li><b>git pull</b> => busca e baixa o último conteudo salvo e atualizado do repositorio remoto (substitui o git clone)
   <li>Mesmo processo que antes (add -> commit -> push)
 </ol>
 <hr>
 
-<h3>Outras infos:<\h3>
+<h3>Outras infos:</h3>
 
 <ul>
   <li>Ramo principal e padrão => main
@@ -39,7 +39,7 @@
 
 <hr>
 
-<h3>Mais comandos:<\h3>
+<h3>Mais comandos:</h3>
 <ul>
   <li><b>git branch</b> => realizar operações com branches (criar, listar, renomear ou excluir)<br>
       link: https://blog.betrybe.com/git/git-branch/#1
