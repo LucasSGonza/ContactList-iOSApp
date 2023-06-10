@@ -73,39 +73,38 @@ link: https://blog.betrybe.com/git/git-checkout/#1
 <hr>
     
 <details>
-<summary><h3><img src="https://img.shields.io/badge/swift-F54A2A?style=for-the-badge&logo=swift&logoColor=white" width: "20px">:</h3></summary>
+<summary><h3><img src="https://img.shields.io/badge/swift-F54A2A?style=for-the-badge&logo=swift&logoColor=white" width: "17px">:</h3></summary>
 
 <h3>Links:</h3>
-
-https://www.codingame.com/playgrounds/66493/swift---variaveis-tipos-tuplas-enumeracoes-e-operadores <br>
-https://macmagazine.com.br/sobre/quaddro-macmagazine/ <br>
-https://tiagoaguiar.co/xcode-shortcuts-teclas-de-atalho#:~:text=cmd%20%2B%20%5B%20%3A%3A%20unindent&text=Um%20bom%20desenvolvedor%20de%20software,atalho%20dentro%20do%20seu%20Xcode <br>
-https://www.tutorialspoint.com/swift-program-to-get-input-from-the-user# <br>
-https://www.codecademy.com/learn/learn-swift/modules/learn-swift-hello-world/cheatsheet <br>
-
+<ul>
+	<li>https://www.codingame.com/playgrounds/66493/swift---variaveis-tipos-tuplas-enumeracoes-e-operadores
+	<li>https://macmagazine.com.br/sobre/quaddro-macmagazine/
+	<li>https://tiagoaguiar.co/xcode-shortcuts-teclas-de-atalho#:~:text=cmd%20%2B%20%5B%20%3A%3A%20unindent&text=Um%20bom%20desenvolvedor%20de%20software,atalho%20dentro%20do%20seu%20Xcode
+	<li>https://www.tutorialspoint.com/swift-program-to-get-input-from-the-user#
+	<li>https://www.codecademy.com/learn/learn-swift/modules/learn-swift-hello-world/cheatsheet
+</ul>
+	
 <hr>
 
 <h3>Características</h3>
-
-* tipagem => tipo da variável é definido baseado no 1º valor que ela receber. Uma vez definido o tipo, este não poderá ser modificado
-
-* ' ; ' é opcional
-
-*  "Xcode" => IDE oficial desenvolvida pela apple para desenvolvimento de SWIFT
-
-* readLine() -> funciona quase como o scan.nextLine() do Scanner do Java (utiliza do conceito de opcionais)
-
-* usar { } em métodos
-
-* usar ‘ _ ‘ (underline) significa que o valor não é necessário ser citado. Exemplo:
+<ul>
+	<li> tipagem => tipo da variável é definido baseado no 1º valor que ela receber. Uma vez definido o tipo, este não poderá ser modificado
+	<li> ' ; ' é opcional
+	<li> "Xcode" => IDE oficial desenvolvida pela apple para desenvolvimento de SWIFT
+	<li> readLine() -> funciona quase como o scan.nextLine() do Scanner do Java (utiliza do conceito de opcionais)
+	<li> usar { } em métodos
+</ul>
+<pre>
+usar ‘ _ ‘ (underline) significa que o valor não é necessário ser citado. Exemplo:
+		
+* for _ in 0…2 { print(‘Ola Mundo’) } —> irá simplesmente realizar o código do loop 3x
+* func calcMedia (_ nota1: Double, _ nota2: Double ) { //codigo }
 	
-	for _ in 0…2 { print(‘Ola Mundo’) } —> irá simplesmente realizar o código do loop 3x
+(nesse caso, por padrao as funções em swift utilizam de ‘label’ (tag/identificador) para cada parâmetro, 
+ou seja, utlizando o ‘ _ ‘,vc retira a necessidade de, quando for chamar a função, ter que colocar as labels 
+(no caso os nomes utilizados, no exemplo citado sendo nota1, nota2))
 
-	func calcMedia (_ nota1: Double, _ nota2: Double ) { //codigo }
-	
-(nesse caso, por padrao as funções em swift utilizam de ‘label’ (tag/identificador) para cada parâmetro, ou seja, utlizando o ‘ _ ‘, vc retira a necessidade de, quando for chamar a função, ter que colocar as labels (no caso os nomes utilizados, no exemplo citado sendo nota1, nota2))
-
-* ‘ ?? ‘ —> utiliza-se quando a variável é do tipo opcional, dessa forma, após as ??, coloca-se um valor padrão para a mesma.
+‘ ?? ‘ —> utiliza-se quando a variável é do tipo opcional, dessa forma, após as ??, coloca-se um valor padrão para a mesma.
 
 	This operator is generally used to provide a default value when an expression or variable produces an 		optional result. for ex:
 		let i: Int? = 5
@@ -116,14 +115,14 @@ https://www.codecademy.com/learn/learn-swift/modules/learn-swift-hello-world/che
 
 	You can chain multiple of these operators as such:
 		let value3 = j ?? i ?? 9 //value3 will be 5 non-optional
-
-
+</pre>
+	
 * Concatenação => 
-	
+	<pre>
 	print (“Média: “, media) => usar + da erro. O “+” iria concatenar apenas se tudo fosse String.
-	
 	Dica: utilizamos “\(valor)” para inserirmos o valor de uma variável ou constante dentro de uma string (Interpolação).
-
+	</pre>
+	
 <hr>
 
 <h3>Sobre a linguagem</h3>
@@ -135,30 +134,34 @@ https://www.codecademy.com/learn/learn-swift/modules/learn-swift-hello-world/che
 <hr>
 
 <h3>Tipos de Dados:</h3>
-* Int
-* Double
-* String
-* Boolean
-* Character (char) => precisa ser declarado explícitamente (ex => var umChar: Character = “a”);
-
+<ul>
+	<li>Int
+	<li>Double
+	<li>String
+	<li>Boolean
+	<li>Character (char) => precisa ser declarado explícitamente (ex => var umChar: Character = “a”);
+</ul>
+	
 <hr>
 
 <h3>Tipos de declaração:</h3>
+<pre>
 ex: 
 * let num; —> num = 1
 * let num = 1;
 * let num: Int = 2; 
-
+</pre>
+	
 <hr>
 
 <h3>Conversão de dados (type casting):</h3>
-<p>
+<pre>
 Sintaxe: tipoDado(variável);
 Ex:
 Let x = 10;
 Let name = String(x)
 print(name) —> “10”
-</p>
+</pre>
 	
 * Como dito la nas “Características”, a tipagem é ‘automática’, mas definir o tipo da variável da 3º forma é de certa forma mais didática, facilitando o entendimento do código.
 
@@ -167,16 +170,15 @@ print(name) —> “10”
 <h3>Operadores Lógicos:</h3>
 	
 * No geral, igual as outras linguagens (<,>,//, ==, !=, !, +=, -=, …, &&, ||)
-
-https://docs.swift.org/swift-book/documentation/the-swift-programming-language/basicoperators/ <br>
+* https://docs.swift.org/swift-book/documentation/the-swift-programming-language/basicoperators/
 
 <hr>
 
 <h3>Condições:</h3>
-* If, if/else, else if, switch => igual as outras linguagens
-	
-* Operador ternário: sintaxe => 	expressão ? valor-seTrue : valor-seFalse;
-
+<ul>
+	<li>If, if/else, else if, switch => igual as outras linguagens
+	<li>Operador ternário: sintaxe => 	expressão ? valor-seTrue : valor-seFalse;
+</ul>
 <hr>
 
 <h3>Comentarios:</h3>
@@ -260,6 +262,7 @@ https://www.codecademy.com/learn/learn-swift/modules/learn-swift-dictionaries/ch
 * Sintaxe padrao —> 	var newSet: Set<tipo> = [ ]
 	
 * Sua utilização me parece mais específica do que em relação aos demais tipos de dados, além de talvez necessitar de um maior contexto para utilizá-la
+<pre>
 - Ex:
 
 //simulando a Mega-sena
@@ -274,29 +277,33 @@ while (numbers > 0) {
 		numbers - -
 	}
 }
+</pre>
 
 <hr>
 
 <h3>Laços de Repetição:</h3>
-
-* While => sintaxe padrão, igual em Java e JS (verifica a condição, dps executa o bloco de código)
-* Repeat/while => igual o do/while (execute o bloco de código, dps verifica a condição)
-
-* Sequências (ranges) => controlam o for
-	
+<ul>
+	<li>While => sintaxe padrão, igual em Java e JS (verifica a condição, dps executa o bloco de código)
+	<li>Repeat/while => igual o do/while (execute o bloco de código, dps verifica a condição)
+	<li>Sequências (ranges) => controlam o for
+</ul>
+<pre>
 ex: 
 let range = 0…5 // inclusive (incluí tudo)
 let r = 0..<5 // exclusive (não incluí o limite)
+</pre>
 
 * for-in
-<p>
--> sintaxe 1=> for i in x...y { }
--> i => variável padrão, é imutável (let)
--> é possível utilizar da cláusula ‘where’ para colocar uma condição no loop. ex:
-	
-	for i in 1...10 where i % 2 == 0 { print(i) }
+<ul>
+	<li>sintaxe 1=> for i in x...y { }
+	<li>i => variável padrão, é imutável (let)
+	<li> O for em swift utiliza bem da questão dos parâmetros genéricos, ent a variável i é somente uma opção para tal.
+</ul>
 
--> O for em swift utiliza bem da questão dos parâmetros genéricos, ent a variável i é somente uma opção para tal.
+<pre>
+-> é possível utilizar da cláusula ‘where’ para colocar uma condição no loop. ex:
+
+		for i in 1...10 where i % 2 == 0 { print(i) }
 	
 -> No geral, o loop for é mais fácil de interpretar traduzindo-o. ex:
 	
@@ -307,10 +314,9 @@ let r = 0..<5 // exclusive (não incluí o limite)
 -> sintaxe mais padrão ainda => 
 
 	for item in items { 		// Do this 	}
-<\p>
-<p>
-	nessa sintaxe, deixa mais claro a possibilidade de utilizar do for para iterar uma Array, da mesma forma que um forEach(). A vantagem do for, seria da possibilidade de iterar por uma Array de Array’s, ou seja, cada item da Array a ser iterada é uma outra Array
-<\p>
+
+-> nessa sintaxe, deixa mais claro a possibilidade de utilizar do for para iterar uma Array, da mesma forma que um forEach(). A vantagem do for, seria da possibilidade de iterar por uma Array de Array’s, ou seja, cada item da Array a ser iterada é uma outra Array
+</pre>
 	
 https://www.programiz.com/swift-programming/for-in-loop <br>
 https://www.appypie.com/loops-swift-how-to <br>
@@ -319,10 +325,10 @@ https://www.hackingwithswift.com/sixty/4/1/for-loops <br>
 <hr>
 
 <h3>BREAK e CONTINUE</h3>
-
-* break —> utilizado para literalmente quebrar/parar algo, geralmente uma iteração em um loop ou no caso de utilizar de switch/case, por exemplo. Quando utilizado em loops, muito comum ser utilizado dentro de if’s (verificações), para não ser necessário validar tudo de algo (array por ex) quando já satisfez oq era procurado
-
-* continue —> pula uma iteração e passa para a próxima instrução ou bloco de código. Facilita quando uti
+<ul>
+	<li>break —> utilizado para literalmente quebrar/parar algo, geralmente uma iteração em um loop ou no caso de utilizar de switch/case, por exemplo. Quando utilizado em loops, muito comum ser utilizado dentro de if’s (verificações), para não ser necessário validar tudo de algo (array por ex) quando já satisfez oq era procurado
+	<li> continue —> pula uma iteração e passa para a próxima instrução ou bloco de código. Facilita quando uti
+</ul>
 
 <hr>
 
@@ -345,7 +351,7 @@ https://www.hackingwithswift.com/sixty/4/1/for-loops <br>
 https://www.programiz.com/swift-programming/closures <br>
 
 * Funciona quase como uma Arroy function em JavaScript, no sentido de que a Closure é uma função resumida
-
+<pre>
 EX:
 
 closure:							function
@@ -353,16 +359,16 @@ closure:							function
    a + b								return a + b
 }								}
 
-<p>
-Características:
-- pode ou não receber parâmetros
-- não é necessário uma palavra chave para declarar uma closure (como existe nas functions)
-- a declaração consiste nas { }
-- Sintaxe padrao: { (parametro) -> tipoRetorno in //codigo } 
-- o ‘in’ funciona como uma “—>” em JS
-- o ’—>’ serve para separar os parâmetros do tipo de retorno 
-- Pode ser passada como parâmetro de outras funções (callback function), como em um map por exemplo
-<\p>
+-> Características:
+	- pode ou não receber parâmetros
+	- não é necessário uma palavra chave para declarar uma closure (como existe nas functions)
+	- a declaração consiste nas { }
+	- Sintaxe padrao: { (parametro) -> tipoRetorno in //codigo } 
+	- o ‘in’ funciona como uma “—>” em JS
+	- o ’—>’ serve para separar os parâmetros do tipo de retorno 
+	- Pode ser passada como parâmetro de outras funções (callback function), como em um map por exemplo
+</pre>
+
 <hr>
 
 <h3>Opcionais:</h3>
@@ -373,13 +379,14 @@ Características:
 * sintaxe =>  var variavel: tipoVariavel? , ex: let nota: Int?
 	
 * Como esse tipo de variável permite valores nulos, é necessário fazer algo para que, caso tente acessar um valor nulo, o programa nao dê problema. Para isso, existem 2 respostas padrão:
-	
+<pre>
 	- Definir um valor padrão, caso ainda esteja como nil => ?? valor padrão , ex: var numbers = total ?? 60 
 	(funciona como um if: caso tenha valor, seguirá utilizando o valor normalmente. Caso ainda esteja nil, utiliza o valor padrão)
 	
 	- Forçar um unwrapp na variável => 
 	. usado quando temos certeza de que a variável, mesmo que opcional, terá um valor informado (e não será nil) durante a compilação
 	. utiliza ! ao fim da variável
+</pre>
 
 * CUIDADO => caso seja passado um nil e seja usado ! para forçar, o programa dará fatal error. Para não acontecer este problema, existem maneiras de verificar se realmente é possível forçar um desembrulo da variável:
 	
@@ -506,7 +513,7 @@ OBS:
 * sintaxe => 		classeFilha : classePai
 	
 * é como se vc estivesse atribuindo a uma classeFilha ser do tipo da classePai
-* <i>IMPORTANTE:<\i> A subclasse pode ter suas próprias propriedades e métodos, e estes não podem ser acessados pela superclasse, já que o fluxo da herança é sempre da superclasse para a subclasse
+* <i>IMPORTANTE:</i> A subclasse pode ter suas próprias propriedades e métodos, e estes não podem ser acessados pela superclasse, já que o fluxo da herança é sempre da superclasse para a subclasse
 	
 <b>Polimorsfismo</b>
 
