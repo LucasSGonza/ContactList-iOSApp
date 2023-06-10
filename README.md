@@ -13,7 +13,7 @@
 
 <hr>
 
-<h3>Estrutura Inicial do Git:</h1>
+<h3>Estrutura Inicial do Git:<\h3>
 <ol>
   <li><b>git clone</b> => cria um clone do projeto (repositório) em nossa máquina local
   <li><b>git add .</b> => realiza a inclusão ou modificação dos arquivos no diretório local, preparando ele para ser entregue ao servidor remoto (commit -> push)
@@ -23,14 +23,14 @@
 
 <hr>
 
-<h3>Estrutura Normal do Git:</h3>
+<h3>Estrutura Normal do Git:<\h3>
 <ol>
   <li><b>git pull</b> => busca e baixa o último conteudo salvo e atualizado do repositorio remoto (substitui o git clone)
   <li>Mesmo processo que antes (add -> commit -> push)
 </ol>
 <hr>
 
-<h3>Outras infos:</h3>
+<h3>Outras infos:<\h3>
 
 <ul>
   <li>Ramo principal e padrão => main
@@ -39,7 +39,7 @@
 
 <hr>
 
-<h3>Mais comandos:</h3>
+<h3>Mais comandos:<\h3>
 <ul>
   <li><b>git branch</b> => realizar operações com branches (criar, listar, renomear ou excluir)<br>
       link: https://blog.betrybe.com/git/git-branch/#1
@@ -134,7 +134,7 @@ Tipos de variáveis:
 
 <hr>
 
-<h3>Tipos de Dados:<\h3>
+<h3>Tipos de Dados:</h3>
 * Int
 * Double
 * String
@@ -143,7 +143,7 @@ Tipos de variáveis:
 
 <hr>
 
-<h3>Tipos de declaração:<\h3>
+<h3>Tipos de declaração:</h3>
 ex: 
 * let num; —> num = 1
 * let num = 1;
@@ -151,7 +151,7 @@ ex:
 
 <hr>
 
-<h3>Conversão de dados (type casting):<h3>
+<h3>Conversão de dados (type casting):</h3>
 * Sintaxe: tipoDado(variável);
 Ex:
 Let x = 10;
@@ -162,26 +162,26 @@ print(name) —> “10”
 
 <hr>
 
-<h3>Operadores Lógicos:<\h3>
+<h3>Operadores Lógicos:</h3>
 * No geral, igual as outras linguagens (<,>,//, ==, !=, !, +=, -=, …, &&, ||)
 
 https://docs.swift.org/swift-book/documentation/the-swift-programming-language/basicoperators/ <br>
 
 <hr>
 
-<h3>Condições:<\h3>
+<h3>Condições:</h3>
 * If, if/else, else if, switch => igual as outras linguagens
 * Operador ternário:
 Sintaxe => expressão ? valor-seTrue : valor-seFalse;
 
 <hr>
 
-<h3>Comentarios:<\h3>
+<h3>Comentarios:</h3>
 * Igual Java ( // ou /* */ )
 
 <hr>
 
-<h3>Tuplas:<\h3>
+<h3>Tuplas:</h3>
 
 * Sintaxe padrão => let numbers = (1,2,3)
 * Funciona semelhante como uma matriz em Java (uma ‘variável’ ou um espaço de memória que agrupa vários valores, podendo ser de tipos distintos ou não)
@@ -194,7 +194,7 @@ Sintaxe => expressão ? valor-seTrue : valor-seFalse;
 
 <hr>
 
-<h3>Array:<\h3>
+<h3>Array:</h3>
 
 * Sintaxe padrão => let numbers = [1,2,3]
 
@@ -219,7 +219,7 @@ https://developer.apple.com/documentation/swift/array/map(_:)-87c4d <br>
 
 <hr>
 
-<h3>Dictionary:<\h3>
+<h3>Dictionary:</h3>
 
 https://www.codecademy.com/learn/learn-swift/modules/learn-swift-dictionaries/cheatsheet#:~:text=To%20remove%20a%20key%2Dvalue,removeAll()%20to%20a%20dictionary <br>
 
@@ -248,7 +248,7 @@ https://www.codecademy.com/learn/learn-swift/modules/learn-swift-dictionaries/ch
 	
 <hr>
 
-<h3>Sets:<\h3>
+<h3>Sets:</h3>
 
 * Semelhante a um Array, mas não permite itens repetidos
 * Igualmente a Array, permite apenas 1 tipo (coleção de dados únicos de mesmo tipo)
@@ -273,7 +273,7 @@ while (numbers > 0) {
 
 <hr>
 
-<h3>Laços de Repetição:<\h3>
+<h3>Laços de Repetição:</h3>
 
 * While => sintaxe padrão, igual em Java e JS (verifica a condição, dps executa o bloco de código)
 * Repeat/while => igual o do/while (execute o bloco de código, dps verifica a condição)
@@ -314,7 +314,7 @@ https://www.hackingwithswift.com/sixty/4/1/for-loops <br>
 
 <hr>
 
-<h3>BREAK e CONTINUE<\h3>
+<h3>BREAK e CONTINUE</h3>
 
 * break —> utilizado para literalmente quebrar/parar algo, geralmente uma iteração em um loop ou no caso de utilizar de switch/case, por exemplo. Quando utilizado em loops, muito comum ser utilizado dentro de if’s (verificações), para não ser necessário validar tudo de algo (array por ex) quando já satisfez oq era procurado
 
@@ -322,7 +322,7 @@ https://www.hackingwithswift.com/sixty/4/1/for-loops <br>
 
 <hr>
 
-<h3>Functions:<\h3>
+<h3>Functions:</h3>
 
 * Muito semelhante às sintaxe dos métodos em Java e das functions em JavaScript, só muda o prefixo: func nomeFuncao () { }
 
@@ -336,7 +336,7 @@ https://www.hackingwithswift.com/sixty/4/1/for-loops <br>
 
 <hr>
 
-<h3>Closure:<\h3>
+<h3>Closure:</h3>
 
 https://www.programiz.com/swift-programming/closures <br>
 
@@ -361,7 +361,7 @@ Características:
 <\p>
 <hr>
 
-<h3>Opcionais:<\h3>
+<h3>Opcionais:</h3>
 	
 * Uma condição dada aos tipos de varíaveis na qual permite a ausência de valor (nil)
 * resumidademente, permite valores nulos (tipo nulo [nil]) a variáveis , com tipos declarados (String, Int, Double, ...), visto que normalmente isso não seria permitido (ex: atribuir nil a uma variável que espera um valor Int)
@@ -391,7 +391,7 @@ Características:
 	
 <hr>
 	
-<h3>Type Casting:<\h3>
+<h3>Type Casting:</h3>
 	
 * utilizado para detecer o tipo dos objetos (como o TypeOf em JS), mas também se determinada classe faz parte de uma determinada hierarquia, por exemplo.
 	
@@ -409,7 +409,7 @@ Características:
 
 https://www.youtube.com/watch?v=pgHzqTXwkLI&t=6s <br>
 	
-<h3>Enum:<\h3>
+<h3>Enum:</h3>
 
 * Basicamente é uma lista de itens. Contudo, cada item é um 'case' (o mesmo utilizado em swift), logo, podem ser atribuídos códigos para cada case utilizando um switch (fora da estrutura do enum)
 	
@@ -458,7 +458,7 @@ https://www.youtube.com/watch?v=tKSNjg9Cb_g&list=PLZPWdr0WUuJ93mjCDaxLM8ZOi_5BwG
 	
 <hr>	
 	
-<h3>Semelhanças e Diferenças entre 'Class' e 'Struct'<\h3>	
+<h3>Semelhanças e Diferenças entre 'Class' e 'Struct'</h3>	
 	
 * Tanto em Struct quanto em Class, deve-se atentar a 2 casos (pelo que eu ja vi agr ja deu cagada kk):
 * Caso nao definir um valor inicial para um atributo, deve ser criado um metodo inicializador (construtor)
@@ -472,7 +472,7 @@ https://www.youtube.com/watch?v=tKSNjg9Cb_g&list=PLZPWdr0WUuJ93mjCDaxLM8ZOi_5BwG
 	
 ————
 	
-<b>Encapsulamento<\b> 
+<b>Encapsulamento</b> 
 	
 * Mesmo conceito de Java, ent serve pra definir os tipos de acesso às classes, propriedades e métodos
 	
@@ -487,7 +487,7 @@ OBS:
 
 ————
 	
-<b>'willSet' e 'didSet'<\b>
+<b>'willSet' e 'didSet'</b>
 
 * Os observadores 'didSet' e 'willSet' provêm uma maneira de responder corretamente quando uma propriedade tem seu valor definido/alterado. 
 * O observador willSet é chamado antes de o valor ser atribuído a uma propriedade
@@ -495,7 +495,7 @@ OBS:
 	
 ————
 	
-<b>Herança<b>
+<b>Herança</b>
 	
 * Mesmo princípio das outras linguagens, portanto permite o compartilhamento (herança/herdar) os métodos e atributos entre classes
 	
@@ -504,7 +504,7 @@ OBS:
 * é como se vc estivesse atribuindo a uma classeFilha ser do tipo da classePai
 * <i>IMPORTANTE:<\i> A subclasse pode ter suas próprias propriedades e métodos, e estes não podem ser acessados pela superclasse, já que o fluxo da herança é sempre da superclasse para a subclasse
 	
-<b>Polimorsfismo<\b>
+<b>Polimorsfismo</b>
 
 * Novamente, funciona a partir do mesmo princípio das outras linguagens, então é a propriedade que permite a subClasse (classeFilha) sobrescrever métodos e propriedades de uma superClasse (classePai)	
 * Tanto em Swift quanto em Java utiliza-se da mesma palavra reservada: <i>override<\i>
