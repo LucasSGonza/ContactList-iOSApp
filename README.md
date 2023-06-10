@@ -430,7 +430,7 @@ https://www.youtube.com/watch?v=tKSNjg9Cb_g&list=PLZPWdr0WUuJ93mjCDaxLM8ZOi_5BwG
 * Em resumo, os objetos do tipo Struct, não são necessariamente únicos, pois podem ser feitas CÓPIAS de um único objeto criado
 * Logo, é do tipo 'Value Type', assim como Arrays, Dictionarys, Tuplas
 
-* sintaxe => let player1 = Player()
+* sintaxe => 		let player1 = Player()
 	
 <b>Class:</b>
 
@@ -440,27 +440,27 @@ https://www.youtube.com/watch?v=tKSNjg9Cb_g&list=PLZPWdr0WUuJ93mjCDaxLM8ZOi_5BwG
 	1. instânciar um objeto (ex: let jogador1 = Jogador())
 	2. caso eu queira instanciar um novo objeto da class Jogador, eu devo instanciar novamente um novo objeto, e não tentar fazer o seguinte: 
 	let jogador2 = jogador1 
-	--> nesse caso, tanto jogador1 quanto jogador2 estao fazendo REFERÊNCIA ao mesmo espaço de memória e, portanto, ao mesmo objeto. Logo, qualquer alteração das propriedades desse objeto serão observadas em ambas as variáveis.
+--> nesse caso, tanto jogador1 quanto jogador2 estao fazendo REFERÊNCIA ao mesmo espaço de memória e, portanto, ao mesmo objeto. Logo, qualquer alteração das propriedades desse objeto serão observadas em ambas as variáveis.
 	
-* sintaxe => var pessoa : Pessoa = Pessoa()
+* sintaxe => 		var pessoa : Pessoa = Pessoa()
 	
 <b>Semelhanças e Diferenças entre 'Class' e 'Struct'<\b>	
 	
--> Tanto em Struct quanto em Class, deve-se atentar a 2 casos (pelo que eu ja vi agr ja deu cagada kk):
-	- Caso nao definir um valor inicial para um atributo, deve ser criado um metodo inicializador (construtor)
-	- Nao pode criar um metodo construtor vazio -> visto que esse conceito acontece quando definimos valores iniciais aos atributos, permitindo que instanciemos um objeto sem ter que definir seus atributos logo de cara
-	- Se nao quiser criar um metodo construtor, deve-se definir um valor inicial para cada atributo (geralmente é tipo "", 0, ...)
+* Tanto em Struct quanto em Class, deve-se atentar a 2 casos (pelo que eu ja vi agr ja deu cagada kk):
+--> Caso nao definir um valor inicial para um atributo, deve ser criado um metodo inicializador (construtor)
+--> Nao pode criar um metodo construtor vazio -> visto que esse conceito acontece quando definimos valores iniciais aos atributos, permitindo que instanciemos um objeto sem ter que definir seus atributos logo de cara
+--> Se nao quiser criar um metodo construtor, deve-se definir um valor inicial para cada atributo (geralmente é tipo "", 0, ...)
 	
 -> Método Inicializador (mesmo conceito do método construtor de Java)
 	- sintaxe: 	init (parameters) {
 			   statements	
 		        }
 	
-* <b>Encapsulamento<b> 
+<b>Encapsulamento<b> 
 	
---> mesmo conceito de Java, ent serve pra definir os tipos de acesso às classes, propriedades e métodos
+* mesmo conceito de Java, ent serve pra definir os tipos de acesso às classes, propriedades e métodos
 	
---> Tipos:
+* Tipos:
 <li> public – Permite acesso a qualquer outro elemento.
 <li> internal – Permite acesso apenas dentro da própria classe e nas classes herdeiras.
 <li> private – Permite acesso apenas dentro da classe na qual foi declarada.
@@ -469,24 +469,22 @@ https://www.youtube.com/watch?v=tKSNjg9Cb_g&list=PLZPWdr0WUuJ93mjCDaxLM8ZOi_5BwG
 <li> por padrão, o nível de encapsulamento é internal.
 <li> o encapsulamento do Swift funciona apenas se a classe e sua instância estiverem em arquivos separados.
 	
-* <b>'willSet' e 'didSet'<\b>
+<b>'willSet' e 'didSet'<\b>
 
---> Os observadores 'didSet' e 'willSet' provêm uma maneira de responder corretamente quando uma propriedade tem seu valor definido/alterado. 
---> O observador willSet é chamado antes de o valor ser atribuído a uma propriedade
---> O observador didSet é chamado depois de uma propriedade ter recebido um valor.
+* Os observadores 'didSet' e 'willSet' provêm uma maneira de responder corretamente quando uma propriedade tem seu valor definido/alterado. 
+* O observador willSet é chamado antes de o valor ser atribuído a uma propriedade
+* O observador didSet é chamado depois de uma propriedade ter recebido um valor.
 	
-* <b>Herança<b>
+<b>Herança<b>
 	
---> Mesmo princípio das outras linguagens, portanto permite o compartilhamento (herança/herdar) os métodos e atributos entre classes
-
-* sintaxe => classeFilha : classePai
+* Mesmo princípio das outras linguagens, portanto permite o compartilhamento (herança/herdar) os métodos e atributos entre classes
+sintaxe => classeFilha : classePai
 * é como se vc estivesse atribuindo a uma classeFilha ser do tipo da classePai
 * IMPORTANTE: A subclasse pode ter suas próprias propriedades e métodos, e estes não podem ser acessados pela superclasse, já que o fluxo da herança é sempre da superclasse para a subclasse
 	
 * <b>Polimorsfismo<\b>
 
---> Novamente, funciona a partir do mesmo princípio das outras linguagens, então é a propriedade que permite a subClasse (classeFilha) sobrescrever métodos e propriedades de uma superClasse (classePai)
-	
+* Novamente, funciona a partir do mesmo princípio das outras linguagens, então é a propriedade que permite a subClasse (classeFilha) sobrescrever métodos e propriedades de uma superClasse (classePai)	
 * Tanto em Swift quanto em Java utiliza-se da mesma palavra reservada: <i>override<\i>
 * Novamente igual em Java, em Swift existe a palavra reservada <i>final<\i> para definir como "final"/irretocável um atributo ou método
 	
