@@ -74,7 +74,7 @@ link: https://blog.betrybe.com/git/git-checkout/#1
 <hr>
     
 <details>
-<summary><h3><img src="https://img.shields.io/badge/swift-F54A2A?style=for-the-badge&logo=swift&logoColor=white" width: "17px">:</h3></summary>
+<summary><h3>Swift:</h3></summary>
 
 <h3>Links:</h3>
 <ul>
@@ -554,7 +554,7 @@ To access these parameters, you do not need to declare them anywhere. They are a
 	
 </details>
 <details>
-<summary>Criando aplicativos!</summary>
+<summary><h3>Criando aplicativos!</h3></summary>
 <ul>
 	<li>https://www.alura.com.br/artigos/ios-swift-diferencas-construcao-layouts-storyboard-xib-view-code?gclid=CjwKCAjwp6CkBhB_EiwAlQVyxTN_Ww64Fd-mqoph6pqmOBo-G1BNj3CfPyQqXxegOwGjbAr8yUsJPBoCj5kQAvD_BwE
 	<li>https://medium.com/good-morning-swift/ios-view-controller-life-cycle-2a0f02e74ff5
