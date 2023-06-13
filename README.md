@@ -520,6 +520,17 @@ Output:
 Name will from Alice to Jack
 Name changed from Alice to Jack
 </pre>
+<br>
+<pre>
+Property observers also take parameters that refer to the old and the new values.
+
+By default, these parameters are called oldValue and newValue.
+
+-> The willSet block always stores the incoming value as newValue.
+-> The didSet block always stores the previous value as oldValue.
+
+To access these parameters, you do not need to declare them anywhere. They are automatically in your use.
+</pre>
 	
 ————
 	
