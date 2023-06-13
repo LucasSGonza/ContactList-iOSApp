@@ -500,9 +500,26 @@ OBS:
 	
 <b>'willSet' e 'didSet'</b>
 
+link: https://www.codingem.com/didset-and-willset-in-swift/
+
 * Os observadores 'didSet' e 'willSet' provêm uma maneira de responder corretamente quando uma propriedade tem seu valor definido/alterado. 
 * O observador willSet é chamado antes de o valor ser atribuído a uma propriedade
 * O observador didSet é chamado depois de uma propriedade ter recebido um valor.
+<pre>
+-> willSet runs a piece of code right before a property changes.
+-> didSet runs a piece of code right after the property has changed.
+
+var name: String = "Alice" {
+    willSet { print("Name will from \(name) to \(newValue)") }
+    didSet { print("Name changed from \(oldValue) to \(name)")}
+}
+name = "Jack"
+-------------------------
+Output:
+
+Name will from Alice to Jack
+Name changed from Alice to Jack
+</pre>
 	
 ————
 	
