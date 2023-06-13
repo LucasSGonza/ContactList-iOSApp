@@ -553,6 +553,7 @@ To access these parameters, you do not need to declare them anywhere. They are a
 ————
 	
 </details>
+<hr>
 <details>
 <summary><h3>Criando aplicativos!</h3></summary>
 <ul>
