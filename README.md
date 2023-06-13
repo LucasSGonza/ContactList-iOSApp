@@ -553,3 +553,14 @@ To access these parameters, you do not need to declare them anywhere. They are a
 ————
 	
 </details>
+<details>
+<summary>Criando aplicativos!</summary>
+<ul>
+	<li>https://www.alura.com.br/artigos/ios-swift-diferencas-construcao-layouts-storyboard-xib-view-code?gclid=CjwKCAjwp6CkBhB_EiwAlQVyxTN_Ww64Fd-mqoph6pqmOBo-G1BNj3CfPyQqXxegOwGjbAr8yUsJPBoCj5kQAvD_BwE
+	<li>https://medium.com/good-morning-swift/ios-view-controller-life-cycle-2a0f02e74ff5
+	<li>https://caiocnoronha.medium.com/como-passar-entre-p%C3%A1ginas-no-xcode-f7613820d912
+	<li>https://www.youtube.com/watch?v=XzyF36Wun3U
+	<li>https://www.youtube.com/watch?v=DxCydBmOqXU
+	<li>https://www.youtube.com/watch?v=09TeUXjzpKs
+</ul>
+</details>
