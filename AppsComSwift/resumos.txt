@@ -1,0 +1,11 @@
+No mundo do desenvolvimento iOS, falando especificamente sobre o UIKit, que é um framework criado pela Apple que permite a construção de aplicações iOS, temos três diferentes modos de construir interfaces: 
+- Storyboard 
+- XIB
+- View Code.
+
+======================
+
+--> Storyboard:
+
+. É o tipo de interface utilizado em nossos apps
+. 
