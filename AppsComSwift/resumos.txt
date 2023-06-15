@@ -8,4 +8,60 @@ No mundo do desenvolvimento iOS, falando especificamente sobre o UIKit, que é u
 --> Storyboard:
 
 . É o tipo de interface utilizado em nossos apps
-. 
+. O desenvolvimento em storyboard acontece no padrão MVC (Model, View, Controller)
+
+. Infos gerais:
+
+- Quando iniciamos uma aplicação com o framework UIKit, são criados 3 arquivos: 
+
+[ ViewController.swift ] -> Controller
+
+[ Main.storyboard ] -> View (Esse é um único arquivo que mostra todas as telas do nosso aplicativo, bem como todo o fluxo de navegação entre elas.)
+
+[ AppDelegate.swift ] -> (Nesse local, é onde as configurações em abrir o app, fechar, pausar, voltar operação[…] são armazenadas e prontas para ser configuradas com cada estilo de app)
+
+. Sobre a tela no XCode: 
+
+- À esquerda que mostra a lista de telas e a hierarquia dos elementos.
+- No centro, fica a parte das telas e/ou código que eu quiser ver
+- À direita temos o painel de atributos em que podemos selecionar opções para editar as telas e elementos (cores, textos, tabelas), ou seja, adicionar modificadores.
+
+. Em geral, no Storyboard: 
+Você constrói o protótipo inteiro em um só lugar, colocando seus elementos (botão, textos, imagens, entre outros), junto com algumas regras de layouts para funcionar em diferentes tamanhos de dispositivos e é basicamente isso! Está criado o layout da sua aplicação.
+
+. Principais funções do Storyboard:
+
+- 'Outlets' => serve para referenciar um elemento do storyboard em nosso código
+- 'Actions' => serve para referenciar uma ação de um elemento do storyboard em nosso código
+
+======================
+https://developer.apple.com/documentation/uikit/uiviewcontroller
+https://medium.com/good-morning-swift/ios-view-controller-life-cycle-2a0f02e74ff5
+
+--> ViewController
+
+. Neses caso, o ViewController é a primeira classe criada em nosso app, e ela é responsável por gerenciar toda a hierarquia das view's de nosso app, bem como todas as coisas de todas as views (responder a interações dos usuários, redefinir tamanho, layout, atualizar conteúdos,...)
+
+. Ela é uma classe padrão, com métodos padrões, logo, é importante saber os seus principais métodos (muitos deles são relativamente auto-explicativos):
+
+OBS: aparentemente nenhum desses métodos recebe parâmetros
+
+- viewDidLoad()
+[ método chamado após toda a view ser carregada (view did load - view foi carregada) ]
+[ SÓ É CHAMADA UMA VEZ NO VIEW LIFE CYCLE ]
+
+- viewWillAppear()
+[ método chamado toda vez antes da view estar visivél e antes de qualquer animação ser configurada ]
+[ prepara o terreno para inicializar o app ]
+
+- viewDidAppear()
+[ método chamado após a view ser mostrada na tela ]
+[ inicia as animações, sons, coleta de dados, ... ] --> [ aqui é basicamente onde as coisas do app para o usuário são inicializádas ]
+
+- viewWillDisappear()
+[ método chamado antes da view ser removida da hierarquia das view's ]
+[ prepara o terreno para fechar a view ]
+
+- viewDidDisappear()
+[ método é chamado após o encerramento da view ]
+[ usado para encerrar tudo que ainda pode estar rodando no app (notificações, sensores, ...) ]
