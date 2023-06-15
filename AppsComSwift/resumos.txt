@@ -34,6 +34,8 @@ Você constrói o protótipo inteiro em um só lugar, colocando seus elementos (
 - 'Outlets' => serve para referenciar um elemento do storyboard em nosso código
 - 'Actions' => serve para referenciar uma ação de um elemento do storyboard em nosso código
 
+* Amarrar Storyboard => só é necessário instaciar um elemento se eu necessitar usar algum metodo ou alterar ele 
+
 ======================
 https://developer.apple.com/documentation/uikit/uiviewcontroller
 https://medium.com/good-morning-swift/ios-view-controller-life-cycle-2a0f02e74ff5
