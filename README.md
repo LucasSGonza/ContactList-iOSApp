@@ -391,12 +391,12 @@ closure:							function
 
 * CUIDADO => caso seja passado um nil e seja usado ! para forçar, o programa dará fatal error. Para não acontecer este problema, existem maneiras de verificar se realmente é possível forçar um desembrulo da variável:
 	
-<h2>if let variavel</h2> 
+<h2>if let</h2> 
 * faz uma verificação if para ver se a variável possuí valor.
 	
 * sintaxe => if let product = dict[id] { return product } else { return "nenhum produto encontrado" }
 	
-<h2>guard let variavel</h2> 
+<h2>guard let</h2> 
 * muito semelhante ao 'if let' mas realiza as operações em ordem trocada: primeiro verifica o erro, para ent seguir com o sucesso (true)
 	
 *sintaxe => guard let product = dict[id] else { return "nenhum produto encontrado" } return product
