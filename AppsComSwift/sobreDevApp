@@ -1,0 +1,47 @@
+Principais coisas sobre meu desenvolvimento no app:
+
+-> Deve-se instanciar no código principalmente os 'controls' (label, text, button,...) que irão ser modificados em algum momento da execução do app,
+visto que se for apenas estilizar algo, mt provavel que apenas utilizando a Storyboard dê conta
+
+-> Funções do 'Life Cycle' do app: lembrar que não é uma linha do tempo, no sentido de ter início -> meio -> fim sempre nessa ordem, principalmente
+em relação ao 'meio', visto que existirão várias telas podendo serem abertas e fechadas, e não deve-se perder nada de conteúdo durante este processo
+
+========================
+
+Classes, Objetos e Métodos úteis:
+
+-> UIAlertController => classe responsável pelos alertas (tipo um alert em js)
+
+sintaxe => UIAlertController(title: String?, message: String?, preferredStyle: UIAlertController.Style)
+
+-----------------------
+
+-> UIAlertAction => classe responsável por definir certas coisas sobre uma ação, geralmente um espaço para o usuário clicar e sair do alert.
+
+sintaxe => UIAlertAction(title: String?, style: UIAlertAction.Style, handler: ((UIAlertAction) -> Void)? = nil)
+
+É usado juntamente do UIAlertController geralmente da seguinte maneira (utilizando o método addAction() do UIAlertController):
+
+let successMessage = UIAlertController(title: "Sucesso!", message: "êxito em salvar o contato", preferredStyle: .alert)
+successMessage.addAction(UIAlertAction(title: "OK", style: .default))
+
+-----------------------
+
+-> Para ter a perfeita combinação entre as duas classes, deve-se por fim utilizar um método da ViewController chamado present(), de forma a
+definitivamente apresentar o alerta criado. O Fluxo seria o seguinte:
+
+UIAlertController --> alerta.addAction(UIAlertAction) --> ViewController.present(alerta)
+(criar alerta)    --> (definir uma ação para o alerta) --> amarrar esse alerta à ViewController (trocar ViewController para self)
+
+-----------------------
+
+ex:
+
+let alert = UIAlertController(title: "My Alert", message: "This is an alert.", preferredStyle: .alert)
+
+alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in 
+NSLog("The \"OK\" alert occured.")}))
+
+self.present(alert, animated: true, completion: nil)
+
+========================
