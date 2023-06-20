@@ -45,3 +45,22 @@ NSLog("The \"OK\" alert occured.")}))
 self.present(alert, animated: true, completion: nil)
 
 ========================
+
+Como instanciar novas telas!
+
+Link: https://www.youtube.com/watch?v=Dh7fa1fdzBo
+
+-> Lógica muito parecida com em Java: você deverá de alguma forma definir que uma nova tela será exibida (ao clicar em um botão, por ex)
+-> Para isso, existem algumas etapas padrões a serem seguidas:
+
+1. Criar uma nova ViewController
+
+- A ViewController é basicamente a nossa tela, ou seja, se queremos mais telas...
+- É preciso criar 2x: primeiro cria a nova tela no Storyboard (da mesma forma que se cria textfields, buttons,...), depois cria um novo arquivo
+para a nova ViewController (basicamente para ter o código próprio dessa nova Tela)
+
+2. Definir um ID
+
+
+3. Métodos
+
