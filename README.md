@@ -391,13 +391,15 @@ closure:							function
 
 * CUIDADO => caso seja passado um nil e seja usado ! para forçar, o programa dará fatal error. Para não acontecer este problema, existem maneiras de verificar se realmente é possível forçar um desembrulo da variável:
 	
-* <b>if let</b> <i>variavel</i> => faz uma verificação if para ver se a variável possuí valor.
+<h2>if let variavel</h2> 
+* faz uma verificação if para ver se a variável possuí valor.
 	
-	sintaxe => if let product = dict[id] { return product } else { return "nenhum produto encontrado" }
+* sintaxe => if let product = dict[id] { return product } else { return "nenhum produto encontrado" }
 	
-* <b>guard let</b> <i>variavel</i> => muito semelhante ao 'if let' mas realiza as operações em ordem trocada: primeiro verifica o erro, para ent seguir com o sucesso (true)
+<h2>guard let variavel</h2> 
+* muito semelhante ao 'if let' mas realiza as operações em ordem trocada: primeiro verifica o erro, para ent seguir com o sucesso (true)
 	
-	sintaxe => guard let product = dict[id] else { return "nenhum produto encontrado" } return product
+*sintaxe => guard let product = dict[id] else { return "nenhum produto encontrado" } return product
 
 * QUANDO USAR => semelhante ao NOT NULL em SQL, ou seja, geralmente utilizado após verificar se é necessário ou não existir um valor. In fact, esse é um dos motivos para existir esse tipo, visto que serve para tratar, por exemplo, valores nulos vindo de um BD, visto que no BD podem existir campos que permitem serem nulos, fazendo com que em nosso sistema realizassemos a mesma lógica, definindo algumas variáveis como <i>opcionais</i>.
 	
