@@ -91,8 +91,20 @@ Link: https://www.youtube.com/watch?v=DxCydBmOqXU
 
 GERAL:
 
+----
+TROCAR TIPO DE TECLADO
+
 -> aquele .numberpad funcionou no iphone 7 mas no 8 deu esse erro: 
 "Can't find keyplane that supports type 4 for keyboard iPhone-PortraitChoco-NumberPad; using 25889_PortraitChoco_iPhone-Simple-Pad_Default"
+
+. DESCOBRI => .numberpad é um teclado antigo, só com numeros. Funciona em versoes antigas de iphone. Nas novas tem que ser outro, tem varios tipos
+de keyboardtype testar:
+
+.numberpad (n funcinou)
+.phonepad (n funcionou)
+.asciiCapableNumberPad (n funcionou)
+
+----
 
 
 
