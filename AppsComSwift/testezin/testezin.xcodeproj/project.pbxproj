@@ -15,7 +15,7 @@
 		D9027C2A2A38E30400EACED7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9027C282A38E30400EACED7 /* LaunchScreen.storyboard */; };
 		D9027C352A38E30400EACED7 /* testezinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9027C342A38E30400EACED7 /* testezinTests.swift */; };
 		D9027C402A38E30400EACED7 /* testezinUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9027C3F2A38E30400EACED7 /* testezinUITests.swift */; };
-		D9507FE12A4233B500ACCE10 /* ViewControllerContactList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9507FE02A4233B500ACCE10 /* ViewControllerContactList.swift */; };
+		D9DB55112A44B515003D8FF8 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DB55102A44B515003D8FF8 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +50,7 @@
 		D9027C3B2A38E30400EACED7 /* testezinUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testezinUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9027C3F2A38E30400EACED7 /* testezinUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testezinUITests.swift; sourceTree = "<group>"; };
 		D9027C412A38E30400EACED7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D9507FE02A4233B500ACCE10 /* ViewControllerContactList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerContactList.swift; sourceTree = "<group>"; };
+		D9DB55102A44B515003D8FF8 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +101,13 @@
 		D9027C1C2A38E30100EACED7 /* testezin */ = {
 			isa = PBXGroup;
 			children = (
+				D9DB55162A44CC59003D8FF8 /* Dashboard */,
+				D9DB55152A44CBDD003D8FF8 /* Models */,
 				D9027C1D2A38E30100EACED7 /* AppDelegate.swift */,
 				D9027C1F2A38E30100EACED7 /* SceneDelegate.swift */,
-				D9027C212A38E30100EACED7 /* ViewController.swift */,
-				D9027C232A38E30100EACED7 /* Main.storyboard */,
 				D9027C262A38E30400EACED7 /* Assets.xcassets */,
 				D9027C282A38E30400EACED7 /* LaunchScreen.storyboard */,
 				D9027C2B2A38E30400EACED7 /* Info.plist */,
-				D9507FE02A4233B500ACCE10 /* ViewControllerContactList.swift */,
 			);
 			path = testezin;
 			sourceTree = "<group>";
@@ -129,6 +128,23 @@
 				D9027C412A38E30400EACED7 /* Info.plist */,
 			);
 			path = testezinUITests;
+			sourceTree = "<group>";
+		};
+		D9DB55152A44CBDD003D8FF8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D9DB55102A44B515003D8FF8 /* Model.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D9DB55162A44CC59003D8FF8 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				D9027C232A38E30100EACED7 /* Main.storyboard */,
+				D9027C212A38E30100EACED7 /* ViewController.swift */,
+			);
+			path = Dashboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,9 +278,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9027C222A38E30100EACED7 /* ViewController.swift in Sources */,
-				D9507FE12A4233B500ACCE10 /* ViewControllerContactList.swift in Sources */,
 				D9027C1E2A38E30100EACED7 /* AppDelegate.swift in Sources */,
 				D9027C202A38E30100EACED7 /* SceneDelegate.swift in Sources */,
+				D9DB55112A44B515003D8FF8 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
