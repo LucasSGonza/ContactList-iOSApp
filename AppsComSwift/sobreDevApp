@@ -8,6 +8,19 @@ em relação ao 'meio', visto que existirão várias telas podendo serem abertas
 
 ========================
 
+CONSTRAINTS!
+
+-> amarrações feitas nos itens da tela
+-> define padrões de altura e largura de objetos da tela, bem como seus espaçamentos nas 4 dimensões (top, left, right, bottom) em relação a outro 
+parâmetro (pode ser a outro objeto, a tela, ...)
+
+COMO EU FIZ...
+
+-> define a largura e altura dos objetos como "aspect ratio", ou seja, a proporção dos objetos será proporcional à tela
+-> junto a isso, define ainda um padrão de posicionamento horizontal para todos os objetos como '0', ou seja, no centro da tela
+
+========================
+
 Classes, Objetos e Métodos úteis:
 
 -> UIAlertController => classe responsável pelos alertas (tipo um alert em js)
@@ -48,6 +61,9 @@ self.present(alert, animated: true, completion: nil)
 
 Como instanciar novas telas!
 
+------
+OPÇÃO 1:
+
 Link: https://www.youtube.com/watch?v=Dh7fa1fdzBo
 
 -> Lógica muito parecida com em Java: você deverá de alguma forma definir que uma nova tela será exibida (ao clicar em um botão, por ex)
@@ -63,4 +79,7 @@ para a nova ViewController (basicamente para ter o código próprio dessa nova T
 
 
 3. Métodos
+------
+
+
 
