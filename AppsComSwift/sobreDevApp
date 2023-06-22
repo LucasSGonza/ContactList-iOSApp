@@ -79,7 +79,20 @@ para a nova ViewController (basicamente para ter o código próprio dessa nova T
 
 
 3. Métodos
+
+
 ------
+
+OPÇÃO 2:
+
+Link: https://www.youtube.com/watch?v=DxCydBmOqXU
+
+========================
+
+GERAL:
+
+-> aquele .numberpad funcionou no iphone 7 mas no 8 deu esse erro: 
+"Can't find keyplane that supports type 4 for keyboard iPhone-PortraitChoco-NumberPad; using 25889_PortraitChoco_iPhone-Simple-Pad_Default"
 
 
 
