@@ -16,7 +16,7 @@ parâmetro (pode ser a outro objeto, a tela, ...)
 
 COMO EU FIZ...
 
--> define a largura e altura dos objetos como "aspect ratio", ou seja, a proporção dos objetos será proporcional à tela
+-> limitei a largura e altura dos objetos para os valores padrões, para que em qualquer tela os objetos sejam como eu quero
 -> junto a isso, define ainda um padrão de posicionamento horizontal para todos os objetos como '0', ou seja, no centro da tela
 
 ========================
@@ -25,7 +25,13 @@ Classes, Objetos e Métodos úteis:
 
 -> UIAlertController => classe responsável pelos alertas (tipo um alert em js)
 
-sintaxe => UIAlertController(title: String?, message: String?, preferredStyle: UIAlertController.Style)
+- sintaxe => UIAlertController(title: String?, message: String?, preferredStyle: UIAlertController.Style)
+
+- Como é uma classe, quando eu instancio um objeto, posso utilizar de vários métodos que a class possui, como por ex:
+
+let errorMessage = UIAlertController(title: "ERRO!", message: "Verifique os dados digitados e tente novamente", preferredStyle: .alert)
+//errorMessage.message = "teste" --> altera o valor do atributo 'message' que coloquei quando instanciei o objeto
+errorMessage.addAction(okButton)
 
 -----------------------
 
