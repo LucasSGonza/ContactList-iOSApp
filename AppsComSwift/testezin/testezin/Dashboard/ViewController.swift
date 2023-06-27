@@ -13,61 +13,66 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var phoneTextField: UITextField!
     
-    @IBOutlet weak var testeContato: UILabel!
     
-    
-    //variables
+    //variables OF THIS VIEWCONTROLLER (remember that this is a class)
     var contactList: [Contact] = []
-    
+    var alertFlag: String = ""
     
     //Life Cycle of the App
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        alertSuccessMessage()
-        alertErrorMessage()
-        phoneTextField.keyboardType = .asciiCapableNumberPad
+        //configs
+        phoneTextField.keyboardType = .numberPad
     }
     
     
     //MARK: Function's
-    
     //func to save the contact in the array
     @IBAction func saveContact(_ sender: UIButton) {
         //Instanciar um objeto do tipo 'Contact', que irá receber os valores dos textFields
         if let name = nameTextField.text, let number = phoneTextField.text {
-            if name != "" && number != "" {
-                let newContact:Contact = Contact(name, Int(number)!)
-                print(newContact.showInfos())
-                contactList.append(newContact)
-                print(contactList)
-                alertSuccessMessage()
-                cleanTextsFields()
+            
+            if name != "" && number != "" { //verificar se number é numero
+                
+                alertFlag = "saveContact" //flag para o alerta
+                let newContact:Contact = Contact(name, Int(number)!) //cria um novo contato a partir dos dados dos text fields
+                print(newContact.showInfos()) //showInfos do novo contato
+                contactList.append(newContact) //add na Array (bd)
+                print(contactList) //exibe a Array
+                alertSuccessMessage() //exibe mensagem de sucesso
+                cleanTextsFields() //limpa os textfields
+                
             } else {
-                alertErrorMessage()
+                alertErrorMessage()//exibe mensagem de erro (na func há uma seleção do erro a ser exibido)
             }
+            
         }
-
+        
     }
     
     // func to read the Array Contact List
     @IBAction func readContactList(_ sender: UIButton) {
-        if !contactList.isEmpty {
-            testeContato.text = "Nome:\(contactList.first!.name)\nNúmero:\(contactList.first!.number)"
-        }
         //new screen
         /*
         let screenContactList = storyboard?.instantiateViewController(identifier: "contactListScreen") as! ViewControllerContactList
         
         present(screenContactList, animated: true, completion: nil)
          */
-        
     }
     
     //func to clean the Array Contact List
     @IBAction func cleanList(_ sender: UIButton) {
-        testeContato.text = ""
-        //contactList.removeAll()
+        if !contactList.isEmpty {
+            alertFlag = "cleanList"
+            print("Limpando lista...")
+            contactList.removeAll() //limpa a Array
+            print(contactList)
+            alertSuccessMessage() //exibe mensagem de sucesso
+            cleanTextsFields()
+        } else {
+            alertErrorListIsEmpty()
+        }
     }
     
     //func to clean the textFields -> using in func saveContact
@@ -81,23 +86,41 @@ class ViewController: UIViewController {
     let okButton = UIAlertAction(title: "OK", style: .default)
     
     func alertSuccessMessage() {
-        let successMessage = UIAlertController(title: "Sucesso!", message: "êxito em salvar o contato", preferredStyle: .alert)
-        //(title: String?, message: String?, preferredStyle: UIAlertController.Style)
-        
+        let successMessage = UIAlertController(title: "Sucesso!", message: "", preferredStyle: .alert)
         successMessage.addAction(okButton)
-        
-        //(title: String?, style: UIAlertAction.Style, handler: ((UIAlertAction) -> Void)? = nil)
-        
+         
+        //verifica a mensagem de sucesso que irá exibir
+        if alertFlag == "saveContact" {
+            successMessage.message = "Êxito em salvar o contato"
+        } else if alertFlag == "cleanList" {
+            successMessage.message = "Êxito em limpar a lista de contatos!"
+        }
         self.present(successMessage, animated: true, completion: nil)
     }
     
-    func alertErrorMessage(){
-        let errorMessage = UIAlertController(title: "ERRO!", message: "Verifique os dados digitados e tente novamente", preferredStyle: .alert)
-        
+    func alertErrorMessage() {
+        let errorMessage = UIAlertController(title: "ERRO!", message: "", preferredStyle: .alert)
         errorMessage.addAction(okButton)
+         
+        //verifica oq esta vazio, para saber onde esta o erro
+        
+        if nameTextField.text == "" && phoneTextField.text == "" {
+            errorMessage.message = "Verifique os campos e tente novamente!"
+        } else if nameTextField.text == "" {
+            errorMessage.message = "Verifique o campo 'Name' e tente novamente!"
+        } else if phoneTextField.text == "" {
+            errorMessage.message = "Verifique o campo 'Phone' e tente novamente!"
+        }
         
         self.present(errorMessage, animated: true, completion: nil)
     }
+    
+    func alertErrorListIsEmpty() {
+        let errorMessage = UIAlertController(title: "ERRO!", message: "A lista de contatos está vazia!", preferredStyle: .alert)
+        errorMessage.addAction(okButton)
+        self.present(errorMessage, animated: true, completion: nil)
+    }
     //End of alerts area
+    
     
 }
