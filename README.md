@@ -14,10 +14,8 @@
 <hr>
 
 <h3>Passo a Passo Git:</h3>
-
-<h4>Opção 1 </h4>
 <ol>
-  <li><b>git clone</b> => cria um clone do projeto (repositório) em nossa máquina local
+  <li><b>git clone</b> => cria um clone do projeto (repositório) em nossa máquina local // ou // <b>git init</b> => inicia um repositório git local
   <li><b>git add .</b> => realiza a inclusão ou modificação dos arquivos no diretório local, preparando ele para ser entregue ao servidor remoto (commit -> push)
   <li><b>git commit</b> => confirma e salva as alterações para preparar para o envio (git commit -m 'mensagem', para formalizar os commits
   <li><b>git push</b> => envia ao repositório remoto Git (sobe as alterações ao repositorio no GitHub)
