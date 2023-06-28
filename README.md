@@ -44,7 +44,7 @@
 
 <h3>Mais comandos:</h3>
 <ul>
- <li><b>git remote add origin <i>'link repositorio</i></b></li> => é usado para adicionar um repositório remoto como uma referência em seu repositório local. Ele define a conexão entre o seu repositório local e o repositório remoto, permitindo que você envie e receba alterações entre os dois
+ <li><b>git remote add origin <i>'link repositorio'</i></b> => é usado para adicionar um repositório remoto como uma referência em seu repositório local. Ele define a conexão entre o seu repositório local e o repositório remoto, permitindo que você envie e receba alterações entre os dois
   <li><b>git branch</b> => realizar operações com branches (criar, listar, renomear ou excluir)<br>
       link: https://blog.betrybe.com/git/git-branch/#1
   <li><b>git checkout</b> => alterar a branch ou restaurar arquivos (da pra usar o 'git checkout -b <nome branch>' para criar e já entrar nessa nova branch (ramificação) criada)<br>
