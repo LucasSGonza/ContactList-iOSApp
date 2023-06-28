@@ -54,7 +54,7 @@ link: https://blog.betrybe.com/git/git-checkout/#1
   <li><b>git rm</b> => remove arquivos
   <li><b>git mv</b> => move arquivos
 </ul>
-</details>
+
 <pre>
 - create a new repository on the command line
 git init
@@ -71,6 +71,8 @@ git remote add origin https://github.com/LucasSGonza/testezin.git
 git branch -M main
 git push -u origin main
 </pre>
+
+</details>
 	
 <hr>
 	
