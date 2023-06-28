@@ -13,7 +13,9 @@
 
 <hr>
 
-<h3>Estrutura Inicial do Git:</h3>
+<h3>Passo a Passo Git:</h3>
+
+<h4>Opção 1 </h4>
 <ol>
   <li><b>git clone</b> => cria um clone do projeto (repositório) em nossa máquina local
   <li><b>git add .</b> => realiza a inclusão ou modificação dos arquivos no diretório local, preparando ele para ser entregue ao servidor remoto (commit -> push)
@@ -21,13 +23,12 @@
   <li><b>git push</b> => envia ao repositório remoto Git (sobe as alterações ao repositorio no GitHub)
 </ol>
 
-<hr>
-
-<h3>Estrutura Normal do Git:</h3>
-<ol>
-  <li><b>git pull</b> => busca e baixa o último conteudo salvo e atualizado do repositorio remoto (substitui o git clone)
-  <li>Mesmo processo que antes (add -> commit -> push)
-</ol>
+<pre>
+  OBS: caso já exista um repositório local, não é necessário baixar novamente todo o conteúdo novamente com o 'git clone'. Ao invés disso, pode ser utilizado o comando ' git pull':
+- <b>git pull</b> => busca e baixa o último conteudo salvo e atualizado do repositorio remoto (substitui o git clone)
+- é usado para trazer as atualizações mais recentes de um repositório remoto para o seu repositório local. Ele combina as alterações do repositório remoto no branch atual em seu repositório local. O git pull é usado quando você já tem um repositório local e deseja sincronizá-lo com o repositório remoto, obtendo as últimas alterações.
+ </pre>
+ 
 <hr>
 
 <h3>Outras infos:</h3>
@@ -41,6 +42,7 @@
 
 <h3>Mais comandos:</h3>
 <ul>
+ <li><b>git remote add origin <i>'link repositorio</i></b></li> => é usado para adicionar um repositório remoto como uma referência em seu repositório local. Ele define a conexão entre o seu repositório local e o repositório remoto, permitindo que você envie e receba alterações entre os dois
   <li><b>git branch</b> => realizar operações com branches (criar, listar, renomear ou excluir)<br>
       link: https://blog.betrybe.com/git/git-branch/#1
   <li><b>git checkout</b> => alterar a branch ou restaurar arquivos (da pra usar o 'git checkout -b <nome branch>' para criar e já entrar nessa nova branch (ramificação) criada)<br>
