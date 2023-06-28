@@ -26,7 +26,9 @@
 <pre>
   OBS: caso já exista um repositório local, não é necessário baixar novamente todo o conteúdo novamente com o 'git clone'. Ao invés disso, pode ser utilizado o comando ' git pull':
 - <b>git pull</b> => busca e baixa o último conteudo salvo e atualizado do repositorio remoto (substitui o git clone)
-- é usado para trazer as atualizações mais recentes de um repositório remoto para o seu repositório local. Ele combina as alterações do repositório remoto no branch atual em seu repositório local. O git pull é usado quando você já tem um repositório local e deseja sincronizá-lo com o repositório remoto, obtendo as últimas alterações.
+- é usado para trazer as atualizações mais recentes de um repositório remoto para o seu repositório local. 
+- Ele combina as alterações do repositório remoto no branch atual em seu repositório local. 
+- O git pull é usado quando você já tem um repositório local e deseja sincronizá-lo com o repositório remoto, obtendo as últimas alterações.
  </pre>
  
 <hr>
