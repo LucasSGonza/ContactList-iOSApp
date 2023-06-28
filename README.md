@@ -79,6 +79,7 @@ git push -u origin main
 <details>
 <summary><h3>Links úteis:</h3></summary>
 <ul>
+  <li>https://gitfichas.com/</li>
   <li>https://comandosgit.github.io/
   <li>https://www.freecodecamp.org/portuguese/news/10-comandos-do-git-que-todo-desenvolvedor-deveria-conhecer/
   <li>https://medium.com/@rafaelpiresvb/programação-reativa-com-reactivex-no-swift-e-kotlin-71e8a78fe07f
