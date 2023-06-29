@@ -587,6 +587,8 @@ To access these parameters, you do not need to declare them anywhere. They are a
 
 <h3>Protocol</h3>
 
+<li> Link: https://www.programiz.com/swift-programming/protocols#:~:text=In%20Swift%2C%20a%20protocol%20defines,(or%20any%20other%20types).</li>
+
 <pre>
 -> Funciona como uma class abstract em Java, ou seja, sua função é ser um modelo para que outras classes utilizem de seus
 métodos e atributos, mudando apenas o conteudo deles
