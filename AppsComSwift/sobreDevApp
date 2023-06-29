@@ -100,7 +100,7 @@ Link: https://www.youtube.com/watch?v=DxCydBmOqXU
 
 1. Instanciar uma nova ViewController (ou seja, uma nova tela) -> pode ser pela propria Storyboard (igual for criar um novo botao, 'drag and hold')
 
-2. 
+2. Criar um button, clicar com o botão direito do mouse nele e arrastar até a tela que deseja ser aberta
 
 ========================
 
