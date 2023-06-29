@@ -584,6 +584,43 @@ To access these parameters, you do not need to declare them anywhere. They are a
 * Novamente igual em Java, em Swift existe a palavra reservada <i>final</i> para definir como "final"/irretocável um atributo ou método
 	
 ————
+
+<h3>Protocol</h3>
+
+<pre>
+-> Funciona como uma class abstract em Java, ou seja, sua função é ser um modelo para que outras classes utilizem de seus
+métodos e atributos, mudando apenas o conteudo deles
+
+-> A diferença aqui é que o 'protocol' tem sintaxe semelhante a uma function, na qual dentro dele irão os atributos ou functions para
+serem usados em outros locais
+
+-> sintaxe e ex:
+	
+protocol Greet {
+
+  // blueprint of a property
+  var name: String { get }
+
+
+  // blueprint of a method 
+  func message() 
+}  
+	
+	---
+	
+// conform class to Greet protocol
+class Employee: Greet {
+
+  // implementation of property
+  var name = "Perry"
+
+  // implementation of method
+  func message() {
+    print("Good Morning!")
+  }
+}
+
+</pre>
 	
 </details>
 <hr>
