@@ -624,9 +624,9 @@ class Employee: Greet {
 </pre>
 
 <h2>Delegate</h2>
+<label>Links</label>
 <ul>
-	
-<li>Link: https://jamesrochabrun.medium.com/implementing-delegates-in-swift-step-by-stepd3211cbac3ef#:~:text=Delegates%20are%20a%20design%20pattern,B%20to%20perform%20an%20action.</li>
+<li>https://jamesrochabrun.medium.com/implementing-delegates-in-swift-step-by-stepd3211cbac3ef#:~:text=Delegates%20are%20a%20design%20pattern,B%20to%20perform%20an%20action.</li>
 <li>https://medium.com/mackmobile/protocol-delegate-em-swift-5f521e19ca56</li>
 </ul>
 <ul>
