@@ -7,6 +7,7 @@
 
 import UIKit
 
+//MARK: Inicial
 class ViewController: UIViewController {
     
     @IBOutlet weak var nameTextField: UITextField!
@@ -15,19 +16,27 @@ class ViewController: UIViewController {
     
     
     //variables OF THIS VIEWCONTROLLER (remember that this is a class)
+    
+    //my database
     var contactList: [Contact] = []
+    
+    //flag for my alert's to help to define the alert message of them
     var alertFlag: String = ""
     
-    //Life Cycle of the App
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        //configs
-        phoneTextField.keyboardType = .numberPad
+        self.getContactList(contactList)
+        //phoneTextField.keyboardType = .numberPad
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print(showContactInfos())
     }
     
     
-    //MARK: Function's
+    //MARK:Save contact
+    
     //func to save the contact in the array
     @IBAction func saveContact(_ sender: UIButton) {
         //Instanciar um objeto do tipo 'Contact', que irá receber os valores dos textFields
@@ -51,16 +60,18 @@ class ViewController: UIViewController {
         
     }
     
-    // func to read the Array Contact List
+    //MARK:Go to 2 screen
+    
+    //func to read the Array Contact List
     @IBAction func readContactList(_ sender: UIButton) {
         //new screen
-        /*
-        let screenContactList = storyboard?.instantiateViewController(identifier: "contactListScreen") as! ViewControllerContactList
-        
-        present(screenContactList, animated: true, completion: nil)
-         */
+        let screenContactList = storyboard?.instantiateViewController(identifier: "contactListScreen") as! ViewController2
+        screenContactList.initView(contactList, delegate2: self)
+        navigationController?.pushViewController(screenContactList, animated: true)
     }
+
     
+    //MARK: Clean List
     //func to clean the Array Contact List
     @IBAction func cleanList(_ sender: UIButton) {
         if !contactList.isEmpty {
@@ -81,10 +92,11 @@ class ViewController: UIViewController {
         phoneTextField.text = ""
     }
     
-    
-    //MARK: Alerts area
+
+    //MARK: Alerts
     let okButton = UIAlertAction(title: "OK", style: .default)
     
+    //alert's of success
     func alertSuccessMessage() {
         let successMessage = UIAlertController(title: "Sucesso!", message: "", preferredStyle: .alert)
         successMessage.addAction(okButton)
@@ -98,6 +110,7 @@ class ViewController: UIViewController {
         self.present(successMessage, animated: true, completion: nil)
     }
     
+    //alert of error
     func alertErrorMessage() {
         let errorMessage = UIAlertController(title: "ERRO!", message: "", preferredStyle: .alert)
         errorMessage.addAction(okButton)
@@ -115,6 +128,7 @@ class ViewController: UIViewController {
         self.present(errorMessage, animated: true, completion: nil)
     }
     
+    //alert of error from clean a empty list
     func alertErrorListIsEmpty() {
         let errorMessage = UIAlertController(title: "ERRO!", message: "A lista de contatos está vazia!", preferredStyle: .alert)
         errorMessage.addAction(okButton)
@@ -122,5 +136,15 @@ class ViewController: UIViewController {
     }
     //End of alerts area
     
-    
+}
+
+//MARK: Delegate
+extension ViewController: toPassDataDelegate {
+    func getContactList(_ list:[Contact]) {
+        self.contactList = list
+    }
+    func showContactInfos() -> String {
+        guard let texto = contactList.first?.showInfos() else {return "Nada"}
+        return texto
+    }
 }

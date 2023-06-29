@@ -18,7 +18,7 @@ class Contact {
     }
     
     func showInfos() -> String {
-        return "Name: \(name),Number: \(number)"
+        return "Name: \(name), Number: \(number)"
     }
     
 }
