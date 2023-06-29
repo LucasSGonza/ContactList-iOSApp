@@ -1,3 +1,11 @@
+OQ ESTÁ FALTANDO:
+
+-> arrumar button de retorno da segunda tela para a primeira (por enquanto esát sendo pela navegation controller)
+-> achar um jeito para passar os dados entre as telas
+-> preencher tableView com os dados da Array
+
+=======================
+
 Principais coisas sobre meu desenvolvimento no app:
 
 -> Deve-se instanciar no código principalmente os 'controls' (label, text, button,...) que irão ser modificados em algum momento da execução do app,
