@@ -587,7 +587,7 @@ To access these parameters, you do not need to declare them anywhere. They are a
 
 <h3>Protocol</h3>
 
-<li> Link: https://www.programiz.com/swift-programming/protocols#:~:text=In%20Swift%2C%20a%20protocol%20defines,(or%20any%20other%20types).</li>
+*Link: https://www.programiz.com/swift-programming/protocols#:~:text=In%20Swift%2C%20a%20protocol%20defines,(or%20any%20other%20types).
 
 <pre>
 -> Funciona como uma class abstract em Java, ou seja, sua função é ser um modelo para que outras classes utilizem de seus
@@ -621,8 +621,18 @@ class Employee: Greet {
     print("Good Morning!")
   }
 }
-
 </pre>
+
+<h2>Delegate</h2>
+<ul>
+	
+<li>Link: https://jamesrochabrun.medium.com/implementing-delegates-in-swift-step-by-stepd3211cbac3ef#:~:text=Delegates%20are%20a%20design%20pattern,B%20to%20perform%20an%20action.</li>
+<li>https://medium.com/mackmobile/protocol-delegate-em-swift-5f521e19ca56</li>
+</ul>
+<ul>
+	<li>Delegates are a design pattern that allows one object to send messages to another object when a specific event happens.</li>
+	<li>Imagine an object A calls an object B to perform an action. Once the action is complete, object A should know that B has completed the task and take necessary action, this can be achieved with the help of delegates!</li>
+</ul>
 	
 </details>
 <hr>
