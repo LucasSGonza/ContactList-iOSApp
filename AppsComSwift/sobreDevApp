@@ -1,7 +1,5 @@
 OQ ESTÁ FALTANDO:
 
--> arrumar button de retorno da segunda tela para a primeira (por enquanto esát sendo pela navegation controller)
--> achar um jeito para passar os dados entre as telas
 -> preencher tableView com os dados da Array
 
 =======================
@@ -75,6 +73,17 @@ alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default a
 NSLog("The \"OK\" alert occured.")}))
 
 self.present(alert, animated: true, completion: nil)
+
+-----------------------
+
+-> UIStoryboard => utiliza para interagir com a storyboard
+
+ex de instancia:
+
+//new screen
+  let screenContactList = storyboard?.instantiateViewController(identifier: "contactListScreen") as! ViewController2
+  screenContactList.initView(contactList, delegate2: self)
+  navigationController?.pushViewController(screenContactList, animated: true)
 
 ========================
 
