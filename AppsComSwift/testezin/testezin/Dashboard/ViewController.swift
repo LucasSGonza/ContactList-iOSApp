@@ -7,6 +7,10 @@
 
 import UIKit
 
+//botão pra geral usar -> talvez não seja legal fazer isso
+let okButton = UIAlertAction(title: "OK", style: .default)
+
+
 //MARK: Inicial
 class ViewController: UIViewController {
     
@@ -31,26 +35,29 @@ class ViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        print(showContactInfos())
+        print(contactList)
     }
     
     
     //MARK:Save contact
-    
     //func to save the contact in the array
     @IBAction func saveContact(_ sender: UIButton) {
         //Instanciar um objeto do tipo 'Contact', que irá receber os valores dos textFields
         if let name = nameTextField.text, let number = phoneTextField.text {
             
-            if name != "" && number != "" { //verificar se number é numero
+            if (name != "" && number != "") && validateInputs(name, number) { //verificar se number é numero
                 
                 alertFlag = "saveContact" //flag para o alerta
                 let newContact:Contact = Contact(name, Int(number)!) //cria um novo contato a partir dos dados dos text fields
-                print(newContact.showInfos()) //showInfos do novo contato
-                contactList.append(newContact) //add na Array (bd)
-                print(contactList) //exibe a Array
-                alertSuccessMessage() //exibe mensagem de sucesso
-                cleanTextsFields() //limpa os textfields
+                if !validadeIfContactAlreadyExist(newContact) {
+                    print(newContact.showInfos()) //showInfos do novo contato
+                    contactList.append(newContact) //add na Array (bd)
+                    print(contactList) //exibe a Array
+                    alertSuccessMessage() //exibe mensagem de sucesso
+                    cleanTextsFields() //limpa os textfields
+                } else {
+                    alertErrorMessage()
+                }
                 
             } else {
                 alertErrorMessage()//exibe mensagem de erro (na func há uma seleção do erro a ser exibido)
@@ -86,16 +93,28 @@ class ViewController: UIViewController {
         }
     }
     
+    //MARK: Functions gerais
     //func to clean the textFields -> using in func saveContact
     func cleanTextsFields() {
         nameTextField.text = ""
         phoneTextField.text = ""
     }
     
+    func validadeIfContactAlreadyExist(_ contatin: Contact) -> Bool {
+        var result:Bool = false
+        
+        contactList.forEach { contato in
+            if ( (contatin.name == contato.name) && (contatin.number == contato.number) ) {
+                result = true
+                return
+            }
+            
+        }
+        return result
+    }
+    
 
     //MARK: Alerts
-    let okButton = UIAlertAction(title: "OK", style: .default)
-    
     //alert's of success
     func alertSuccessMessage() {
         let successMessage = UIAlertController(title: "Sucesso!", message: "", preferredStyle: .alert)
@@ -107,6 +126,7 @@ class ViewController: UIViewController {
         } else if alertFlag == "cleanList" {
             successMessage.message = "Êxito em limpar a lista de contatos!"
         }
+        
         self.present(successMessage, animated: true, completion: nil)
     }
     
@@ -116,13 +136,14 @@ class ViewController: UIViewController {
         errorMessage.addAction(okButton)
          
         //verifica oq esta vazio, para saber onde esta o erro
-        
         if nameTextField.text == "" && phoneTextField.text == "" {
             errorMessage.message = "Verifique os campos e tente novamente!"
         } else if nameTextField.text == "" {
             errorMessage.message = "Verifique o campo 'Name' e tente novamente!"
         } else if phoneTextField.text == "" {
             errorMessage.message = "Verifique o campo 'Phone' e tente novamente!"
+        } else {
+            errorMessage.message = "Erro nos campos e tente novamente!"
         }
         
         self.present(errorMessage, animated: true, completion: nil)
@@ -138,7 +159,9 @@ class ViewController: UIViewController {
     
 }
 
+
 //MARK: Delegate
+//a class(View) que herdará o protocol Delegate deve ser, no meu caso, a ViewController 1, portanto, a view que
 extension ViewController: toPassDataDelegate {
     func getContactList(_ list:[Contact]) {
         self.contactList = list

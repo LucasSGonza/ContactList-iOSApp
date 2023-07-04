@@ -12,3 +12,8 @@ protocol toPassDataDelegate: AnyObject {
     func getContactList(_ list:[Contact])
     func showContactInfos() -> String
 }
+
+protocol MyAlerts: AnyObject {
+    func alertSuccessMessage()
+    func alertErrorMessage()
+}
