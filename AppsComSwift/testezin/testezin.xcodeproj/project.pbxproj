@@ -16,6 +16,8 @@
 		D9027C352A38E30400EACED7 /* testezinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9027C342A38E30400EACED7 /* testezinTests.swift */; };
 		D9027C402A38E30400EACED7 /* testezinUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9027C3F2A38E30400EACED7 /* testezinUITests.swift */; };
 		D943B29D2A4E181900856217 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D943B29C2A4E181900856217 /* Protocol.swift */; };
+		D9441EB52A5755680002DD3A /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9441EB32A5755680002DD3A /* ContactsTableViewCell.swift */; };
+		D9441EB62A5755680002DD3A /* ContactsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9441EB42A5755680002DD3A /* ContactsTableViewCell.xib */; };
 		D94D5A172A4B711A00465936 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94D5A162A4B711A00465936 /* ViewController2.swift */; };
 		D9DB55112A44B515003D8FF8 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DB55102A44B515003D8FF8 /* Model.swift */; };
 /* End PBXBuildFile section */
@@ -53,6 +55,8 @@
 		D9027C3F2A38E30400EACED7 /* testezinUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testezinUITests.swift; sourceTree = "<group>"; };
 		D9027C412A38E30400EACED7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D943B29C2A4E181900856217 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
+		D9441EB32A5755680002DD3A /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
+		D9441EB42A5755680002DD3A /* ContactsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactsTableViewCell.xib; sourceTree = "<group>"; };
 		D94D5A162A4B711A00465936 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		D9DB55102A44B515003D8FF8 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +109,7 @@
 		D9027C1C2A38E30100EACED7 /* testezin */ = {
 			isa = PBXGroup;
 			children = (
+				D9441EB22A57552F0002DD3A /* Cells */,
 				D943B2902A4E17E300856217 /* Protocols */,
 				D9DB55162A44CC59003D8FF8 /* Dashboard */,
 				D9DB55152A44CBDD003D8FF8 /* Models */,
@@ -141,6 +146,15 @@
 				D943B29C2A4E181900856217 /* Protocol.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D9441EB22A57552F0002DD3A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D9441EB32A5755680002DD3A /* ContactsTableViewCell.swift */,
+				D9441EB42A5755680002DD3A /* ContactsTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		D9DB55152A44CBDD003D8FF8 /* Models */ = {
@@ -264,6 +278,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9441EB62A5755680002DD3A /* ContactsTableViewCell.xib in Resources */,
 				D9027C2A2A38E30400EACED7 /* LaunchScreen.storyboard in Resources */,
 				D9027C272A38E30400EACED7 /* Assets.xcassets in Resources */,
 				D9027C252A38E30100EACED7 /* Main.storyboard in Resources */,
@@ -291,6 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9441EB52A5755680002DD3A /* ContactsTableViewCell.swift in Sources */,
 				D94D5A172A4B711A00465936 /* ViewController2.swift in Sources */,
 				D9027C222A38E30100EACED7 /* ViewController.swift in Sources */,
 				D9027C1E2A38E30100EACED7 /* AppDelegate.swift in Sources */,

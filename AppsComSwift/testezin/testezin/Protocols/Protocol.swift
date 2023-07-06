@@ -9,11 +9,11 @@ import Foundation
 
 //protocol para que as Views utilizem do método getContactList para trocarem entre si a contactList, contendo seu conteudo sempre atualizado
 protocol toPassDataDelegate: AnyObject {
-    func getContactList(_ list:[Contact])
+    func setContactList(_ list:[Contact])
     func showContactInfos() -> String
 }
 
 protocol MyAlerts: AnyObject {
-    func alertSuccessMessage()
-    func alertErrorMessage()
+    func alertSuccessMessage(_ alertFlag: String)
+    func alertErrorMessage(_ alertFlag:String)
 }

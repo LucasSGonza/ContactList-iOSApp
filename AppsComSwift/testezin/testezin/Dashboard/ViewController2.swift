@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController2: UIViewController{
+class ViewController2: UIViewController {
 
     @IBOutlet weak var tabelaView: UITableView!
     
@@ -22,10 +22,8 @@ class ViewController2: UIViewController{
     
     //Array que será cópia do meu bd na 1 ViewController
     private var contactList:[Contact] = []
-    
-    private var alertFlag: String = ""
-    
-    
+
+
     //método para no momento de instanciar a segunda tela, poder pegar os dados que estão vindo da primeira tela, no caso a Array(bd) e o próprio delegate
     func initView(_ list:[Contact], delegate2:toPassDataDelegate){
         self.contactList = list
@@ -36,7 +34,7 @@ class ViewController2: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        delegate?.getContactList(contactList)
+        //delegate?.setContactList(contactList) //necessario?
         print(delegate!.showContactInfos())
     }
     
@@ -48,7 +46,7 @@ class ViewController2: UIViewController{
     }
     
     
-    //func to clean the textFields -> using in func saveContact
+    //func to clean the textFields
     func cleanTextsFields() {
         nameTextField.text = ""
         phoneTextField.text = ""
@@ -59,30 +57,38 @@ class ViewController2: UIViewController{
     //func do botão para retornar para 1 ViewController
     @IBAction func goBack(_ sender: Any) {
         guard let delegate = delegate else {return}
-        delegate.getContactList(contactList)
+        delegate.setContactList(contactList)
         navigationController?.popViewController(animated: true)
         dismiss(animated: true)
     }
     
     
-    //MARK: Editar lista
+    //MARK: Editar contato
     @IBAction func editContactList(_ sender: UIButton) {
         //verificar os itens dos inputs para buscar na Array e se os dados baterem, atualiza-los
         
         if let name = nameTextField.text , let phone = phoneTextField.text {
             
+            //var i:Int = 0
+            
             contactList.forEach { contato in
                 //se nome e número forem exatamente iguais, não alterar nada e exibir mensagem
                 print(contato.showInfos())
+                
                 if name == contato.name && Int(phone) == contato.number {
-                    alertFlag = "contactIsEqual"
-                    alertErrorMessage()
+                    alertErrorMessage("contactIsEqual")
                     cleanTextsFields()
                     return
                 }
                 //verificar se somente o phone se alterou
                 else if name == contato.name && Int(phone) != contato.number {
-                    //
+                    //atualizar o nome
+                    contato.number = Int(phone)!
+                    print("a")
+                } else {
+                    //atualizar o phone
+                    contato.name = name
+                    print("b")
                 }
                 //
             }//fim do forEach()
@@ -93,7 +99,31 @@ class ViewController2: UIViewController{
         
     }//fim da ação do botão
     
+    
+    //MARK: Deletar contato
+    @IBAction func deleteContact(_ sender: UIButton) {
+        guard let name = nameTextField.text, let phone = phoneTextField.text else {return}
+        
+        var i: Int = 0
+        if !contactList.isEmpty {
+            contactList.forEach { contato in
+                if name == contato.name && Int(phone) == contato.number {
+                    contactList.remove(at: i)
+                    print(contactList)
+                    alertSuccessMessage("deleteContact")
+                    cleanTextsFields()
+                    //
+                    return
+                } else {i = i + 1}
+            }
+        } else {
+            alertErrorMessage("listIsEmpty")
+        }
+        
+    }
+    
 }
+
 
 // MARK: TableView methods
 extension ViewController2: UITableViewDelegate, UITableViewDataSource {
@@ -105,6 +135,7 @@ extension ViewController2: UITableViewDelegate, UITableViewDataSource {
         return contactList.count
     }
     
+    
     //func que irá inserir dados na tableView (cellForRowAt) -> célula para linha em x índice
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tabelaView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
@@ -113,6 +144,7 @@ extension ViewController2: UITableViewDelegate, UITableViewDataSource {
         cell.detailTextLabel?.text = "\(contato.number)"
         return cell
     }
+    
     
     //func que irá pegar os dados da Row selecionada e exibir nos inputs (didSelectRowAt)
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -124,30 +156,45 @@ extension ViewController2: UITableViewDelegate, UITableViewDataSource {
 
 //MARK: Alerts
 extension ViewController2: MyAlerts {
-    func alertSuccessMessage() {
+    func alertSuccessMessage(_ alertFlag:String) {
         let successMessage = UIAlertController(title: "Sucesso!", message: "", preferredStyle: .alert)
         successMessage.addAction(okButton)
          
         //verifica a mensagem de sucesso que irá exibir
-        if alertFlag == "saveContact" {
-            successMessage.message = "Êxito em salvar o contato"
-        } else if alertFlag == "cleanList" {
+        switch alertFlag {
+        case "deleteContact":
+            successMessage.message = "Êxito em deletar o contato!"
+            break
+            
+        case "editContact":
             successMessage.message = "Êxito em limpar a lista de contatos!"
+            break
+        
+        default:
+            successMessage.message = "Êxito na operação!"
         }
+        
         self.present(successMessage, animated: true, completion: nil)
     }
     
-    func alertErrorMessage() {
+    func alertErrorMessage(_ alertFlag: String) {
         let errorMessage = UIAlertController(title: "ERRO!", message: "", preferredStyle: .alert)
         errorMessage.addAction(okButton)
          
         //verifica oq esta vazio, para saber onde esta o erro
-        if alertFlag == "contactIsEqual" {
+        switch alertFlag {
+        case "contactIsEqual":
             errorMessage.message = "Os dados do contato procurado estão iguais!"
+            break
+            
+        case "listIsEmpty":
+            errorMessage.message = "A lista de contatos está vazia!"
+            break
+        
+        default:
+            errorMessage.message = "Verifique os dados e tente novamete"
         }
         
         self.present(errorMessage, animated: true, completion: nil)
     }
-    
 }
-
