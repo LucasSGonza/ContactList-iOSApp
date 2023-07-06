@@ -23,7 +23,8 @@ parâmetro (pode ser a outro objeto, a tela, ...)
 COMO EU FIZ...
 
 -> limitei a largura e altura dos objetos para os valores padrões, para que em qualquer tela os objetos sejam como eu quero
--> junto a isso, define ainda um padrão de posicionamento horizontal para todos os objetos como '0', ou seja, no centro da tela
+-> amarrei o topo do objeto para fixar uma distância com o 1º elemento acima de cada obj
+-> junto a isso, define ainda um padrão de posicionamento horizontal para todos os objetos como '0', ou seja, no centro da tela      
 
 ========================
 
@@ -97,7 +98,7 @@ Como instanciar novas telas!
 para a nova ViewController (basicamente para ter o código próprio dessa nova Tela)
 
 ------
-OPÇÃO 1:
+OPÇÃO 1 (INSTANCIANDO COMO OBJETOS):
 
 Link: https://www.youtube.com/watch?v=Dh7fa1fdzBo
 
@@ -105,13 +106,13 @@ Link: https://www.youtube.com/watch?v=Dh7fa1fdzBo
 
 2. Definir um ID
 
+3. Instanciar a partir do método 'instantiateViewController' da 'storyboard'
 
-3. Métodos
-
+4. Colocar o ID da ViewController que será instanciada, bem como a class(pode-se dizer arquivo) ViewController referente
 
 ------
 
-OPÇÃO 2:
+OPÇÃO 2 (SEGUES):
 
 Link: https://www.youtube.com/watch?v=DxCydBmOqXU
 
@@ -143,6 +144,64 @@ de keyboardtype testar:
 TABLE VIEW:
 
 Link: https://medium.com/@sarinyaswift/easy-tableview-setup-tutorial-swift-4-ad48ec4cbd45
+(bom link)
+(mais dicas sobre tableView estão comentadas no proprio código do projeto 'testezin'
+
+=======================
+
+COMO PASSAR INFORMAÇÕES ENTRE AS TELAS!
+
+-> Deve ser feito de forma 'protegida', na qual permite maior controle sobre os caminhos que a informação está passando (de onde vem, onde está, como foi, ...)
+-> Para isso, utilizamos de um 'protocol' chamado 'Delegate':
+
+.protocol => tipo uma class abstrata em Java, serve para dar override em seus métodos, economizando e flexibilizando o código
+.Delegate => será nossa instância desse protocol, na qual utilizaremos para passar as informações entre as ViewControllers
+
+Passo a Passo:
+
+1. Criar o protocol com os métodos mais adequados. No meu caso ficou assim:
+protocol toPassDataDelegate: AnyObject {
+    func setContactList(_ list:[Contact])
+    func showContactInfos() -> String
+}
 
 
+2. Definir qual ViewController herdará os métodos do protocol -> em meu projeto foi de onde as minhas infos estão sendo criadas
+
+2.1 A Herança pode ser criada de 2 maneiras: (o mais recomendado para melhor organização do código seria a 2 opção)
+- class ViewController: UIViewController, 'nomeDoProtocol' {}
+- extension ViewController: 'nomeDoProtocol' {}
+
+2.2 Completar os métodos (dar corpo a eles, visto que no protocol eles veem 'vazios'), já pensando no melhor jeito de pegar as informações desejadas
+para posteriormente passá-las para a próxima ViewController
+
+
+3. Com os métodos prontos, devemos agr pensar em como passar esse Delegate 'recheado' (com as infos) para a próxima tela. Para isso, em meu projeto 'testezin'
+pensamos em passar na chamada da próxima tela, passando o delegate (no caso a própria ViewController, visto que a mesma HERDOU os métodos do protocol) como
+parâmetro
+
+3.1 Para fazer isso, criamos um método na 2ºViewController chamadado 'initView', na qual recebe 2 parâmetros:
+func initView(_ list:[Contact], delegate2:toPassDataDelegate){
+        self.contactList = list
+        self.delegate = delegate2
+    }
+
+3.2 Observando esta func, já pode-se adiantar alguns passos a serem feitos na 2º tela, que seriam a criação de um atributo 'contactList' e de um 'delegate',
+criando locais para armazenar as infos recebidas da 1º tela:
+//Delegate -> 'objeto' que será do tipo do protocol, para poder utilizar de seus métodos e atributos
+    private var delegate: toPassDataDelegate?
+    
+//Array que será cópia do meu bd na 1 ViewController
+    private var contactList:[Contact] = []
+
+
+4. Agr com tudo isso pronto, acredito que faltam poucas coisas a serem feitas. Primeiro, vamos ao botão que irá chamar a 2º ViewController:
+@IBAction func readContactList(_ sender: UIButton) {
+        //new screen
+        let screenContactList = storyboard?.instantiateViewController(identifier: "contactListScreen") as! ViewController2
+        screenContactList.initView(contactList, delegate2: self)
+        navigationController?.pushViewController(screenContactList, animated: true)
+    }
+
+4.1 Com isso tudo feito, devemos agr na segunda tela atribuir os dados vindos da 1º nos atributos que criamos aqui na 2º...
 
