@@ -70,33 +70,48 @@ OBS: aparentemente nenhum desses métodos recebe parâmetros
 [ método é chamado após o encerramento da view ]
 [ usado para encerrar tudo que ainda pode estar rodando no app (notificações, sensores, ...) ]
 
+
 ======================
 
+
 LINKS:
+
 
 How To Pass Data Between View Controllers in Swift (Xcode 11) | iOS for Beginners
 https://www.youtube.com/watch?v=Dh7fa1fdzBo&t=304s
 
+
 How to pass data between view controllers in Swift (iOS)
 https://www.youtube.com/watch?v=0fk82nXC2F0
+
 
 Como passar entre páginas no Xcode.
 https://caiocnoronha.medium.com/como-passar-entre-páginas-no-xcode-f7613820d912
 
+
 iOS Swift Tutorial: Programmatic and Storyboard Segues
 https://www.youtube.com/watch?v=DxCydBmOqXU
+
 
 [SWIFT] PRA QUE SERVE O DELEGATE NO SWIFT
 https://www.youtube.com/watch?v=IrBaLvYzRLI
 
+
 Swift Protocols
 https://www.programiz.com/swift-programming/protocols#:~:text=In%20Swift%2C%20a%20protocol%20defines,(or%20any%20other%20types).
+
 
 Protocol Delegate em Swift
 https://medium.com/mackmobile/protocol-delegate-em-swift-5f521e19ca56
 
+
 Implementing delegates in Swift, step by step.
 https://jamesrochabrun.medium.com/implementing-delegates-in-swift-step-by-step-d3211cbac3ef#:~:text=Delegates%20are%20a%20design%20pattern,B%20to%20perform%20an%20action.
 
+
 Easy TableView Setup Tutorial — Swift 4
 https://medium.com/@sarinyaswift/easy-tableview-setup-tutorial-swift-4-ad48ec4cbd45
+
+
+How to create custom cell from xib for UITableView using Swift
+https://www.youtube.com/watch?v=A7J0AmtVABg
