@@ -14,6 +14,5 @@ protocol toPassDataDelegate: AnyObject {
 }
 
 protocol MyAlerts: AnyObject {
-    func alertSuccessMessage(_ alertFlag: String)
-    func alertErrorMessage(_ alertFlag:String)
+    func setupAlert(title: String, message:String)
 }

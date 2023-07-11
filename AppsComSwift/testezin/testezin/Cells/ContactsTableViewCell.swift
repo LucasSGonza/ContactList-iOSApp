@@ -28,4 +28,9 @@ class ContactsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func bind (item: Contact) {
+        self.nameLabel.text = item.name
+        self.numberLabel.text = item.phone
+    }
+    
 }

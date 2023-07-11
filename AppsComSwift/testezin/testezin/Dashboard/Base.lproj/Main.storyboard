@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="mainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="testezin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="MainViewController" customModule="testezin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -52,7 +52,8 @@
                                     <constraint firstAttribute="width" constant="156" id="TEB-cs-wLl"/>
                                     <constraint firstAttribute="height" constant="30" id="w8C-on-MrO"/>
                                 </constraints>
-                                <state key="normal" title="LISTA DE CONTATOS">
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Lista de Contatos">
                                     <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                     <color key="titleShadowColor" systemColor="labelColor"/>
                                 </state>
@@ -67,7 +68,8 @@
                                     <constraint firstAttribute="height" constant="30" id="dG4-KM-lQW"/>
                                     <constraint firstAttribute="width" constant="156" id="u1N-LH-ynL"/>
                                 </constraints>
-                                <state key="normal" title="LIMPAR LISTA">
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Limpar Lista">
                                     <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                     <color key="titleShadowColor" systemColor="labelColor"/>
                                 </state>
@@ -82,9 +84,9 @@
                                     <constraint firstAttribute="width" constant="156" id="Ehb-Yp-Vdd"/>
                                     <constraint firstAttribute="height" constant="30" id="hMH-5M-EmK"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="SALVAR CONTATO">
+                                <state key="normal" title="Salvar Contato">
                                     <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                     <color key="titleShadowColor" systemColor="labelColor"/>
                                 </state>
@@ -120,43 +122,43 @@
             </objects>
             <point key="canvasLocation" x="980" y="41"/>
         </scene>
-        <!--View Controller2-->
+        <!--Contact View Controller-->
         <scene sceneID="a1T-7s-NdX">
             <objects>
-                <viewController storyboardIdentifier="contactListScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nf3-A0-8ri" customClass="ViewController2" customModule="testezin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="contactListScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nf3-A0-8ri" customClass="ContactViewController" customModule="testezin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HuK-e6-nUa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oQU-Ov-wYN">
-                                <rect key="frame" x="67.5" y="59" width="240" height="128"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oQU-Ov-wYN">
+                                <rect key="frame" x="45" y="59" width="284" height="175"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="5ri-3K-leH"/>
-                                    <constraint firstAttribute="width" constant="240" id="9ba-zP-l5P"/>
+                                    <constraint firstAttribute="height" constant="175" id="5ri-3K-leH"/>
+                                    <constraint firstAttribute="width" constant="284" id="9ba-zP-l5P"/>
                                 </constraints>
                                 <color key="separatorColor" systemColor="systemGreenColor"/>
                                 <color key="sectionIndexColor" systemColor="labelColor"/>
                                 <color key="sectionIndexBackgroundColor" systemColor="systemGreenColor"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="ndh-9K-oVi" detailTextLabel="b6f-AD-Tlp" style="IBUITableViewCellStyleSubtitle" id="Omf-yL-VWy">
-                                        <rect key="frame" x="0.0" y="28" width="240" height="55.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="ndh-9K-oVi" detailTextLabel="b6f-AD-Tlp" rowHeight="50" style="IBUITableViewCellStyleSubtitle" id="Omf-yL-VWy">
+                                        <rect key="frame" x="0.0" y="28" width="284" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Omf-yL-VWy" id="aXH-li-LX2">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="55.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="284" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ndh-9K-oVi">
-                                                    <rect key="frame" x="16" y="10" width="33" height="20.5"/>
+                                                    <rect key="frame" x="16" y="8" width="33" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="b6f-AD-Tlp">
-                                                    <rect key="frame" x="16" y="31.5" width="44" height="14.5"/>
+                                                    <rect key="frame" x="16" y="28.5" width="44" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
@@ -177,6 +179,7 @@
                                     <constraint firstAttribute="width" constant="156" id="E4h-UO-0f8"/>
                                     <constraint firstAttribute="height" constant="30" id="H6f-Br-wtZ"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Retornar">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -191,6 +194,7 @@
                                     <constraint firstAttribute="height" constant="30" id="8ux-Xh-fMv"/>
                                     <constraint firstAttribute="width" constant="155" id="Hpx-hT-S3O"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Remover contato">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -205,6 +209,7 @@
                                     <constraint firstAttribute="height" constant="30" id="eMk-va-12U"/>
                                     <constraint firstAttribute="width" constant="156" id="zXo-pC-sz0"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Editar Contato">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -240,7 +245,7 @@
                             <constraint firstItem="GJU-By-zqE" firstAttribute="centerX" secondItem="HuK-e6-nUa" secondAttribute="centerX" id="PVB-Nt-cg1"/>
                             <constraint firstItem="oQU-Ov-wYN" firstAttribute="centerX" secondItem="HuK-e6-nUa" secondAttribute="centerX" id="Q7C-fK-aXI"/>
                             <constraint firstItem="XHK-CS-uQc" firstAttribute="centerX" secondItem="HuK-e6-nUa" secondAttribute="centerX" id="YMz-6z-f6N"/>
-                            <constraint firstItem="ZWh-3e-7yF" firstAttribute="top" secondItem="oQU-Ov-wYN" secondAttribute="bottom" constant="117" id="Zae-Q7-gZF"/>
+                            <constraint firstItem="ZWh-3e-7yF" firstAttribute="top" secondItem="oQU-Ov-wYN" secondAttribute="bottom" constant="70" id="Zae-Q7-gZF"/>
                             <constraint firstItem="oQU-Ov-wYN" firstAttribute="top" secondItem="bnU-dr-OKd" secondAttribute="top" constant="59" id="aRN-Y5-NeT"/>
                             <constraint firstItem="pqk-iM-9SR" firstAttribute="top" secondItem="dKO-5a-VPn" secondAttribute="bottom" constant="20" id="dOl-7d-wcW"/>
                             <constraint firstItem="ZWh-3e-7yF" firstAttribute="centerX" secondItem="HuK-e6-nUa" secondAttribute="centerX" id="iEg-t0-zIE"/>
