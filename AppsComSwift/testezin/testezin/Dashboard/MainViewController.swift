@@ -18,14 +18,14 @@ class MainViewController: UIViewController {
     
     //variables OF THIS VIEWCONTROLLER (remember that this is a class)
     
-    //my database
+    //my 'database'
     var contactList: [Contact] = []
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setContactList(contactList)
-        //phoneTextField.keyboardType = .numberPad
+        //phoneTextField.keyboardType = .numberPad --> didn't work :(
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -34,30 +34,34 @@ class MainViewController: UIViewController {
     
     
     //MARK:Save contact
-    //func to save the contact in the array
+    //EN => func to create and save a contact in the array
     @IBAction func saveContact(_ sender: UIButton) {
-        //Instanciar um objeto do tipo 'Contact', que irá receber os valores dos textFields
+        //PT-BR => Func que irá instanciar um objeto do tipo 'Contact', que irá receber os valores dos textFields, e adicionar esse objeto à Array
+        
         guard let name = nameTextField.text, let number = phoneTextField.text else {return}
-        if (!name.isEmpty && !number.isEmpty) { //verificar se o campos estão vazios
-            if validateInputs(name, number) { //valida os tipos dos inputs
-                let newContact:Contact = Contact(name,number) //cria um novo contato a partir dos dados dos text fields
-                if !validadeIfContactAlreadyExist(newContact) { //verifica se o contato já existe
-                    print(newContact.showInfos()) //showInfos do novo contato
-                    contactList.append(newContact) //add na Array (bd)
-                    print(contactList) //exibe a Array
-                    setupAlert(title: "Sucesso!", message: "contato cadastrado com sucesso")//exibe mensagem de sucesso
-                    cleanTextsFields() //limpa os textfields
-                } else {
+        
+        if !name.isEmpty && !number.isEmpty { //EN => validate if the textfields are empty
+            if validateInputs(name, number) { //EN => validate if the value of the textfields are right
+                
+                //EN => i did 2 diferent 'if/else' validations because the 'else's return diferent types of alerts (the message of the alerts are diferent because the error's are also diferent's)
+                
+                let newContact:Contact = Contact(name,number) //PT-BR => cria um novo contato a partir dos dados dos text fields
+                if !validadeIfContactAlreadyExist(newContact) { //PT-BR => verifica se o contato já existe
+                    print(newContact.showInfos())
+                    contactList.append(newContact)
+                    print(contactList)
+                    setupAlert(title: "Sucesso!", message: "contato cadastrado com sucesso")
+                    cleanTextsFields()
+                } else { //EN => error if the contact(infos) already exist in the Array
                     setupAlert(title: "ERRO!", message: "O contato informado já existe")
                 }
-            } else {
+            } else { //EN => error if the infos informed are not right (name has to have only letters a-z and/or A-Z and phone must be only numbers 0-9)
                 setupAlert(title: "ERRO!", message: "Verifique os dados digitados e tente novamente")
             }
-        } else {
-            setupAlert(title: "ERRO!", message: "Os campos estão vazios")
+        } else { //EN => error informing that all the fields need to be filled
+            setupAlert(title: "ERRO!", message: "Todos os campos devem ser preenchidos")
         }
             
-        
     }
     
     //MARK:Go to 2 screen
@@ -70,7 +74,7 @@ class MainViewController: UIViewController {
         navigationController?.pushViewController(screenContactList, animated: true)
     }
 
-    
+
     //MARK: Clean List
     //func to clean the Array Contact List
     @IBAction func cleanList(_ sender: UIButton) {
@@ -86,15 +90,17 @@ class MainViewController: UIViewController {
     }
     
     
-    //func to clean the textFields -> using in func saveContact
+    //func to clean the textFields
     func cleanTextsFields() {
         nameTextField.text = ""
         phoneTextField.text = ""
     }
     
+    
     //MARK: Validar Contato
+    //func to validade if a contact already exist in the contactList
     func validadeIfContactAlreadyExist(_ contatin: Contact) -> Bool {
-        var result:Bool = false
+        var result:Bool = false //to set my bool return of the func
         
         contactList.forEach { contato in
             if ( (contatin.name == contato.name) && (contatin.phone == contato.phone) ) {
@@ -110,11 +116,12 @@ class MainViewController: UIViewController {
 
 
 //MARK: Delegate
-//a class(View) que herdará o protocol Delegate deve ser, no meu caso, a ViewController 1, portanto, a view que
+//my MainViewControler will inherit the protocol Delegate to allow me to pass data between the ViewController's
 extension MainViewController: toPassDataDelegate {
     func setContactList(_ list:[Contact]) {
         self.contactList = list
     }
+    //optional func, its just to see if the data is passing by the screen's
     func showContactInfos() -> String {
         guard let texto = contactList.first?.showInfos() else {return "Nada"}
         return texto
@@ -123,6 +130,7 @@ extension MainViewController: toPassDataDelegate {
 
 
 //MARK: Alerts
+//MainViewController is also inheriting the protocol MyAlerts just to reduce code lines (this protocol is also inherited in the ContactViewController)
 extension MainViewController: MyAlerts {
     //alert's of success
     func setupAlert(title: String, message:String) {

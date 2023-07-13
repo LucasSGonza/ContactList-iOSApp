@@ -18,7 +18,8 @@ class Contact {
         self.phone = number
     }
     
-    func updateContact(name:String, phone:String){
+    //EN => method is used in 'ContactViewController' in 'editContactList' button action
+    func updateContact(_ name:String, _ phone:String){
         self.name = name
         self.phone = phone
     }

@@ -7,12 +7,14 @@
 
 import Foundation
 
-//protocol para que as Views utilizem do método getContactList para trocarem entre si a contactList, contendo seu conteudo sempre atualizado
+//PT-BR => protocol para que as Views utilizem do método getContactList para trocarem entre si a contactList, contendo seu conteudo sempre atualizado
+//EN => protocol to allow to pass data between the viewController's
 protocol toPassDataDelegate: AnyObject {
-    func setContactList(_ list:[Contact])
+    func setContactList(_ list:[Contact]) //the secret is here => this func will receive the contactList in the parameter and will set/equal with his own contactList
     func showContactInfos() -> String
 }
 
+//protocol for my alerts (reduce code lines)
 protocol MyAlerts: AnyObject {
     func setupAlert(title: String, message:String)
 }
