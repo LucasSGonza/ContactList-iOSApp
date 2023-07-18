@@ -163,7 +163,7 @@ Link: https://medium.com/@sarinyaswift/easy-tableview-setup-tutorial-swift-4-ad4
 COMO PASSAR INFORMAÇÕES ENTRE AS TELAS!
 
 -> Deve ser feito de forma 'protegida', na qual permite maior controle sobre os caminhos que a informação está passando (de onde vem, onde está, como foi, ...)
--> Para isso, utilizamos de um 'protocol' chamado 'Delegate':
+-> Para isso, utilizamos (no meu app de contatos) de um 'protocol' chamado 'Delegate':
 
 .protocol => tipo uma class abstrata em Java, serve para dar override em seus métodos, economizando e flexibilizando o código
 .Delegate => será nossa instância desse protocol, na qual utilizaremos para passar as informações entre as ViewControllers
@@ -214,5 +214,16 @@ criando locais para armazenar as infos recebidas da 1º tela:
         navigationController?.pushViewController(screenContactList, animated: true)
     }
 
-4.1 Com isso tudo feito, devemos agr na segunda tela atribuir os dados vindos da 1º nos atributos que criamos aqui na 2º...
+4.1 Com isso tudo feito, a partir do initView, a Array e o Delegate 'cheios' são passados e atribuidos para a 2º View Controller e ta show. Agora só falta
+fazer esse initView 'ao contrário', no sentido de que as possíveis alterações feitas na 2º Tela voltem para a 1º. Para isso, utilizaremos do método
+'setContactList' do delegate no botão 'goBack' (botão que irá retornar para a 1º tela):
 
+    //PT-BR => func do botão para retornar para 1 ViewController
+    @IBAction func goBack(_ sender: Any) {
+        guard let delegate = delegate else {return}
+        delegate.setContactList(contactList)
+        navigationController?.popViewController(animated: true)
+        dismiss(animated: true)
+    }
+
+==============FIM===============
