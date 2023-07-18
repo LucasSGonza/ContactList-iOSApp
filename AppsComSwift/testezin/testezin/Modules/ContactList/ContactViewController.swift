@@ -56,10 +56,10 @@ class ContactViewController: HelpController {
         navigationController?.popViewController(animated: true)
         dismiss(animated: true)
     }
-    
+    /*
     //MARK: Validate Contact
     //EN => func to validate if a contact already exist in the contactList
-    func validadeIfContactAlreadyExist(_ contatin: Contact) -> Bool {
+    func validateIfContactAlreadyExist(_ contatin: Contact) -> Bool {
         var result:Bool = false
         
         contactList.forEach { contato in
@@ -70,6 +70,7 @@ class ContactViewController: HelpController {
         }
         return result
     }
+     */
     
     //MARK: Edit Contact
     /*
@@ -93,9 +94,8 @@ class ContactViewController: HelpController {
             print(contactToEdit.showInfos() + "\nindex: \(index)")
             
             //PT-BR => if para verificar se já existe um contato com os dados iguais ao 'atualizado'
-            if !validadeIfContactAlreadyExist(contactToEdit) {
+            if !contactToEdit.validateIfContactAlreadyExist(contactToEdit, contactList) {
                 contactList[index] = contactToEdit
-                print(contactList)
                 setupAlert(title: "Sucesso!", message: "contato atualizado com sucesso")
                 cleanTextsFields()
             } else { //EN => error if already exist a contact in the array exactly equal with the updated contact
@@ -133,8 +133,8 @@ class ContactViewController: HelpController {
     @IBAction func deleteContact(_ sender: UIButton) {
         if let name = nameTextField.text, let phone = phoneTextField.text {
             
-            var i: Int = 0
-            var didntMatch: Bool = true
+            var contactIndex: Int = 0
+            var foundContact: Bool = false
             
             if !contactList.isEmpty {
                 if !name.isEmpty && !phone.isEmpty {
@@ -148,16 +148,16 @@ class ContactViewController: HelpController {
                     
                     contactList.forEach { contato in
                         if name == contato.name && phone == contato.phone {
-                            contactList.remove(at: i)
+                            contactList.remove(at: contactIndex)
                             print(contactList)
-                            didntMatch = false
+                            foundContact = true
                             cleanTextsFields()
                             //
                             return
-                        } else {i = i + 1}
+                        } else {contactIndex = contactIndex + 1}
                     }
                     //EN => ternary operator to define the alert that will be displayed to the user -> if the contact that the user wants to remove exist or not in the contactList
-                    didntMatch ? setupAlert(title: "ERRO!", message: "Não existe um contato com os dados informados") : setupAlert(title: "Sucesso!", message: "Contato removido com sucesso")
+                    foundContact ? setupAlert(title: "Sucesso!", message: "Contato removido com sucesso") : setupAlert(title: "ERRO!", message: "Não existe um contato com os dados informados")
                     
                 } else { //EN => error if the textFields are empty
                     setupAlert(title: "ERRO!", message: "Informe os dados do contato a ser removido")
@@ -178,6 +178,7 @@ class ContactViewController: HelpController {
             }
         }
     }
+    
 }
 
 // MARK: TableView methods

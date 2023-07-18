@@ -19,8 +19,19 @@ class Contact {
     }
     
     func showInfos() -> String {
-        return "Name: \(name), Number: \(phone)"
+        return "Name: \(self.name), Number: \(self.phone)"
     }
     
+    func validateIfContactAlreadyExist(_ contatin: Contact, _ contactList: [Contact]) -> Bool {
+        var result:Bool = false //to set my bool return of the func
+        
+        contactList.forEach { contato in
+            if ((contatin.name == contato.name) && (contatin.phone == contato.phone) ) {
+                result = true
+                return
+            }
+        }
+        return result
+    }
     
 }

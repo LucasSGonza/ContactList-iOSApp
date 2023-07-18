@@ -15,7 +15,7 @@
 		D9027C2A2A38E30400EACED7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9027C282A38E30400EACED7 /* LaunchScreen.storyboard */; };
 		D9027C352A38E30400EACED7 /* testezinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9027C342A38E30400EACED7 /* testezinTests.swift */; };
 		D9027C402A38E30400EACED7 /* testezinUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9027C3F2A38E30400EACED7 /* testezinUITests.swift */; };
-		D943B29D2A4E181900856217 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D943B29C2A4E181900856217 /* Protocol.swift */; };
+		D943B29D2A4E181900856217 /* PassDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D943B29C2A4E181900856217 /* PassDataDelegate.swift */; };
 		D9441EB52A5755680002DD3A /* ContactsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9441EB32A5755680002DD3A /* ContactsTableViewCell.swift */; };
 		D9441EB62A5755680002DD3A /* ContactsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9441EB42A5755680002DD3A /* ContactsTableViewCell.xib */; };
 		D948900C2A5DDDB500F9355B /* HelpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D948900B2A5DDDB500F9355B /* HelpController.swift */; };
@@ -55,7 +55,7 @@
 		D9027C3B2A38E30400EACED7 /* testezinUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testezinUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9027C3F2A38E30400EACED7 /* testezinUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testezinUITests.swift; sourceTree = "<group>"; };
 		D9027C412A38E30400EACED7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D943B29C2A4E181900856217 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
+		D943B29C2A4E181900856217 /* PassDataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassDataDelegate.swift; sourceTree = "<group>"; };
 		D9441EB32A5755680002DD3A /* ContactsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewCell.swift; sourceTree = "<group>"; };
 		D9441EB42A5755680002DD3A /* ContactsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactsTableViewCell.xib; sourceTree = "<group>"; };
 		D948900B2A5DDDB500F9355B /* HelpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpController.swift; sourceTree = "<group>"; };
@@ -176,7 +176,7 @@
 		D943B2902A4E17E300856217 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				D943B29C2A4E181900856217 /* Protocol.swift */,
+				D943B29C2A4E181900856217 /* PassDataDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -356,7 +356,7 @@
 				D9027C1E2A38E30100EACED7 /* AppDelegate.swift in Sources */,
 				D9027C202A38E30100EACED7 /* SceneDelegate.swift in Sources */,
 				D9DB55112A44B515003D8FF8 /* Contact.swift in Sources */,
-				D943B29D2A4E181900856217 /* Protocol.swift in Sources */,
+				D943B29D2A4E181900856217 /* PassDataDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -37,7 +37,7 @@ class MainViewController: HelpController {
                 //EN => i did 2 diferent 'if/else' validations because the 'else's return diferent types of alerts (the message of the alerts are diferent because the error's are also diferent's)
                 
                 let newContact:Contact = Contact(name,number) //PT-BR => cria um novo contato a partir dos dados dos text fields
-                if !validadeIfContactAlreadyExist(newContact) { //PT-BR => verifica se o contato já existe
+                if !newContact.validateIfContactAlreadyExist(newContact, contactList) { //PT-BR => verifica se o contato já existe
                     print(newContact.showInfos())
                     contactList.append(newContact)
                     print(contactList)
@@ -84,9 +84,9 @@ class MainViewController: HelpController {
         nameTextField.text = ""
         phoneTextField.text = ""
     }
-    
+    /*
     //MARK: Validar Contato
-    //func to validade if a contact already exist in the contactList
+    //func to validate if a contact already exist in the contactList
     func validadeIfContactAlreadyExist(_ contatin: Contact) -> Bool {
         var result:Bool = false //to set my bool return of the func
         
@@ -98,6 +98,7 @@ class MainViewController: HelpController {
         }
         return result
     }
+    */
 }
 
 //MARK: Delegate
