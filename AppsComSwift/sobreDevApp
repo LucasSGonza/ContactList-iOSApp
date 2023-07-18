@@ -1,10 +1,3 @@
-OQ ESTÁ FALTANDO:
-
--> atualizar tableView quando eu edito ou apago um contact
--> permitir editar contato na 2 tela
-
-=======================
-
 Principais coisas sobre meu desenvolvimento no app:
 
 -> Deve-se instanciar no código principalmente os 'controls' (label, text, button,...) que irão ser modificados em algum momento da execução do app,
@@ -86,6 +79,23 @@ ex de instancia:
   let screenContactList = storyboard?.instantiateViewController(identifier: "contactListScreen") as! ViewController2
   screenContactList.initView(contactList, delegate2: self)
   navigationController?.pushViewController(screenContactList, animated: true)
+
+-----------------------
+
+-> NSAttributedString => edita strings (placeholders, textFields,...)
+
+nameTextField.attributedPlaceholder = NSAttributedString(
+            string: "Name",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.green]
+        )
+nameTextField.textColor = UIColor.green
+
+
+phoneTextField.attributedPlaceholder = NSAttributedString(
+            string: "Phone",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.green]
+        )
+phoneTextField.textColor = UIColor.systemGreen
 
 ========================
 
