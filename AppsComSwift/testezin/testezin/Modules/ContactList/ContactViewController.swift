@@ -94,7 +94,7 @@ class ContactViewController: HelpController {
             print(contactToEdit.showInfos() + "\nindex: \(index)")
             
             //PT-BR => if para verificar se já existe um contato com os dados iguais ao 'atualizado'
-            if !contactToEdit.validateIfContactAlreadyExist(contactToEdit, contactList) {
+            if !contactToEdit.validateIfContactAlreadyExist(contactList) {
                 contactList[index] = contactToEdit
                 setupAlert(title: "Sucesso!", message: "contato atualizado com sucesso")
                 cleanTextsFields()

@@ -22,11 +22,11 @@ class Contact {
         return "Name: \(self.name), Number: \(self.phone)"
     }
     
-    func validateIfContactAlreadyExist(_ contatin: Contact, _ contactList: [Contact]) -> Bool {
+    func validateIfContactAlreadyExist(_ contactList: [Contact]) -> Bool {
         var result:Bool = false //to set my bool return of the func
         
         contactList.forEach { contato in
-            if ((contatin.name == contato.name) && (contatin.phone == contato.phone) ) {
+            if ((self.name == contato.name) && (self.phone == contato.phone) ) {
                 result = true
                 return
             }
