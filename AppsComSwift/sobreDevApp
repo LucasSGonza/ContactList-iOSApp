@@ -121,6 +121,17 @@ Link: https://www.youtube.com/watch?v=Dh7fa1fdzBo
 
 4. Colocar o ID da ViewController que será instanciada, bem como a class(pode-se dizer arquivo) ViewController referente
 
+EX:
+@IBAction func readContactList(_ sender: UIButton) {
+        //new screen
+        let screenContactList = storyboard?.instantiateViewController(identifier: "contactListScreen") as! ContactViewController
+        screenContactList.initView(contactList, delegate2: self)
+        navigationController?.pushViewController(screenContactList, animated: true)
+    }
+
+. o 'as!' serve para referenciar qual a class ViewController será instanciada (por padrão/sem o as! é simplesmente ViewController). Assim,
+passamos após o 'as!' a class específica da ViewController que deve ser inicializada
+
 ------
 
 OPÇÃO 2 (SEGUES):
