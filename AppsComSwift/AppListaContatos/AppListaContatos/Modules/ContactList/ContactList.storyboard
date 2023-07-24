@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Contact List View Controller-->
+        <scene sceneID="wa4-tu-79v">
+            <objects>
+                <viewController storyboardIdentifier="ContactList" useStoryboardIdentifierAsRestorationIdentifier="YES" id="L54-VO-ZpE" customClass="ContactListViewController" customModule="AppListaContatos" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IbO-zp-pKN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VIt-vY-fck">
+                                <rect key="frame" x="20" y="196" width="374" height="666"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact List" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yeY-kf-47t">
+                                <rect key="frame" x="30" y="64" width="156" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <searchBar opaque="NO" contentMode="redraw" searchBarStyle="minimal" placeholder="Search a contact" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vyw-VY-NXm">
+                                <rect key="frame" x="20" y="130" width="374" height="44"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="2Qz-0U-p7k"/>
+                                    <constraint firstAttribute="width" constant="374" id="JVV-ek-fJy"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <color key="barTintColor" systemColor="labelColor"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hSH-hS-PYe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hSH-hS-PYe" firstAttribute="trailing" secondItem="VIt-vY-fck" secondAttribute="trailing" constant="20" id="Dco-Mj-Jio"/>
+                            <constraint firstItem="VIt-vY-fck" firstAttribute="bottom" secondItem="hSH-hS-PYe" secondAttribute="bottom" id="FK4-py-QEy"/>
+                            <constraint firstItem="Vyw-VY-NXm" firstAttribute="centerX" secondItem="IbO-zp-pKN" secondAttribute="centerX" id="Ktq-bu-CYP"/>
+                            <constraint firstItem="Vyw-VY-NXm" firstAttribute="top" secondItem="yeY-kf-47t" secondAttribute="bottom" constant="30" id="SAe-Ik-3JQ"/>
+                            <constraint firstItem="VIt-vY-fck" firstAttribute="top" secondItem="Vyw-VY-NXm" secondAttribute="bottom" constant="22" id="WB1-px-1nY"/>
+                            <constraint firstItem="VIt-vY-fck" firstAttribute="leading" secondItem="hSH-hS-PYe" secondAttribute="leading" constant="20" id="dbg-Ia-VTD"/>
+                            <constraint firstItem="yeY-kf-47t" firstAttribute="leading" secondItem="hSH-hS-PYe" secondAttribute="leading" constant="30" id="fRh-gi-bqp"/>
+                            <constraint firstItem="yeY-kf-47t" firstAttribute="top" secondItem="hSH-hS-PYe" secondAttribute="top" constant="20" id="qgu-xB-Cjm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="VIt-vY-fck" id="gCF-8V-4Uj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sgC-1c-xNi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="186.95652173913044" y="65.625"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
