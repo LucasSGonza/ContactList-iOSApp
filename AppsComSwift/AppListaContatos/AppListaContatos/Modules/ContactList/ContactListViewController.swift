@@ -9,11 +9,16 @@ import UIKit
 
 class ContactListViewController: UIViewController {
 
+    private var contactList:[Contact] = []
+    
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
+        searchBar.backgroundColor = .systemBackground
+        searchBar.barTintColor = .gray
         // Do any additional setup after loading the view.
     }
     
@@ -34,4 +39,19 @@ class ContactListViewController: UIViewController {
         self.navigationController?.pushViewController(newContact, animated: true)
     }
 
+}
+
+extension ContactListViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return contactList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ContactsTableViewCell", for: indexPath) as! ContactsTableViewCell
+        let contact = contactList[indexPath.row]
+        cell.bind(cell: contact)
+        return cell
+    }
+    
 }

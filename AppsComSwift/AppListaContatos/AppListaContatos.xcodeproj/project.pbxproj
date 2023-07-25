@@ -20,6 +20,7 @@
 		D92B541D2A69B10500FC407B /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92B541C2A69B10500FC407B /* ContactListViewController.swift */; };
 		D92B54222A69BE5500FC407B /* NewContact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D92B54212A69BE5500FC407B /* NewContact.storyboard */; };
 		D92B54272A69BE6200FC407B /* NewContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92B54262A69BE6200FC407B /* NewContactViewController.swift */; };
+		D9DC9C962A70464A00DB1443 /* HelperController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DC9C952A70464900DB1443 /* HelperController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		D92B541C2A69B10500FC407B /* ContactListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewController.swift; sourceTree = "<group>"; };
 		D92B54212A69BE5500FC407B /* NewContact.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewContact.storyboard; sourceTree = "<group>"; };
 		D92B54262A69BE6200FC407B /* NewContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactViewController.swift; sourceTree = "<group>"; };
+		D9DC9C952A70464900DB1443 /* HelperController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 		D92B54002A69ACC200FC407B /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				D9DC9C942A70461100DB1443 /* UIViewController */,
 				D92B54012A69ACCD00FC407B /* UITableViewCell */,
 			);
 			path = Extension;
@@ -205,6 +208,14 @@
 				D92B54002A69ACC200FC407B /* Extension */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		D9DC9C942A70461100DB1443 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D9DC9C952A70464900DB1443 /* HelperController.swift */,
+			);
+			path = UIViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,6 +354,7 @@
 				D92B53AB2A69A6C800FC407B /* AppDelegate.swift in Sources */,
 				D92B54042A69AD3200FC407B /* ContactsTableViewCell.swift in Sources */,
 				D92B53AD2A69A6C800FC407B /* SceneDelegate.swift in Sources */,
+				D9DC9C962A70464A00DB1443 /* HelperController.swift in Sources */,
 				D92B54272A69BE6200FC407B /* NewContactViewController.swift in Sources */,
 				D92B541D2A69B10500FC407B /* ContactListViewController.swift in Sources */,
 			);

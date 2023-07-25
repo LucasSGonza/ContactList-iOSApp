@@ -31,6 +31,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             let navigationBarAppearance = UINavigationBar.appearance()
 
+            navigationBarAppearance.titleTextAttributes = [
+                NSAttributedString.Key.foregroundColor: UIColor.white,
+                NSAttributedString.Key.font : UIFont.systemFont(ofSize: 20.0)
+            ]
             navigationBarAppearance.tintColor = UIColor(named: "tabBar")
             navigationBarAppearance.barTintColor = UIColor(named: "tabBar")
             navigationBarAppearance.isTranslucent = false
