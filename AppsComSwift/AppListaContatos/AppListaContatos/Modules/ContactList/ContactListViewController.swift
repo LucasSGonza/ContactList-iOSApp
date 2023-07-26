@@ -18,7 +18,7 @@ class ContactListViewController: UIViewController {
         super.viewDidLoad()
         setupNavigationBar()
         searchBar.backgroundColor = .systemBackground
-        searchBar.barTintColor = .gray
+        searchBar.barTintColor = .green
         // Do any additional setup after loading the view.
     }
     
