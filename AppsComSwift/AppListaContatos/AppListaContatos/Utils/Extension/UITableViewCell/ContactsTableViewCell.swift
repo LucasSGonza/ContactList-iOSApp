@@ -24,6 +24,7 @@ class ContactsTableViewCell: UITableViewCell {
     }
     
     func bind(cell:Contact) {
+        //fazer verificação pra pegar o nome ou o lastName
         self.nameLabel.text = cell.getName()
     }
     

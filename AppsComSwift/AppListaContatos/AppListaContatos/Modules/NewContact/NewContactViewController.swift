@@ -10,7 +10,9 @@ import UIKit
 class NewContactViewController: HelpController {
     
     private var contactList:[Contact] = []
+    private var firstScreen:ContactListDelegate?
     
+    @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
@@ -18,11 +20,34 @@ class NewContactViewController: HelpController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
+        setupTextFields()
         // Do any additional setup after loading the view.
     }
     
+    //MARK:TextFields
+    private func clearTextFields() {
+        nameTextField.text = ""
+        lastNameTextField.text = ""
+        phoneTextField.text = ""
+    }
+    
+    private func setupTextFields() {
+        nameTextField.attributedPlaceholder = NSAttributedString(
+                    string: "Name",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+                )
+        lastNameTextField.attributedPlaceholder = NSAttributedString(
+                    string: "Last Name",
+                    attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+                )
+        phoneTextField.attributedPlaceholder = NSAttributedString(
+                    string: "Phone",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+                )
+    }
+    
     //MARK: setup NavBar
-    private func setupNavigationBar(){
+    private func setupNavigationBar() {
         
         navigationItem.title = "New Contact"
         
@@ -50,12 +75,10 @@ class NewContactViewController: HelpController {
         self.navigationItem.rightBarButtonItem = addContact
     }
     
-//    private func setupButtons() {
-//        deleteButton.layer.cornerRadius = 10
-//    }
-    
-    //MARK: buttons objc funcs
+    //MARK: objc funcs
     @objc private func goBack() {
+        guard let firstScreen = firstScreen else {return }
+        firstScreen.setContactList(contactList)
         navigationController?.popViewController(animated: true)
         //self.dismiss(animated: true, completion: nil)
     }
@@ -76,9 +99,15 @@ class NewContactViewController: HelpController {
             print(contact.showInfos())
             contactList.append(contact)
             setupAlert(title: "Sucess", message: "Contact created with success!")
+            clearTextFields()
         } else {
             setupAlert(title: "Error", message: "To create a contact, at least inform a 'Name' or a 'Last Name'")
         }
+    }
+    
+    func initView(_ contactList:[Contact], firstScreen:ContactListDelegate){
+        self.firstScreen = firstScreen
+        self.contactList = contactList
     }
     
 }

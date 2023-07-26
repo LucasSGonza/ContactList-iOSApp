@@ -17,12 +17,24 @@ class ContactListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
-        searchBar.backgroundColor = .systemBackground
-        searchBar.barTintColor = .green
+        setupSearchBar()
+        setupTableView()
         // Do any additional setup after loading the view.
     }
     
-    private func setupNavigationBar(){
+    override func viewDidAppear(_ animated: Bool) {
+        print(contactList.first?.showInfos() ?? "nada")
+    }
+    
+    //MARK: setup TableView
+    private func setupTableView(){
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UINib.init(nibName: "ContactsTableViewCell", bundle: nil), forCellReuseIdentifier: "ContactsTableViewCell")
+    }
+    
+    //MARK: setup NavBar
+    private func setupNavigationBar() {
         //let newContactButton = UIBarButtonItem(title: "New Contact", style: .done, target: self, action: nil)
         navigationItem.title = "Contacts"
         
@@ -34,13 +46,29 @@ class ContactListViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = newContactButton
     }
     
+    //MARK: objc funcs
     @objc private func newScreen() {
         let newContact = UIStoryboard(name: "NewContact", bundle: nil).instantiateViewController(withIdentifier: "NewContact") as! NewContactViewController
+        newContact.initView(contactList, firstScreen: self)
         self.navigationController?.pushViewController(newContact, animated: true)
+    }
+    
+    //MARK: setup searchBar
+    private func setupSearchBar() {
+        searchBar.isTranslucent = true
+        searchBar.backgroundColor = .systemBackground
+        searchBar.searchTextField.backgroundColor = UIColor(named: "grayColor")
+        searchBar.tintColor = UIColor(named: "adaptDarkLightMode")
+    }
+    
+    //MARK: InitView
+    func initView(_ contactList:[Contact]) {
+        self.contactList = contactList
     }
 
 }
 
+//MARK: TableView
 extension ContactListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -54,4 +82,11 @@ extension ContactListViewController: UITableViewDelegate, UITableViewDataSource 
         return cell
     }
     
+}
+
+//MARK: ContactList Delegate
+extension ContactListViewController: ContactListDelegate {
+    func setContactList(_ contactList: [Contact]) {
+        self.contactList = contactList
+    }
 }

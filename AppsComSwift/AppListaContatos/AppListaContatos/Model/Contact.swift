@@ -24,7 +24,12 @@ class Contact {
     }
     
     func showInfos() -> String {
-        return "Name: \(name)\nLastName: \(lastName)\nPhone: \(phone)"
+        return
+    """
+    Name: \(name)
+    LastName: \(lastName)
+    Phone: \(phone)
+    """
     }
     
     //Get/Set
