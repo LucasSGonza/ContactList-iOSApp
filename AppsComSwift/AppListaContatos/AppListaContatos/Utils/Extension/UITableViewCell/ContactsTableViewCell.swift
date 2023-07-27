@@ -23,7 +23,7 @@ class ContactsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func bind(cell:Contact) {
+    func bind (cell:Contact) {
         //fazer verificação pra pegar o nome ou o lastName
         self.nameLabel.text = cell.getName()
     }

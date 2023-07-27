@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let appearance = UINavigationBarAppearance()
 
             appearance.configureWithOpaqueBackground()
-            appearance.backgroundColor = UIColor(named: "tabBar")
+            appearance.backgroundColor = UIColor(named: "adaptGreenColor")
 
             UINavigationBar.appearance().standardAppearance = appearance
             UINavigationBar.appearance().scrollEdgeAppearance = appearance
@@ -35,8 +35,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 NSAttributedString.Key.foregroundColor: UIColor.white,
                 NSAttributedString.Key.font : UIFont.systemFont(ofSize: 20.0)
             ]
-            navigationBarAppearance.tintColor = UIColor(named: "tabBar")
-            navigationBarAppearance.barTintColor = UIColor(named: "tabBar")
+            navigationBarAppearance.tintColor = UIColor(named: "adaptGreenColor")
+            navigationBarAppearance.barTintColor = UIColor(named: "adaptGreenColor")
             navigationBarAppearance.isTranslucent = false
             
             let barButtonAppearance = UIBarButtonItem.appearance()

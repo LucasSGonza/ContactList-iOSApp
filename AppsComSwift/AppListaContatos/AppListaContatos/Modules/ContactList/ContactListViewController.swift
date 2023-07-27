@@ -24,13 +24,14 @@ class ContactListViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         print(contactList.first?.showInfos() ?? "nada")
+        tableView.reloadData()
     }
     
     //MARK: setup TableView
     private func setupTableView(){
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UINib.init(nibName: "ContactsTableViewCell", bundle: nil), forCellReuseIdentifier: "ContactsTableViewCell")
+        tableView.register(UINib(nibName: "ContactsTableViewCell", bundle: nil), forCellReuseIdentifier: "ContactsCell")
     }
     
     //MARK: setup NavBar
@@ -57,13 +58,8 @@ class ContactListViewController: UIViewController {
     private func setupSearchBar() {
         searchBar.isTranslucent = true
         searchBar.backgroundColor = .systemBackground
-        searchBar.searchTextField.backgroundColor = UIColor(named: "grayColor")
+        searchBar.searchTextField.backgroundColor = UIColor(named: "searchBarColor")
         searchBar.tintColor = UIColor(named: "adaptDarkLightMode")
-    }
-    
-    //MARK: InitView
-    func initView(_ contactList:[Contact]) {
-        self.contactList = contactList
     }
 
 }
@@ -76,10 +72,21 @@ extension ContactListViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ContactsTableViewCell", for: indexPath) as! ContactsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ContactsCell", for: indexPath) as! ContactsTableViewCell
         let contact = contactList[indexPath.row]
         cell.bind(cell: contact)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        guard let selectedCell = tableView.cellForRow(at: indexPath) else { return }
+//        selectedCell.imageView?.backgroundColor = UIColor(named: "adaptGreenColor")
+//        selectedCell.textLabel?.backgroundColor = UIColor(named: "adaptGreenColor")
+        
+        //abrir tela edição do contato
+        let editContactSB = UIStoryboard(name: "EditContact", bundle: nil)
+        let editContactVC = editContactSB.instantiateViewController(withIdentifier: "EditContact") as! EditContactViewController
+        self.navigationController?.pushViewController(editContactVC, animated: true)
     }
     
 }

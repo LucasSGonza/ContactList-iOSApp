@@ -34,15 +34,15 @@ class NewContactViewController: HelpController {
     private func setupTextFields() {
         nameTextField.attributedPlaceholder = NSAttributedString(
                     string: "Name",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "placeholderColor")]
                 )
         lastNameTextField.attributedPlaceholder = NSAttributedString(
                     string: "Last Name",
-                    attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+                    attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "placeholderColor")]
                 )
         phoneTextField.attributedPlaceholder = NSAttributedString(
                     string: "Phone",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "placeholderColor")]
                 )
     }
     
@@ -77,14 +77,14 @@ class NewContactViewController: HelpController {
     
     //MARK: objc funcs
     @objc private func goBack() {
-        guard let firstScreen = firstScreen else {return }
+        guard let firstScreen = firstScreen else { return }
         firstScreen.setContactList(contactList)
         navigationController?.popViewController(animated: true)
         //self.dismiss(animated: true, completion: nil)
     }
 
     @objc private func newContact() {
-        guard let firstName = nameTextField.text, let lastName = lastNameTextField.text, let phone = phoneTextField.text else {return }
+        guard let firstName = nameTextField.text, let lastName = lastNameTextField.text, let phone = phoneTextField.text else { return }
         
         let contact = Contact()
         
