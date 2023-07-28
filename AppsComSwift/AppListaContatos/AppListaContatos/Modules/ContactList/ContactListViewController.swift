@@ -7,10 +7,15 @@
 
 import UIKit
 
-class ContactListViewController: UIViewController {
-
+class ContactListViewController: UIViewController, UISearchResultsUpdating {
+    
     private var contactList:[Contact] = []
     
+    /*
+     Como a tableView é baseada na minha Array, e eu não devo mexer no meu 'bd'(contactList), eu crio uma array cópia, para que então eu possa alterar seus valores e consequentemente alterar oq esta sendo mostrado na tableView
+     */
+    private var filterData:[Contact] = []
+
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -23,12 +28,19 @@ class ContactListViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        print(contactList.first?.showInfos() ?? "nada")
+        //print(contactList.first?.showInfos() ?? "nada")
+        filterData = contactList
         tableView.reloadData()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        tableView.visibleCells.forEach { cell in
+            cell.contentView.backgroundColor = .none
+        }
+    }
+    
     //MARK: setup TableView
-    private func setupTableView(){
+    private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "ContactsTableViewCell", bundle: nil), forCellReuseIdentifier: "ContactsCell")
@@ -60,33 +72,63 @@ class ContactListViewController: UIViewController {
         searchBar.backgroundColor = .systemBackground
         searchBar.searchTextField.backgroundColor = UIColor(named: "searchBarColor")
         searchBar.tintColor = UIColor(named: "adaptDarkLightMode")
+        searchBar.delegate = self /*necessario tal qual na tableView*/
     }
+    
+    //Func from UISearchResultsUpdating protocol
+    func updateSearchResults(for searchController: UISearchController) {
+        print("b")
+        //self.searchBar(self.searchBar, textDidChange: text)
+    }
+    
+}
 
+// https://medium.com/@himanshunag/searchbar-in-swift-ios-14e66d8ce29d
+extension ContactListViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchText)
+        
+        filterData = []
+        for contact in contactList
+        where
+            contact.getName() == searchText ||
+            contact.getLastName() == searchText ||
+            contact.getPhone() == searchText
+        {
+            filterData.append(contact)
+        }
+        
+        tableView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        //
+    }
+    
 }
 
 //MARK: TableView
 extension ContactListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contactList.count
+        return filterData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContactsCell", for: indexPath) as! ContactsTableViewCell
-        let contact = contactList[indexPath.row]
+        let contact = filterData[indexPath.row]
         cell.bind(cell: contact)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        guard let selectedCell = tableView.cellForRow(at: indexPath) else { return }
-//        selectedCell.imageView?.backgroundColor = UIColor(named: "adaptGreenColor")
-//        selectedCell.textLabel?.backgroundColor = UIColor(named: "adaptGreenColor")
+        guard let selectedCell = tableView.cellForRow(at: indexPath) else { return }
         
         //abrir tela edição do contato
         let editContactSB = UIStoryboard(name: "EditContact", bundle: nil)
         let editContactVC = editContactSB.instantiateViewController(withIdentifier: "EditContact") as! EditContactViewController
         self.navigationController?.pushViewController(editContactVC, animated: true)
+        selectedCell.contentView.backgroundColor = UIColor.systemGreen
     }
     
 }
