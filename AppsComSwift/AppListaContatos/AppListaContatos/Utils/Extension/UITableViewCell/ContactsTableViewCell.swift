@@ -11,6 +11,8 @@ class ContactsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var lastNameLabel: UILabel!
+    @IBOutlet weak var phoneLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,6 +28,8 @@ class ContactsTableViewCell: UITableViewCell {
     func bind (cell:Contact) {
         //fazer verificação pra pegar o nome ou o lastName
         self.nameLabel.text = cell.getName()
+        self.lastNameLabel.text = cell.getLastName()
+        self.phoneLabel.text = cell.getPhone()
     }
     
 }

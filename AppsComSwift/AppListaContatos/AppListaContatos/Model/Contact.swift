@@ -8,7 +8,8 @@
 import Foundation
 
 class Contact {
-    
+
+    private var id:Int = 0
     private var name:String = ""
     private var lastName:String = ""
     private var phone:String = ""
@@ -29,6 +30,7 @@ class Contact {
     Name: \(name)
     LastName: \(lastName)
     Phone: \(phone)
+    ID: \(id)
     """
     }
     
@@ -52,6 +54,13 @@ class Contact {
     }
     func setPhone(_ phone:String) {
         self.phone = phone
+    }
+    
+    func getID() -> Int {
+        return id
+    }
+    func setID(_ id:Int) {
+        self.id = id
     }
     
 }

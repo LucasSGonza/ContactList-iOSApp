@@ -53,7 +53,7 @@ class NewContactViewController: HelpController {
         
         //buttons for navbar
         let cancelButton = UIBarButtonItem(
-            barButtonSystemItem: .cancel,
+            barButtonSystemItem: .close,
             target: self,
             action: #selector(goBack))
         cancelButton.tintColor = UIColor(named: "buttonsTabBar")
@@ -96,6 +96,7 @@ class NewContactViewController: HelpController {
                 contact.setPhone(phone)
             }
             
+            contact.setID(contactList.count)
             print(contact.showInfos())
             contactList.append(contact)
             setupAlert(title: "Sucess", message: "Contact created with success!")
@@ -105,7 +106,7 @@ class NewContactViewController: HelpController {
         }
     }
     
-    func initView(_ contactList:[Contact], firstScreen:ContactListDelegate){
+    func initView(_ contactList:[Contact], firstScreen:ContactListDelegate) {
         self.firstScreen = firstScreen
         self.contactList = contactList
     }

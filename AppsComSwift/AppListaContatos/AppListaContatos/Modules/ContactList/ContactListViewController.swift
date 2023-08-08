@@ -29,6 +29,9 @@ class ContactListViewController: UIViewController, UISearchResultsUpdating {
     
     override func viewDidAppear(_ animated: Bool) {
         //print(contactList.first?.showInfos() ?? "nada")
+        contactList.forEach{
+            print("debug \($0.showInfos())")
+        }
         filterData = contactList
         tableView.reloadData()
     }
@@ -85,24 +88,16 @@ class ContactListViewController: UIViewController, UISearchResultsUpdating {
 
 // https://medium.com/@himanshunag/searchbar-in-swift-ios-14e66d8ce29d
 extension ContactListViewController: UISearchBarDelegate {
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
+        filterData = contactList
         
-        filterData = []
-        for contact in contactList
-        where
-            contact.getName() == searchText ||
-            contact.getLastName() == searchText ||
-            contact.getPhone() == searchText
-        {
-            filterData.append(contact)
+        filterData = filterData.filter {
+            ($0.getName().lowercased().contains(searchText.lowercased())) || ($0.getLastName().lowercased().contains(searchText.lowercased())) || ($0.getPhone().lowercased().contains(searchText.lowercased()))
         }
         
         tableView.reloadData()
-    }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        //
     }
     
 }
