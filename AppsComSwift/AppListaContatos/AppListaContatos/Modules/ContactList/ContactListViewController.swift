@@ -28,10 +28,6 @@ class ContactListViewController: UIViewController, UISearchResultsUpdating {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        //print(contactList.first?.showInfos() ?? "nada")
-        contactList.forEach{
-            print("debug \($0.showInfos())")
-        }
         filterData = contactList
         tableView.reloadData()
     }
