@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ContactListViewController: UIViewController, UISearchResultsUpdating {
+class ContactListViewController: UIViewController {
     
     private var contactList:[Contact] = []
     
@@ -15,6 +15,9 @@ class ContactListViewController: UIViewController, UISearchResultsUpdating {
      Como a tableView é baseada na minha Array, e eu não devo mexer no meu 'bd'(contactList), eu crio uma array cópia, para que então eu possa alterar seus valores e consequentemente alterar oq esta sendo mostrado na tableView
      */
     private var filterData:[Contact] = []
+    
+    private var selectedIndex:Int = -1
+    private var increaseSize:Bool = false
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -28,7 +31,8 @@ class ContactListViewController: UIViewController, UISearchResultsUpdating {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        filterData = contactList
+        filterData.removeAll()
+        filterData.append(contentsOf: contactList)
         tableView.reloadData()
     }
     
@@ -68,16 +72,10 @@ class ContactListViewController: UIViewController, UISearchResultsUpdating {
     //MARK: setup searchBar
     private func setupSearchBar() {
         searchBar.isTranslucent = true
-        searchBar.backgroundColor = .systemBackground
+        searchBar.backgroundColor = UIColor(named: "backgroundColor")
         searchBar.searchTextField.backgroundColor = UIColor(named: "searchBarColor")
         searchBar.tintColor = UIColor(named: "adaptDarkLightMode")
         searchBar.delegate = self /*necessario tal qual na tableView*/
-    }
-    
-    //Func from UISearchResultsUpdating protocol
-    func updateSearchResults(for searchController: UISearchController) {
-        print("b")
-        //self.searchBar(self.searchBar, textDidChange: text)
     }
     
 }
@@ -87,7 +85,8 @@ extension ContactListViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
-        filterData = contactList
+        filterData.removeAll()
+        filterData.append(contentsOf: contactList)
         
         filterData = filterData.filter {
             ($0.getName().lowercased().contains(searchText.lowercased())) || ($0.getLastName().lowercased().contains(searchText.lowercased())) || ($0.getPhone().lowercased().contains(searchText.lowercased()))
@@ -105,6 +104,14 @@ extension ContactListViewController: UITableViewDelegate, UITableViewDataSource 
         return filterData.count
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == selectedIndex && increaseSize {
+            return 130
+        } else {
+            return 50
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContactsCell", for: indexPath) as! ContactsTableViewCell
         let contact = filterData[indexPath.row]
@@ -113,13 +120,28 @@ extension ContactListViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let selectedCell = tableView.cellForRow(at: indexPath) else { return }
+        selectedIndex = indexPath.row
+        increaseSize = true
         
-        //abrir tela edição do contato
+        /*abrir tela edição do contato
         let editContactSB = UIStoryboard(name: "EditContact", bundle: nil)
         let editContactVC = editContactSB.instantiateViewController(withIdentifier: "EditContact") as! EditContactViewController
         self.navigationController?.pushViewController(editContactVC, animated: true)
         selectedCell.contentView.backgroundColor = UIColor.systemGreen
+         */
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            tableView.beginUpdates()
+            filterData.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.endUpdates()
+        }
     }
     
 }

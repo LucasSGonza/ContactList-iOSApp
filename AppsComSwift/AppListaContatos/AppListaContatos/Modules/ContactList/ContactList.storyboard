@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,18 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VIt-vY-fck">
-                                <rect key="frame" x="20" y="196" width="374" height="666"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="666" id="RvQ-mS-urx"/>
-                                </constraints>
-                                <color key="separatorColor" name="adaptGreenColor"/>
-                                <color key="sectionIndexColor" name="adaptDarkLightMode"/>
-                                <color key="sectionIndexBackgroundColor" systemColor="systemBackgroundColor"/>
-                                <sections/>
-                            </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact List" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yeY-kf-47t">
                                 <rect key="frame" x="30" y="64" width="156" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -37,29 +24,36 @@
                             </label>
                             <searchBar opaque="NO" contentMode="redraw" searchBarStyle="minimal" placeholder="Search a contact" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vyw-VY-NXm">
                                 <rect key="frame" x="20" y="130" width="374" height="56"/>
+                                <color key="backgroundColor" name="backgroundColor"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <scopeButtonTitles>
                                     <string>Title</string>
                                     <string>Title</string>
                                 </scopeButtonTitles>
                             </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UMM-WD-FiZ">
+                                <rect key="frame" x="0.0" y="186" width="414" height="676"/>
+                                <color key="backgroundColor" name="backgroundColor"/>
+                                <color key="separatorColor" name="adaptGreenColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hSH-hS-PYe"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
+                            <constraint firstItem="UMM-WD-FiZ" firstAttribute="top" secondItem="Vyw-VY-NXm" secondAttribute="bottom" id="B83-gP-Due"/>
                             <constraint firstItem="yeY-kf-47t" firstAttribute="top" secondItem="hSH-hS-PYe" secondAttribute="top" constant="20" id="JQf-RF-Ug3"/>
                             <constraint firstItem="yeY-kf-47t" firstAttribute="leading" secondItem="hSH-hS-PYe" secondAttribute="leading" constant="30" id="M3v-hV-VQq"/>
-                            <constraint firstItem="VIt-vY-fck" firstAttribute="leading" secondItem="hSH-hS-PYe" secondAttribute="leading" constant="20" id="MaX-rN-chz"/>
-                            <constraint firstItem="VIt-vY-fck" firstAttribute="top" secondItem="Vyw-VY-NXm" secondAttribute="bottom" constant="10" id="Z3Q-KY-kIM"/>
+                            <constraint firstItem="hSH-hS-PYe" firstAttribute="trailing" secondItem="UMM-WD-FiZ" secondAttribute="trailing" id="MSo-XH-WKa"/>
                             <constraint firstItem="Vyw-VY-NXm" firstAttribute="centerX" secondItem="IbO-zp-pKN" secondAttribute="centerX" id="e40-qM-b4W"/>
                             <constraint firstItem="Vyw-VY-NXm" firstAttribute="leading" secondItem="hSH-hS-PYe" secondAttribute="leading" constant="20" id="g9o-1D-1Np"/>
                             <constraint firstItem="Vyw-VY-NXm" firstAttribute="top" secondItem="yeY-kf-47t" secondAttribute="bottom" constant="30" id="r61-py-Lic"/>
-                            <constraint firstItem="VIt-vY-fck" firstAttribute="centerX" secondItem="IbO-zp-pKN" secondAttribute="centerX" id="srd-JI-3jh"/>
+                            <constraint firstItem="UMM-WD-FiZ" firstAttribute="leading" secondItem="hSH-hS-PYe" secondAttribute="leading" id="uRq-Iw-L4i"/>
+                            <constraint firstItem="hSH-hS-PYe" firstAttribute="bottom" secondItem="UMM-WD-FiZ" secondAttribute="bottom" id="uVc-Cd-clm"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="searchBar" destination="Vyw-VY-NXm" id="PdT-pJ-pSK"/>
-                        <outlet property="tableView" destination="VIt-vY-fck" id="gCF-8V-4Uj"/>
+                        <outlet property="tableView" destination="UMM-WD-FiZ" id="zdD-OE-5oT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sgC-1c-xNi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -74,8 +68,8 @@
         <namedColor name="adaptGreenColor">
             <color red="0.35699999332427979" green="0.67599999904632568" blue="0.24199999868869781" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="backgroundColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

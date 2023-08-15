@@ -5,107 +5,104 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Edit Contact View Controller-->
+        <!--Edit Contact-->
         <scene sceneID="F1B-Ne-06X">
             <objects>
-                <viewController storyboardIdentifier="EditContact" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YGp-zc-4z6" customClass="EditContactViewController" customModule="AppListaContatos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditContact" title="Edit Contact" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YGp-zc-4z6" customClass="EditContactViewController" customModule="AppListaContatos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G85-lo-EcC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ajw-Ox-qTy">
-                                <rect key="frame" x="57" y="134.5" width="300" height="143"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="67" y="89.5" width="280" height="144"/>
+                                <color key="backgroundColor" name="backgroundColor"/>
                                 <color key="tintColor" name="adaptGreenColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="6Hp-UX-vEG"/>
-                                    <constraint firstAttribute="height" constant="144" id="B4M-dD-cuU"/>
+                                    <constraint firstAttribute="height" constant="145" id="Emu-z0-AX2"/>
+                                    <constraint firstAttribute="width" constant="280" id="fHl-D2-T4B"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bookmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ue5-GF-3QO">
-                                <rect key="frame" x="329" y="368" width="65" height="65"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="287" y="304" width="65" height="65"/>
+                                <color key="backgroundColor" name="backgroundColor"/>
                                 <color key="tintColor" name="adaptGreenColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="svQ-UU-FxE"/>
-                                    <constraint firstAttribute="width" constant="65" id="vei-Rh-EF8"/>
+                                    <constraint firstAttribute="height" constant="65" id="AIe-q5-OGD"/>
+                                    <constraint firstAttribute="width" constant="65" id="eCD-qf-bgK"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trash.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="VhG-cf-cAS">
-                                <rect key="frame" x="172" y="367" width="70" height="64"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="172" y="303" width="70" height="64"/>
+                                <color key="backgroundColor" name="backgroundColor"/>
                                 <color key="tintColor" name="adaptGreenColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="ELy-b7-sIk"/>
-                                    <constraint firstAttribute="height" constant="63.5" id="vDw-bd-tg1"/>
+                                    <constraint firstAttribute="height" constant="63.5" id="9vW-3c-dhV"/>
+                                    <constraint firstAttribute="width" constant="70" id="UaS-WW-khc"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xhB-CV-rsS">
-                                <rect key="frame" x="20" y="368.5" width="65" height="65"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="62" y="304.5" width="65" height="65"/>
+                                <color key="backgroundColor" name="backgroundColor"/>
                                 <color key="tintColor" name="adaptGreenColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="66" id="Vwt-Zz-ALV"/>
-                                    <constraint firstAttribute="width" constant="65" id="jlK-v0-UOj"/>
+                                    <constraint firstAttribute="width" constant="65" id="UxD-jo-OIK"/>
+                                    <constraint firstAttribute="height" constant="66" id="gBr-i7-zu7"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Et-kz-I7d">
-                                <rect key="frame" x="20" y="524" width="374" height="34"/>
+                                <rect key="frame" x="67" y="447.5" width="280" height="39.5"/>
                                 <color key="backgroundColor" name="textFieldColors"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="DnS-6R-ch7"/>
-                                    <constraint firstAttribute="width" constant="374" id="kLC-Lp-gI1"/>
+                                    <constraint firstAttribute="height" constant="39.5" id="8fF-Zc-zMj"/>
+                                    <constraint firstAttribute="width" constant="280" id="d74-Gp-uP3"/>
                                 </constraints>
                                 <color key="textColor" name="adaptDarkLightMode"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YHi-xI-H6J">
-                                <rect key="frame" x="20" y="588" width="374" height="34"/>
+                                <rect key="frame" x="67" y="512" width="280" height="39.5"/>
                                 <color key="backgroundColor" name="textFieldColors"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="374" id="8jt-fh-Aaf"/>
-                                    <constraint firstAttribute="height" constant="34" id="sv6-KB-NMJ"/>
+                                    <constraint firstAttribute="width" constant="280" id="97c-ZM-x6i"/>
+                                    <constraint firstAttribute="height" constant="39.5" id="VmA-pC-yny"/>
                                 </constraints>
                                 <color key="textColor" name="adaptDarkLightMode"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hkP-Jw-7SL">
-                                <rect key="frame" x="20" y="652" width="374" height="34"/>
+                                <rect key="frame" x="67" y="576.5" width="280" height="39.5"/>
                                 <color key="backgroundColor" name="textFieldColors"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="Aw0-5n-03e"/>
-                                    <constraint firstAttribute="width" constant="374" id="DrG-KV-u4x"/>
-                                    <constraint firstAttribute="height" constant="34" id="Gj3-x9-Puz"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="374" id="p1g-QM-g1Z"/>
+                                    <constraint firstAttribute="width" constant="280" id="Q7Y-6A-X3E"/>
+                                    <constraint firstAttribute="height" constant="39.5" id="vck-C7-drJ"/>
                                 </constraints>
                                 <color key="textColor" name="adaptDarkLightMode"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OVQ-po-XDs"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Ajw-Ox-qTy" firstAttribute="centerX" secondItem="G85-lo-EcC" secondAttribute="centerX" id="7Ot-cB-g3H"/>
-                            <constraint firstItem="ue5-GF-3QO" firstAttribute="leading" secondItem="VhG-cf-cAS" secondAttribute="trailing" constant="87" id="9qg-C1-hzW"/>
-                            <constraint firstItem="ue5-GF-3QO" firstAttribute="top" secondItem="Ajw-Ox-qTy" secondAttribute="bottom" constant="90" id="CLW-11-YfR"/>
-                            <constraint firstItem="hkP-Jw-7SL" firstAttribute="top" secondItem="YHi-xI-H6J" secondAttribute="bottom" constant="30" id="Eue-hX-vVj"/>
-                            <constraint firstItem="YHi-xI-H6J" firstAttribute="centerX" secondItem="G85-lo-EcC" secondAttribute="centerX" id="FAi-EJ-UHF"/>
-                            <constraint firstItem="YHi-xI-H6J" firstAttribute="top" secondItem="7Et-kz-I7d" secondAttribute="bottom" constant="30" id="SHt-p8-wpT"/>
-                            <constraint firstItem="VhG-cf-cAS" firstAttribute="centerX" secondItem="G85-lo-EcC" secondAttribute="centerX" id="XZd-BI-ijQ"/>
-                            <constraint firstItem="Ajw-Ox-qTy" firstAttribute="top" secondItem="OVQ-po-XDs" secondAttribute="top" constant="90" id="Zia-l7-xhz"/>
-                            <constraint firstItem="xhB-CV-rsS" firstAttribute="top" secondItem="Ajw-Ox-qTy" secondAttribute="bottom" constant="90" id="e7P-ys-Bgj"/>
-                            <constraint firstItem="hkP-Jw-7SL" firstAttribute="centerX" secondItem="G85-lo-EcC" secondAttribute="centerX" id="jHr-3M-gKt"/>
-                            <constraint firstItem="7Et-kz-I7d" firstAttribute="centerX" secondItem="G85-lo-EcC" secondAttribute="centerX" id="jWJ-If-XFM"/>
-                            <constraint firstItem="VhG-cf-cAS" firstAttribute="top" secondItem="Ajw-Ox-qTy" secondAttribute="bottom" constant="90" id="m9W-SY-oGp"/>
-                            <constraint firstItem="7Et-kz-I7d" firstAttribute="top" secondItem="xhB-CV-rsS" secondAttribute="bottom" constant="90" id="mBG-xR-iwf"/>
-                            <constraint firstItem="VhG-cf-cAS" firstAttribute="leading" secondItem="xhB-CV-rsS" secondAttribute="trailing" constant="87" id="oG1-m9-fBg"/>
+                            <constraint firstItem="ue5-GF-3QO" firstAttribute="centerX" secondItem="G85-lo-EcC" secondAttribute="centerX" constant="112.5" id="2eH-A5-0RV"/>
+                            <constraint firstItem="hkP-Jw-7SL" firstAttribute="centerX" secondItem="G85-lo-EcC" secondAttribute="centerX" id="3YN-O4-BN9"/>
+                            <constraint firstItem="Ajw-Ox-qTy" firstAttribute="centerX" secondItem="G85-lo-EcC" secondAttribute="centerX" id="BdE-Ph-umP"/>
+                            <constraint firstItem="xhB-CV-rsS" firstAttribute="top" secondItem="Ajw-Ox-qTy" secondAttribute="bottom" constant="70" id="PnT-W2-95c"/>
+                            <constraint firstItem="hkP-Jw-7SL" firstAttribute="top" secondItem="YHi-xI-H6J" secondAttribute="bottom" constant="25" id="PyF-EH-QGc"/>
+                            <constraint firstItem="VhG-cf-cAS" firstAttribute="top" secondItem="Ajw-Ox-qTy" secondAttribute="bottom" constant="70" id="QF0-7l-jIu"/>
+                            <constraint firstItem="YHi-xI-H6J" firstAttribute="centerX" secondItem="G85-lo-EcC" secondAttribute="centerX" id="XwJ-9I-mMG"/>
+                            <constraint firstItem="YHi-xI-H6J" firstAttribute="top" secondItem="7Et-kz-I7d" secondAttribute="bottom" constant="25" id="Y85-dg-oRd"/>
+                            <constraint firstItem="7Et-kz-I7d" firstAttribute="centerX" secondItem="G85-lo-EcC" secondAttribute="centerX" id="bD8-fw-AYK"/>
+                            <constraint firstItem="VhG-cf-cAS" firstAttribute="centerX" secondItem="G85-lo-EcC" secondAttribute="centerX" id="dMn-fg-N7l"/>
+                            <constraint firstItem="Ajw-Ox-qTy" firstAttribute="top" secondItem="OVQ-po-XDs" secondAttribute="top" constant="45" id="h91-om-Xjt"/>
+                            <constraint firstItem="xhB-CV-rsS" firstAttribute="centerX" secondItem="G85-lo-EcC" secondAttribute="centerX" constant="-112.5" id="lUJ-S6-7w1"/>
+                            <constraint firstItem="7Et-kz-I7d" firstAttribute="top" secondItem="VhG-cf-cAS" secondAttribute="bottom" constant="80" id="mLy-JD-lqk"/>
+                            <constraint firstItem="ue5-GF-3QO" firstAttribute="top" secondItem="Ajw-Ox-qTy" secondAttribute="bottom" constant="70" id="zlC-3G-p5c"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -125,11 +122,11 @@
         <namedColor name="adaptGreenColor">
             <color red="0.35699999332427979" green="0.67599999904632568" blue="0.24199999868869781" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="backgroundColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="textFieldColors">
             <color red="0.5690000057220459" green="0.57200002670288086" blue="0.56699997186660767" alpha="0.49599999189376831" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

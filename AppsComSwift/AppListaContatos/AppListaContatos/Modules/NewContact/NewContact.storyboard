@@ -5,14 +5,13 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--New Contact View Controller-->
+        <!--NewContact-->
         <scene sceneID="Jj8-X3-2ju">
             <objects>
-                <viewController storyboardIdentifier="NewContact" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PnM-Fd-4hO" customClass="NewContactViewController" customModule="AppListaContatos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewContact" title="NewContact" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PnM-Fd-4hO" customClass="NewContactViewController" customModule="AppListaContatos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uYy-zl-Dfv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -55,7 +54,7 @@
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="gFO-Yt-t2e">
                                 <rect key="frame" x="67" y="89.5" width="280" height="144"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="backgroundColor"/>
                                 <color key="tintColor" name="adaptGreenColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="280" id="UBh-dB-pXg"/>
@@ -64,7 +63,7 @@
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="M7c-jy-MVs"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
                             <constraint firstItem="gFO-Yt-t2e" firstAttribute="top" secondItem="M7c-jy-MVs" secondAttribute="top" constant="45" id="ADU-jr-8xa"/>
                             <constraint firstItem="pqj-LY-ZzD" firstAttribute="centerX" secondItem="uYy-zl-Dfv" secondAttribute="centerX" id="NTt-Ln-vhL"/>
@@ -96,11 +95,11 @@
         <namedColor name="adaptGreenColor">
             <color red="0.35699999332427979" green="0.67599999904632568" blue="0.24199999868869781" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="backgroundColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="textFieldColors">
             <color red="0.5690000057220459" green="0.57200002670288086" blue="0.56699997186660767" alpha="0.49599999189376831" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

@@ -30,7 +30,7 @@ class ContactsTableViewCell: UITableViewCell {
         //fazer verificação pra pegar o nome ou o lastName
         self.nameLabel.text = cell.getName()
         self.lastNameLabel.text = cell.getLastName()
-        self.phoneLabel.text = cell.getPhone()
+        //self.phoneLabel.text = cell.getPhone()
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(trashSelect))
         trashImageView.addGestureRecognizer(tap)
