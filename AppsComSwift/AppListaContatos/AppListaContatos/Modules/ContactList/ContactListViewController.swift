@@ -16,9 +16,9 @@ class ContactListViewController: UIViewController {
      */
     private var filterData:[Contact] = []
     
-    private var selectedIndex:Int = -1
-    private var increaseSize:Bool = false
-
+    private var isSelected:Bool = false
+    private var selectedIndex:Int?
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -37,9 +37,9 @@ class ContactListViewController: UIViewController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        tableView.visibleCells.forEach { cell in
-            cell.contentView.backgroundColor = .none
-        }
+//        tableView.visibleCells.forEach { cell in
+//            cell.contentView.backgroundColor = .none
+//        }
     }
     
     //MARK: setup TableView
@@ -105,40 +105,40 @@ extension ContactListViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == selectedIndex && increaseSize {
+        if isSelected && selectedIndex == indexPath.row {
             return 130
-        } else {
-            return 50
         }
+        return 50
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContactsCell", for: indexPath) as! ContactsTableViewCell
         let contact = filterData[indexPath.row]
         cell.bind(cell: contact)
+        cell.pencilSelected(contactListVC: self) //arrumar aqui
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedIndex = indexPath.row
-        increaseSize = true
-        
-        /*abrir tela edição do contato
-        let editContactSB = UIStoryboard(name: "EditContact", bundle: nil)
-        let editContactVC = editContactSB.instantiateViewController(withIdentifier: "EditContact") as! EditContactViewController
-        self.navigationController?.pushViewController(editContactVC, animated: true)
-        selectedCell.contentView.backgroundColor = UIColor.systemGreen
-         */
+        if isSelected == false {
+            isSelected = true
+            selectedIndex = indexPath.row
+        } else {
+            isSelected = false
+            selectedIndex = -1
+        }
+        tableView.reloadRows(at: [indexPath], with: .automatic)
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
     }
-    
+
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             tableView.beginUpdates()
             filterData.remove(at: indexPath.row)
+            contactList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.endUpdates()
         }

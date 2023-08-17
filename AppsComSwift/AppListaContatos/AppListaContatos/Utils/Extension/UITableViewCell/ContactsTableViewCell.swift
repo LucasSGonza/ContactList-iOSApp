@@ -13,7 +13,7 @@ class ContactsTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var lastNameLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
-    @IBOutlet weak var trashImageView: UIImageView!
+    @IBOutlet weak var pencilImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,16 +30,19 @@ class ContactsTableViewCell: UITableViewCell {
         //fazer verificação pra pegar o nome ou o lastName
         self.nameLabel.text = cell.getName()
         self.lastNameLabel.text = cell.getLastName()
-        //self.phoneLabel.text = cell.getPhone()
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(trashSelect))
-        trashImageView.addGestureRecognizer(tap)
-        
+        self.phoneLabel.text = cell.getPhone()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(pencilSelected))
+        pencilImageView.addGestureRecognizer(tap)
     }
     
     //MARK: Func for trashIMG action
-    @objc func trashSelect() {
-        print("ta funfando")
+    @objc func pencilSelected(contactListVC:ContactListViewController) {
+        //Segunda referencia
+        let editContactSB = UIStoryboard(name: "EditContact", bundle: nil)
+        let editContactVC = editContactSB.instantiateViewController(withIdentifier: "EditContact") as! EditContactViewController
+        
+        contactListVC.navigationController?.pushViewController(editContactVC, animated: true)
+        print("a")
     }
     
 }

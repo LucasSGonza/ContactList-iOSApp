@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Contact List View Controller-->
+        <!--Contact List-->
         <scene sceneID="wa4-tu-79v">
             <objects>
-                <viewController storyboardIdentifier="ContactList" useStoryboardIdentifierAsRestorationIdentifier="YES" id="L54-VO-ZpE" customClass="ContactListViewController" customModule="AppListaContatos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContactList" title="Contact List" useStoryboardIdentifierAsRestorationIdentifier="YES" id="L54-VO-ZpE" customClass="ContactListViewController" customModule="AppListaContatos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IbO-zp-pKN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,13 +25,16 @@
                             <searchBar opaque="NO" contentMode="redraw" searchBarStyle="minimal" placeholder="Search a contact" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vyw-VY-NXm">
                                 <rect key="frame" x="20" y="130" width="374" height="56"/>
                                 <color key="backgroundColor" name="backgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="ujV-52-cKT"/>
+                                </constraints>
                                 <textInputTraits key="textInputTraits"/>
                                 <scopeButtonTitles>
                                     <string>Title</string>
                                     <string>Title</string>
                                 </scopeButtonTitles>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UMM-WD-FiZ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UMM-WD-FiZ">
                                 <rect key="frame" x="0.0" y="186" width="414" height="676"/>
                                 <color key="backgroundColor" name="backgroundColor"/>
                                 <color key="separatorColor" name="adaptGreenColor"/>
@@ -40,15 +43,14 @@
                         <viewLayoutGuide key="safeArea" id="hSH-hS-PYe"/>
                         <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
-                            <constraint firstItem="UMM-WD-FiZ" firstAttribute="top" secondItem="Vyw-VY-NXm" secondAttribute="bottom" id="B83-gP-Due"/>
-                            <constraint firstItem="yeY-kf-47t" firstAttribute="top" secondItem="hSH-hS-PYe" secondAttribute="top" constant="20" id="JQf-RF-Ug3"/>
-                            <constraint firstItem="yeY-kf-47t" firstAttribute="leading" secondItem="hSH-hS-PYe" secondAttribute="leading" constant="30" id="M3v-hV-VQq"/>
-                            <constraint firstItem="hSH-hS-PYe" firstAttribute="trailing" secondItem="UMM-WD-FiZ" secondAttribute="trailing" id="MSo-XH-WKa"/>
-                            <constraint firstItem="Vyw-VY-NXm" firstAttribute="centerX" secondItem="IbO-zp-pKN" secondAttribute="centerX" id="e40-qM-b4W"/>
-                            <constraint firstItem="Vyw-VY-NXm" firstAttribute="leading" secondItem="hSH-hS-PYe" secondAttribute="leading" constant="20" id="g9o-1D-1Np"/>
-                            <constraint firstItem="Vyw-VY-NXm" firstAttribute="top" secondItem="yeY-kf-47t" secondAttribute="bottom" constant="30" id="r61-py-Lic"/>
-                            <constraint firstItem="UMM-WD-FiZ" firstAttribute="leading" secondItem="hSH-hS-PYe" secondAttribute="leading" id="uRq-Iw-L4i"/>
-                            <constraint firstItem="hSH-hS-PYe" firstAttribute="bottom" secondItem="UMM-WD-FiZ" secondAttribute="bottom" id="uVc-Cd-clm"/>
+                            <constraint firstItem="yeY-kf-47t" firstAttribute="centerX" secondItem="IbO-zp-pKN" secondAttribute="centerX" constant="-99" id="6Xs-ux-2ma"/>
+                            <constraint firstItem="UMM-WD-FiZ" firstAttribute="leading" secondItem="hSH-hS-PYe" secondAttribute="leading" id="Ba8-ii-3ke"/>
+                            <constraint firstItem="UMM-WD-FiZ" firstAttribute="top" secondItem="Vyw-VY-NXm" secondAttribute="bottom" id="D2o-OG-WLk"/>
+                            <constraint firstItem="Vyw-VY-NXm" firstAttribute="centerX" secondItem="IbO-zp-pKN" secondAttribute="centerX" id="DbR-Hr-iMn"/>
+                            <constraint firstItem="UMM-WD-FiZ" firstAttribute="bottom" secondItem="hSH-hS-PYe" secondAttribute="bottom" id="Mmp-rc-4Cg"/>
+                            <constraint firstItem="Vyw-VY-NXm" firstAttribute="top" secondItem="yeY-kf-47t" secondAttribute="bottom" constant="30" id="NUl-Cq-bQu"/>
+                            <constraint firstItem="yeY-kf-47t" firstAttribute="top" secondItem="hSH-hS-PYe" secondAttribute="top" constant="20" id="r0T-QW-gnc"/>
+                            <constraint firstItem="UMM-WD-FiZ" firstAttribute="trailing" secondItem="hSH-hS-PYe" secondAttribute="trailing" id="tbs-8f-wvF"/>
                         </constraints>
                     </view>
                     <connections>
