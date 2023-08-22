@@ -88,8 +88,10 @@ extension ContactListViewController: UISearchBarDelegate {
         filterData.removeAll()
         filterData.append(contentsOf: contactList)
         
-        filterData = filterData.filter {
-            ($0.getName().lowercased().contains(searchText.lowercased())) || ($0.getLastName().lowercased().contains(searchText.lowercased())) || ($0.getPhone().lowercased().contains(searchText.lowercased()))
+        if !searchText.isEmpty {
+            filterData = filterData.filter {
+                ($0.getName().lowercased().contains(searchText.lowercased())) || ($0.getLastName().lowercased().contains(searchText.lowercased())) || ($0.getPhone().lowercased().contains(searchText.lowercased()))
+            }
         }
         
         tableView.reloadData()
@@ -105,30 +107,29 @@ extension ContactListViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if isSelected && selectedIndex == indexPath.row {
-            return 130
-        }
-        return 50
+//        if isSelected && selectedIndex == indexPath.row {
+//            return 130
+//        }
+        return 65
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContactsCell", for: indexPath) as! ContactsTableViewCell
         let contact = filterData[indexPath.row]
-        cell.bind(cell: contact)
-        cell.pencilSelected(contactListVC: self) //arrumar aqui
+        cell.bind(cell: contact, reference: self, contactList: contactList, firstScreen: self)
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if isSelected == false {
-            isSelected = true
-            selectedIndex = indexPath.row
-        } else {
-            isSelected = false
-            selectedIndex = -1
-        }
-        tableView.reloadRows(at: [indexPath], with: .automatic)
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        if isSelected == false {
+//            isSelected = true
+//            selectedIndex = indexPath.row
+//        } else {
+//            isSelected = false
+//            selectedIndex = -1
+//        }
+//        tableView.reloadRows(at: [indexPath], with: .automatic)
+//    }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete

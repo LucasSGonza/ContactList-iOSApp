@@ -13,6 +13,7 @@ class Contact {
     private var name:String = ""
     private var lastName:String = ""
     private var phone:String = ""
+    public var isFavorite:Bool = false
     
     //init padrão
     init(name:String, lastName:String, phone:String) {
@@ -31,6 +32,7 @@ class Contact {
     LastName: \(lastName)
     Phone: \(phone)
     ID: \(id)
+    Favoritado: \(isFavorite)
     """
     }
     

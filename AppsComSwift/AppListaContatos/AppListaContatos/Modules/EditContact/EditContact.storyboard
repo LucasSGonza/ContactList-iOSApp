@@ -25,7 +25,7 @@
                                     <constraint firstAttribute="width" constant="280" id="fHl-D2-T4B"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bookmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ue5-GF-3QO">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bookmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ue5-GF-3QO">
                                 <rect key="frame" x="287" y="304" width="65" height="65"/>
                                 <color key="backgroundColor" name="backgroundColor"/>
                                 <color key="tintColor" name="adaptGreenColor"/>
@@ -34,7 +34,7 @@
                                     <constraint firstAttribute="width" constant="65" id="eCD-qf-bgK"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trash.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="VhG-cf-cAS">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="trash.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="VhG-cf-cAS">
                                 <rect key="frame" x="172" y="303" width="70" height="64"/>
                                 <color key="backgroundColor" name="backgroundColor"/>
                                 <color key="tintColor" name="adaptGreenColor"/>
@@ -43,8 +43,8 @@
                                     <constraint firstAttribute="width" constant="70" id="UaS-WW-khc"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xhB-CV-rsS">
-                                <rect key="frame" x="62" y="304.5" width="65" height="65"/>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xhB-CV-rsS">
+                                <rect key="frame" x="62" y="305.5" width="65" height="63.5"/>
                                 <color key="backgroundColor" name="backgroundColor"/>
                                 <color key="tintColor" name="adaptGreenColor"/>
                                 <constraints>
@@ -105,6 +105,12 @@
                             <constraint firstItem="ue5-GF-3QO" firstAttribute="top" secondItem="Ajw-Ox-qTy" secondAttribute="bottom" constant="70" id="zlC-3G-p5c"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="favoriteImageView" destination="ue5-GF-3QO" id="puj-kd-AGU"/>
+                        <outlet property="lastNameTextField" destination="YHi-xI-H6J" id="518-wZ-9aw"/>
+                        <outlet property="nameTextField" destination="7Et-kz-I7d" id="ify-Zd-jQU"/>
+                        <outlet property="phoneTextField" destination="hkP-Jw-7SL" id="aim-0y-Dra"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dtE-yA-haU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -114,7 +120,7 @@
     <resources>
         <image name="bookmark" catalog="system" width="112" height="128"/>
         <image name="person.circle" catalog="system" width="128" height="121"/>
-        <image name="phone.circle" catalog="system" width="128" height="121"/>
+        <image name="phone.fill" catalog="system" width="128" height="114"/>
         <image name="trash.fill" catalog="system" width="121" height="128"/>
         <namedColor name="adaptDarkLightMode">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
