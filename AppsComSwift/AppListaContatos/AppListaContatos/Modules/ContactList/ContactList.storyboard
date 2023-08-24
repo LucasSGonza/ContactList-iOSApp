@@ -18,6 +18,9 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact List" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yeY-kf-47t">
                                 <rect key="frame" x="30" y="64" width="156" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="156" id="bo6-6E-6e4"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <color key="textColor" name="adaptDarkLightMode"/>
                                 <nil key="highlightedColor"/>
@@ -25,32 +28,31 @@
                             <searchBar opaque="NO" contentMode="redraw" searchBarStyle="minimal" placeholder="Search a contact" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vyw-VY-NXm">
                                 <rect key="frame" x="20" y="130" width="374" height="56"/>
                                 <color key="backgroundColor" name="backgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="374" id="ujV-52-cKT"/>
-                                </constraints>
                                 <textInputTraits key="textInputTraits"/>
                                 <scopeButtonTitles>
                                     <string>Title</string>
                                     <string>Title</string>
                                 </scopeButtonTitles>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="65" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UMM-WD-FiZ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="65" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="UMM-WD-FiZ">
                                 <rect key="frame" x="0.0" y="186" width="414" height="676"/>
                                 <color key="backgroundColor" name="backgroundColor"/>
-                                <color key="separatorColor" name="adaptGreenColor"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hSH-hS-PYe"/>
                         <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
-                            <constraint firstItem="yeY-kf-47t" firstAttribute="centerX" secondItem="IbO-zp-pKN" secondAttribute="centerX" constant="-99" id="6Xs-ux-2ma"/>
-                            <constraint firstItem="UMM-WD-FiZ" firstAttribute="leading" secondItem="hSH-hS-PYe" secondAttribute="leading" id="Ba8-ii-3ke"/>
-                            <constraint firstItem="UMM-WD-FiZ" firstAttribute="top" secondItem="Vyw-VY-NXm" secondAttribute="bottom" id="D2o-OG-WLk"/>
-                            <constraint firstItem="Vyw-VY-NXm" firstAttribute="centerX" secondItem="IbO-zp-pKN" secondAttribute="centerX" id="DbR-Hr-iMn"/>
-                            <constraint firstItem="UMM-WD-FiZ" firstAttribute="bottom" secondItem="hSH-hS-PYe" secondAttribute="bottom" id="Mmp-rc-4Cg"/>
-                            <constraint firstItem="Vyw-VY-NXm" firstAttribute="top" secondItem="yeY-kf-47t" secondAttribute="bottom" constant="30" id="NUl-Cq-bQu"/>
-                            <constraint firstItem="yeY-kf-47t" firstAttribute="top" secondItem="hSH-hS-PYe" secondAttribute="top" constant="20" id="r0T-QW-gnc"/>
-                            <constraint firstItem="UMM-WD-FiZ" firstAttribute="trailing" secondItem="hSH-hS-PYe" secondAttribute="trailing" id="tbs-8f-wvF"/>
+                            <constraint firstItem="yeY-kf-47t" firstAttribute="top" secondItem="hSH-hS-PYe" secondAttribute="top" constant="20" id="3jd-Ia-aKU"/>
+                            <constraint firstItem="Vyw-VY-NXm" firstAttribute="top" secondItem="yeY-kf-47t" secondAttribute="bottom" constant="30" id="CFz-jn-N5B"/>
+                            <constraint firstItem="Vyw-VY-NXm" firstAttribute="centerX" secondItem="IbO-zp-pKN" secondAttribute="centerX" id="H7k-et-aNi"/>
+                            <constraint firstItem="UMM-WD-FiZ" firstAttribute="bottom" secondItem="hSH-hS-PYe" secondAttribute="bottom" id="L9j-bt-Q4U"/>
+                            <constraint firstItem="UMM-WD-FiZ" firstAttribute="leading" secondItem="hSH-hS-PYe" secondAttribute="leading" id="YVk-wC-6l6"/>
+                            <constraint firstItem="yeY-kf-47t" firstAttribute="leading" secondItem="hSH-hS-PYe" secondAttribute="leading" constant="30" id="eEy-T5-U7O"/>
+                            <constraint firstItem="UMM-WD-FiZ" firstAttribute="top" secondItem="Vyw-VY-NXm" secondAttribute="bottom" id="eWp-eu-czp"/>
+                            <constraint firstItem="Vyw-VY-NXm" firstAttribute="leading" secondItem="hSH-hS-PYe" secondAttribute="leading" constant="20" id="jrt-ut-WBq"/>
+                            <constraint firstItem="hSH-hS-PYe" firstAttribute="trailing" secondItem="Vyw-VY-NXm" secondAttribute="trailing" constant="20" id="jxH-g7-Cd0"/>
+                            <constraint firstItem="UMM-WD-FiZ" firstAttribute="centerX" secondItem="IbO-zp-pKN" secondAttribute="centerX" id="kat-ID-Zx5"/>
+                            <constraint firstItem="UMM-WD-FiZ" firstAttribute="trailing" secondItem="hSH-hS-PYe" secondAttribute="trailing" id="yDg-vj-F31"/>
                         </constraints>
                     </view>
                     <connections>
@@ -66,9 +68,6 @@
     <resources>
         <namedColor name="adaptDarkLightMode">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="adaptGreenColor">
-            <color red="0.35699999332427979" green="0.67599999904632568" blue="0.24199999868869781" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="backgroundColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

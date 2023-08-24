@@ -10,7 +10,7 @@ import UIKit
 class NewContactViewController: HelpController {
     
     private var contactList:[Contact] = []
-    private var firstScreen:ContactListDelegate?
+    private weak var delegate:ContactListDelegate?
     
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
@@ -22,6 +22,12 @@ class NewContactViewController: HelpController {
         setupNavigationBar()
         setupTextFields()
         // Do any additional setup after loading the view.
+    }
+    
+    //MARK:InitView
+    func initView(_ contactList:[Contact], delegate:ContactListDelegate) {
+        self.delegate = delegate
+        self.contactList = contactList
     }
     
     //MARK:TextFields
@@ -77,8 +83,7 @@ class NewContactViewController: HelpController {
     
     //MARK: objc funcs
     @objc private func goBack() {
-        guard let firstScreen = firstScreen else { return }
-        firstScreen.setContactList(contactList)
+        delegate?.setContactList(contactList)
         self.navigationController?.popViewController(animated: true)
         //self.dismiss(animated: true, completion: nil)
     }
@@ -104,11 +109,6 @@ class NewContactViewController: HelpController {
         } else {
             setupAlert(title: "Error", message: "To create a contact, at least inform a 'Name' or a 'Last Name'")
         }
-    }
-    
-    func initView(_ contactList:[Contact], firstScreen:ContactListDelegate) {
-        self.firstScreen = firstScreen
-        self.contactList = contactList
     }
     
 }

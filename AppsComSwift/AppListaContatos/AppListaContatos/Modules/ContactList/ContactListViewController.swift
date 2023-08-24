@@ -65,7 +65,7 @@ class ContactListViewController: UIViewController {
     //MARK: objc funcs
     @objc private func newScreen() {
         let newContact = UIStoryboard(name: "NewContact", bundle: nil).instantiateViewController(withIdentifier: "NewContact") as! NewContactViewController
-        newContact.initView(contactList, firstScreen: self)
+        newContact.initView(contactList, delegate: self)
         self.navigationController?.pushViewController(newContact, animated: true)
     }
     
@@ -116,7 +116,8 @@ extension ContactListViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContactsCell", for: indexPath) as! ContactsTableViewCell
         let contact = filterData[indexPath.row]
-        cell.bind(cell: contact, reference: self, contactList: contactList, firstScreen: self)
+        cell.bind(item: contact, delegate: self)
+        cell.selectionStyle = .none
         return cell
     }
     
@@ -151,5 +152,14 @@ extension ContactListViewController: UITableViewDelegate, UITableViewDataSource 
 extension ContactListViewController: ContactListDelegate {
     func setContactList(_ contactList: [Contact]) {
         self.contactList = contactList
+    }
+}
+//MARK: EditContact Listener
+extension ContactListViewController: EditContactListener {
+    func goToEditContact(_ contact: Contact) {
+        let editContactSB = UIStoryboard(name: "EditContact", bundle: nil)
+        let editContactVC = editContactSB.instantiateViewController(withIdentifier: "EditContact") as! EditContactViewController
+        editContactVC.initView(contact: contact, contactList: contactList, delegate: self)
+        self.navigationController?.pushViewController(editContactVC, animated: true)
     }
 }

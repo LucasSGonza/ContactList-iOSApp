@@ -14,10 +14,8 @@ class ContactsTableViewCell: UITableViewCell {
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var pencilImageView: UIImageView!
     
-    private var screenReference:UIViewController?
-    private var contactList:[Contact] = []
-    private var firstScreen:ContactListDelegate?
-    private var contactID:Int = 0
+    private weak var delegate:EditContactListener?
+    private var contact:Contact?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,30 +28,20 @@ class ContactsTableViewCell: UITableViewCell {
     }
     
     //MARK:Bind for tableView
-    func bind (cell:Contact, reference: UIViewController, contactList:[Contact], firstScreen:ContactListDelegate) {
-        
-        self.nameLabel.text = cell.getName()
-        self.phoneLabel.text = cell.getPhone()
-        self.contactID = cell.getID()
+    func bind (item:Contact, delegate:EditContactListener) {
+        self.delegate = delegate
+        self.contact = item
+        self.nameLabel.text = item.getName()
+        self.phoneLabel.text = item.getPhone()
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(pencilSelected))
         pencilImageView.addGestureRecognizer(tap)
-        
-        self.screenReference = reference
-        self.contactList = contactList
-        self.firstScreen = firstScreen
     }
     
     //MARK: Func for trashIMG action
     @objc func pencilSelected() {
-        //Primeira referencia
-        guard let screenReference = self.screenReference, let firstScreen = firstScreen else { return }
-        
-        //Segunda referencia
-        let editContactSB = UIStoryboard(name: "EditContact", bundle: nil)
-        let editContactVC = editContactSB.instantiateViewController(withIdentifier: "EditContact") as! EditContactViewController
-        editContactVC.initView(contactList: contactList, firstScreen: firstScreen, contactID: contactID)
-        screenReference.navigationController?.pushViewController(editContactVC, animated: true)
+        guard let contact = contact else { return }
+        delegate?.goToEditContact(contact)
     }
     
 }

@@ -16,30 +16,33 @@ class EditContactViewController: HelpController {
     
     //MARK:Pass & Receive Data
     private var contactList:[Contact] = []
-    private var firstScreen:ContactListDelegate?
-    private var contactID:Int = 0
+    private var delegate:ContactListDelegate?
+    private var contact:Contact?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(contactList.first?.showInfos() ?? "nada")
         setupTextFields()
         setupNavigationBar()
         let tap = UITapGestureRecognizer(target: self, action: #selector(favoriteSelected))
         favoriteImageView.addGestureRecognizer(tap)
+        
+        guard let contact = contact else {return }
+        
+        print(contact.isFavorite)
+        favoriteImageView.image = contact.isFavorite ? UIImage(systemName: "bookmark.fill") : UIImage(systemName: "bookmark")
     }
     
-    
     //MARK: InitView
-    func initView(contactList:[Contact], firstScreen:ContactListDelegate, contactID:Int) {
-        self.firstScreen = firstScreen
+    func initView(contact:Contact, contactList:[Contact], delegate:ContactListDelegate) {
+        self.contact = contact
         self.contactList = contactList
-        self.contactID = contactID
+        self.delegate = delegate
     }
     
     //MARK: TextFields
     private func setupTextFields() {
         //procura Array pelo id
-        guard let contact = contactList.first(where: {$0.getID() == contactID}) else { return }
+        guard let contact = contact else { return }
         self.nameTextField.text = contact.getName()
         self.lastNameTextField.text = contact.getLastName()
         self.phoneTextField.text = contact.getPhone()
@@ -78,19 +81,18 @@ class EditContactViewController: HelpController {
     
     //MARK: objc funcs
     @objc private func goBack() {
-        guard let firstScreen = firstScreen else { return }
-        firstScreen.setContactList(contactList)
+        guard let delegate = delegate else { return }
+        delegate.setContactList(contactList)
         self.navigationController?.popViewController(animated: true)
         //self.dismiss(animated: true, completion: nil)
     }
     
     @objc private func editContact() {
-        
-        guard let firstName = nameTextField.text, let lastName = lastNameTextField.text, let phone = phoneTextField.text else { return }
+        guard let firstName = nameTextField.text, let lastName = lastNameTextField.text, let phone = phoneTextField.text, let contact = contact else { return }
         
         if !firstName.isEmpty || !lastName.isEmpty {
-            let contact = Contact(name: firstName, lastName: lastName, phone: phone)
-            contactList[contactID] = contact
+            let newContact = Contact(name: firstName, lastName: lastName, phone: phone)
+            contactList[contact.getID()] = newContact
             setupAlert(title: "Success", message: "Contact updated!")
         } else {
             setupAlert(title: "ERROR", message: "At least inform a 'Name' or a 'Last Name' for the contact")
@@ -98,9 +100,16 @@ class EditContactViewController: HelpController {
     }
     
     @objc private func favoriteSelected() {
-        print("a")
-        favoriteImageView.image = .checkmark
-        contactList[contactID].isFavorite = true
+        guard let contact = contact else {return }
+        
+        if contact.isFavorite {//contact is favorite? when click will become not favorite
+            contact.isFavorite = false
+            favoriteImageView.image = UIImage(systemName: "bookmark")
+        } else {
+            contact.isFavorite = true
+            favoriteImageView.image = UIImage(systemName: "bookmark.fill")
+        }
+        print(contact.isFavorite)
     }
 
 }
