@@ -13,6 +13,8 @@ class EditContactViewController: HelpController {
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var favoriteImageView: UIImageView!
+    @IBOutlet weak var trashImageView: UIImageView!
+    @IBOutlet weak var phoneImageView: UIImageView!
     
     //MARK:Pass & Receive Data
     private var contactList:[Contact] = []
@@ -23,11 +25,9 @@ class EditContactViewController: HelpController {
         super.viewDidLoad()
         setupTextFields()
         setupNavigationBar()
-        let tap = UITapGestureRecognizer(target: self, action: #selector(favoriteSelected))
-        favoriteImageView.addGestureRecognizer(tap)
+        setupIconActions()
         
         guard let contact = contact else {return }
-        
         print(contact.isFavorite)
         favoriteImageView.image = contact.isFavorite ? UIImage(systemName: "bookmark.fill") : UIImage(systemName: "bookmark")
     }
@@ -38,6 +38,25 @@ class EditContactViewController: HelpController {
         self.contactList = contactList
         self.delegate = delegate
     }
+    
+//    private func myContact() -> Contact? {
+//        guard let contact = contact else { return nil}
+//        return contact
+//    }
+    
+    //MARK: Icon actions
+    private func setupIconActions() {
+        
+        let tapFavorite = UITapGestureRecognizer(target: self, action: #selector(favoriteContact))
+        favoriteImageView.addGestureRecognizer(tapFavorite)
+        
+        let tapTrash = UITapGestureRecognizer(target: self, action: #selector(deleteContact))
+        trashImageView.addGestureRecognizer(tapTrash)
+        
+//        let tapCall = UITapGestureRecognizer(target: self, action: #selector(callContact))
+//        phoneImageView.addGestureRecognizer(tapCall)
+    }
+    
     
     //MARK: TextFields
     private func setupTextFields() {
@@ -66,7 +85,7 @@ class EditContactViewController: HelpController {
         let doneButton = UIBarButtonItem(
             barButtonSystemItem: .done,
             target: self,
-            action: #selector(editContact))
+            action: #selector(confirmEdition))
         doneButton.tintColor = UIColor(named: "buttonsTabBar")
         doneButton.setTitleTextAttributes(
             [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 20.0)],
@@ -75,11 +94,9 @@ class EditContactViewController: HelpController {
         self.navigationItem.leftBarButtonItem = cancelButton
         self.navigationItem.rightBarButtonItem = doneButton
     }
-    
-//        let tap = UITapGestureRecognizer(target: self, action: #selector(favoriteSelected))
-//        return tap
-    
-    //MARK: objc funcs
+
+    //MARK: goBack
+    //volta para dashboard
     @objc private func goBack() {
         guard let delegate = delegate else { return }
         delegate.setContactList(contactList)
@@ -87,7 +104,9 @@ class EditContactViewController: HelpController {
         //self.dismiss(animated: true, completion: nil)
     }
     
-    @objc private func editContact() {
+    //MARK: confirmEdition
+    //confirma a edição do contato
+    @objc private func confirmEdition() {
         guard let firstName = nameTextField.text, let lastName = lastNameTextField.text, let phone = phoneTextField.text, let contact = contact else { return }
         
         if !firstName.isEmpty || !lastName.isEmpty {
@@ -99,7 +118,9 @@ class EditContactViewController: HelpController {
         }
     }
     
-    @objc private func favoriteSelected() {
+    //MARK: favorite
+    //favorita ou desfavorita o contato
+    @objc private func favoriteContact() {
         guard let contact = contact else {return }
         
         if contact.isFavorite {//contact is favorite? when click will become not favorite
@@ -110,6 +131,17 @@ class EditContactViewController: HelpController {
             favoriteImageView.image = UIImage(systemName: "bookmark.fill")
         }
         print(contact.isFavorite)
+    }
+    
+    //MARK: Delete
+    //deletar contato
+    @objc private func deleteContact() {
+        print(contactList)
+        guard let contact = contact else { return }
+        contactList.removeAll(where: {$0.getID() == contact.getID()})
+        setupAlert(title: "Sucess!", message: "Contact deleted with success", completion: { self.goBack() })
+        print(contactList)
+        
     }
 
 }

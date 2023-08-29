@@ -1,22 +1,22 @@
 //
-//  ContactsTableViewCell.swift
+//  ContactTableViewCell.swift
 //  AppListaContatos
 //
-//  Created by Squad Apps on 20/07/23.
+//  Created by Squad Apps on 29/08/23.
 //
 
 import UIKit
 
-class ContactsTableViewCell: UITableViewCell {
-
+class ContactTableViewCell: UITableViewCell {
+    
     @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var pencilImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
-    @IBOutlet weak var pencilImageView: UIImageView!
     
     private weak var delegate:EditContactDelegate?
     private var contact:Contact?
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,6 +24,7 @@ class ContactsTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+
         // Configure the view for the selected state
     }
     
@@ -43,5 +44,4 @@ class ContactsTableViewCell: UITableViewCell {
         guard let contact = contact else { return }
         delegate?.goToEditContact(contact)
     }
-    
 }

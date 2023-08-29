@@ -46,7 +46,7 @@ class ContactListViewController: UIViewController {
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UINib(nibName: "ContactsTableViewCell", bundle: nil), forCellReuseIdentifier: "ContactsCell")
+        tableView.register(UINib(nibName: "ContactTableViewCell", bundle: nil), forCellReuseIdentifier: "ContactCell")
     }
     
     //MARK: setup NavBar
@@ -57,13 +57,13 @@ class ContactListViewController: UIViewController {
         let newContactButton = UIBarButtonItem(
             barButtonSystemItem: .add,
             target: self,
-            action: #selector(newScreen))
+            action: #selector(goToNewContact))
         
         self.navigationItem.rightBarButtonItem = newContactButton
     }
     
-    //MARK: objc funcs
-    @objc private func newScreen() {
+    //MARK: go to NewContactVC
+    @objc private func goToNewContact() {
         let newContact = UIStoryboard(name: "NewContact", bundle: nil).instantiateViewController(withIdentifier: "NewContact") as! NewContactViewController
         newContact.initView(contactList, delegate: self)
         self.navigationController?.pushViewController(newContact, animated: true)
@@ -110,14 +110,13 @@ extension ContactListViewController: UITableViewDelegate, UITableViewDataSource 
 //        if isSelected && selectedIndex == indexPath.row {
 //            return 130
 //        }
-        return 65
+        return 70
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ContactsCell", for: indexPath) as! ContactsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ContactCell", for: indexPath) as! ContactTableViewCell
         let contact = filterData[indexPath.row]
         cell.bind(item: contact, delegate: self)
-        cell.selectionStyle = .none
         return cell
     }
     
@@ -155,7 +154,7 @@ extension ContactListViewController: ContactListDelegate {
     }
 }
 //MARK: EditContact Listener
-extension ContactListViewController: EditContactListener {
+extension ContactListViewController: EditContactDelegate {
     func goToEditContact(_ contact: Contact) {
         let editContactSB = UIStoryboard(name: "EditContact", bundle: nil)
         let editContactVC = editContactSB.instantiateViewController(withIdentifier: "EditContact") as! EditContactViewController

@@ -17,89 +17,87 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="pqj-LY-ZzD">
-                                <rect key="frame" x="67" y="254" width="280" height="40"/>
-                                <color key="backgroundColor" name="textFieldColors"/>
+                                <rect key="frame" x="30" y="224" width="354" height="40"/>
+                                <color key="backgroundColor" name="searchBarColor"/>
                                 <color key="tintColor" name="adaptDarkLightMode"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="280" id="xRJ-xY-9oe"/>
-                                </constraints>
                                 <color key="textColor" name="adaptDarkLightMode"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" textContentType="name"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last name" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="K5v-X0-uNI" userLabel="Last name">
-                                <rect key="frame" x="67" y="309" width="280" height="40"/>
-                                <color key="backgroundColor" name="textFieldColors"/>
+                                <rect key="frame" x="30" y="294" width="354" height="40"/>
+                                <color key="backgroundColor" name="searchBarColor"/>
                                 <color key="tintColor" name="adaptDarkLightMode"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="280" id="jYN-0q-VaD"/>
-                                </constraints>
                                 <color key="textColor" name="adaptDarkLightMode"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" textContentType="family-name"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="VsH-4q-DyH" userLabel="Phone">
-                                <rect key="frame" x="67" y="364" width="280" height="40"/>
-                                <color key="backgroundColor" name="textFieldColors"/>
+                                <rect key="frame" x="30" y="364" width="354" height="40"/>
+                                <color key="backgroundColor" name="searchBarColor"/>
                                 <color key="tintColor" name="adaptDarkLightMode"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="280" id="hxT-CP-guF"/>
-                                </constraints>
                                 <color key="textColor" name="adaptDarkLightMode"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="tel"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="gFO-Yt-t2e">
-                                <rect key="frame" x="119.5" y="89.5" width="175" height="89"/>
+                                <rect key="frame" x="121" y="84.5" width="172" height="99"/>
                                 <color key="backgroundColor" name="backgroundColor"/>
                                 <color key="tintColor" name="adaptGreenColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="P2g-3h-G5c"/>
-                                    <constraint firstAttribute="width" constant="175" id="mjB-rf-MKy"/>
-                                </constraints>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="f54-oC-rrz">
-                                <rect key="frame" x="67" y="254.5" width="35" height="38"/>
-                                <color key="tintColor" name="adaptGreenColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="35" id="kC7-AN-iIV"/>
-                                    <constraint firstAttribute="height" constant="40.5" id="oXc-Tt-Wgk"/>
+                                    <constraint firstAttribute="width" constant="172" id="byy-u0-V8k"/>
+                                    <constraint firstAttribute="height" constant="100" id="ptT-Au-TH5"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Uqh-NS-a3q">
-                                <rect key="frame" x="67" y="309.5" width="35" height="38"/>
+                                <rect key="frame" x="30" y="300.5" width="35" height="27.5"/>
                                 <color key="tintColor" name="adaptGreenColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40.5" id="Nzp-Ir-DaA"/>
-                                    <constraint firstAttribute="width" constant="35" id="YhB-rm-BNv"/>
+                                    <constraint firstAttribute="width" constant="35" id="033-M1-Riv"/>
+                                    <constraint firstAttribute="height" constant="30" id="a6Y-us-uzi"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tKD-4q-O1Q">
-                                <rect key="frame" x="67" y="364.5" width="35" height="38.5"/>
+                                <rect key="frame" x="30" y="370.5" width="35" height="28.5"/>
                                 <color key="tintColor" name="adaptGreenColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="35" id="AM7-um-yIe"/>
-                                    <constraint firstAttribute="height" constant="40" id="kQc-ch-Gwl"/>
+                                    <constraint firstAttribute="height" constant="30" id="bTX-xy-v5d"/>
+                                    <constraint firstAttribute="width" constant="35" id="pYy-Pa-wjc"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="f54-oC-rrz">
+                                <rect key="frame" x="30" y="230.5" width="35" height="27.5"/>
+                                <color key="tintColor" name="adaptGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Oza-C9-ibg"/>
+                                    <constraint firstAttribute="width" constant="35" id="mTL-So-VlN"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="M7c-jy-MVs"/>
                         <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
-                            <constraint firstItem="pqj-LY-ZzD" firstAttribute="centerX" secondItem="uYy-zl-Dfv" secondAttribute="centerX" id="6Ah-pB-hLD"/>
-                            <constraint firstItem="VsH-4q-DyH" firstAttribute="top" secondItem="K5v-X0-uNI" secondAttribute="bottom" constant="15" id="IXf-kR-jbf"/>
-                            <constraint firstItem="VsH-4q-DyH" firstAttribute="centerX" secondItem="uYy-zl-Dfv" secondAttribute="centerX" id="ItP-Ie-7dH"/>
-                            <constraint firstItem="f54-oC-rrz" firstAttribute="leading" secondItem="M7c-jy-MVs" secondAttribute="leading" constant="67" id="KLS-Cb-jYJ"/>
-                            <constraint firstItem="K5v-X0-uNI" firstAttribute="centerX" secondItem="uYy-zl-Dfv" secondAttribute="centerX" id="Ngg-PO-hZm"/>
-                            <constraint firstItem="tKD-4q-O1Q" firstAttribute="leading" secondItem="M7c-jy-MVs" secondAttribute="leading" constant="67" id="O7f-Nv-ec3"/>
-                            <constraint firstItem="f54-oC-rrz" firstAttribute="top" secondItem="M7c-jy-MVs" secondAttribute="top" constant="209" id="bcC-AJ-oNr"/>
-                            <constraint firstItem="gFO-Yt-t2e" firstAttribute="top" secondItem="M7c-jy-MVs" secondAttribute="top" constant="45" id="gL0-q6-s0M"/>
-                            <constraint firstItem="pqj-LY-ZzD" firstAttribute="top" secondItem="gFO-Yt-t2e" secondAttribute="bottom" constant="75" id="hzd-54-awY"/>
-                            <constraint firstItem="tKD-4q-O1Q" firstAttribute="top" secondItem="K5v-X0-uNI" secondAttribute="bottom" constant="15" id="rIs-u0-GcZ"/>
-                            <constraint firstItem="gFO-Yt-t2e" firstAttribute="centerX" secondItem="uYy-zl-Dfv" secondAttribute="centerX" id="rbL-qt-4GH"/>
-                            <constraint firstItem="K5v-X0-uNI" firstAttribute="top" secondItem="pqj-LY-ZzD" secondAttribute="bottom" constant="15" id="ugq-hg-mZ0"/>
-                            <constraint firstItem="Uqh-NS-a3q" firstAttribute="top" secondItem="pqj-LY-ZzD" secondAttribute="bottom" constant="14" id="wrB-jN-4kv"/>
-                            <constraint firstItem="Uqh-NS-a3q" firstAttribute="leading" secondItem="M7c-jy-MVs" secondAttribute="leading" constant="67" id="wvL-li-BdS"/>
+                            <constraint firstItem="f54-oC-rrz" firstAttribute="top" secondItem="M7c-jy-MVs" secondAttribute="top" constant="185" id="0LV-zI-CQF"/>
+                            <constraint firstItem="M7c-jy-MVs" firstAttribute="trailing" secondItem="pqj-LY-ZzD" secondAttribute="trailing" constant="30" id="1Od-7W-UoF"/>
+                            <constraint firstItem="K5v-X0-uNI" firstAttribute="leading" secondItem="M7c-jy-MVs" secondAttribute="leading" constant="30" id="2dS-oK-lao"/>
+                            <constraint firstItem="M7c-jy-MVs" firstAttribute="trailing" secondItem="VsH-4q-DyH" secondAttribute="trailing" constant="30" id="46f-NK-LQn"/>
+                            <constraint firstItem="K5v-X0-uNI" firstAttribute="centerX" secondItem="uYy-zl-Dfv" secondAttribute="centerX" id="EeW-jW-5dZ"/>
+                            <constraint firstItem="M7c-jy-MVs" firstAttribute="trailing" secondItem="K5v-X0-uNI" secondAttribute="trailing" constant="30" id="GIh-NY-c8R"/>
+                            <constraint firstItem="VsH-4q-DyH" firstAttribute="centerX" secondItem="uYy-zl-Dfv" secondAttribute="centerX" id="LEL-Zn-KGB"/>
+                            <constraint firstItem="pqj-LY-ZzD" firstAttribute="centerX" secondItem="uYy-zl-Dfv" secondAttribute="centerX" id="RbZ-cL-MDG"/>
+                            <constraint firstItem="gFO-Yt-t2e" firstAttribute="centerX" secondItem="uYy-zl-Dfv" secondAttribute="centerX" id="TSU-yL-VDg"/>
+                            <constraint firstItem="pqj-LY-ZzD" firstAttribute="top" secondItem="gFO-Yt-t2e" secondAttribute="bottom" constant="40" id="aR6-Uv-Jcc"/>
+                            <constraint firstItem="tKD-4q-O1Q" firstAttribute="top" secondItem="K5v-X0-uNI" secondAttribute="bottom" constant="36" id="bE0-sJ-THf"/>
+                            <constraint firstItem="VsH-4q-DyH" firstAttribute="centerX" secondItem="uYy-zl-Dfv" secondAttribute="centerX" id="c96-Jn-bnx"/>
+                            <constraint firstItem="pqj-LY-ZzD" firstAttribute="leading" secondItem="M7c-jy-MVs" secondAttribute="leading" constant="30" id="dd0-v4-LFt"/>
+                            <constraint firstItem="K5v-X0-uNI" firstAttribute="top" secondItem="pqj-LY-ZzD" secondAttribute="bottom" constant="30" id="fDE-up-eRN"/>
+                            <constraint firstItem="gFO-Yt-t2e" firstAttribute="top" secondItem="M7c-jy-MVs" secondAttribute="top" constant="40" id="gBE-Hd-V8H"/>
+                            <constraint firstItem="tKD-4q-O1Q" firstAttribute="leading" secondItem="M7c-jy-MVs" secondAttribute="leading" constant="30" id="oNi-qp-Lf4"/>
+                            <constraint firstItem="VsH-4q-DyH" firstAttribute="top" secondItem="K5v-X0-uNI" secondAttribute="bottom" constant="30" id="rc9-sW-DkK"/>
+                            <constraint firstItem="Uqh-NS-a3q" firstAttribute="leading" secondItem="M7c-jy-MVs" secondAttribute="leading" constant="30" id="sD0-3Q-292"/>
+                            <constraint firstItem="Uqh-NS-a3q" firstAttribute="top" secondItem="pqj-LY-ZzD" secondAttribute="bottom" constant="35" id="t1O-uz-sT2"/>
+                            <constraint firstItem="VsH-4q-DyH" firstAttribute="leading" secondItem="M7c-jy-MVs" secondAttribute="leading" constant="30" id="uZE-vd-q1S"/>
+                            <constraint firstItem="f54-oC-rrz" firstAttribute="leading" secondItem="M7c-jy-MVs" secondAttribute="leading" constant="30" id="uab-Te-4a8"/>
                         </constraints>
                     </view>
                     <connections>
@@ -127,8 +125,8 @@
         <namedColor name="backgroundColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="textFieldColors">
-            <color red="0.5690000057220459" green="0.57200002670288086" blue="0.56699997186660767" alpha="0.49599999189376831" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="searchBarColor">
+            <color red="0.85600000619888306" green="0.86400002241134644" blue="0.84799998998641968" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

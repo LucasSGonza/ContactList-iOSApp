@@ -20,6 +20,8 @@
 		D92B541D2A69B10500FC407B /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92B541C2A69B10500FC407B /* ContactListViewController.swift */; };
 		D92B54222A69BE5500FC407B /* NewContact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D92B54212A69BE5500FC407B /* NewContact.storyboard */; };
 		D92B54272A69BE6200FC407B /* NewContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92B54262A69BE6200FC407B /* NewContactViewController.swift */; };
+		D94225602A9E82E4005EA1D5 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D942255E2A9E82E4005EA1D5 /* ContactTableViewCell.swift */; };
+		D94225612A9E82E4005EA1D5 /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D942255F2A9E82E4005EA1D5 /* ContactTableViewCell.xib */; };
 		D95BFF9F2A72FD1B0044E4DE /* EditContact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D95BFF9E2A72FD1B0044E4DE /* EditContact.storyboard */; };
 		D95BFFA42A72FD3C0044E4DE /* EditContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95BFFA32A72FD3C0044E4DE /* EditContactViewController.swift */; };
 		D9632F7D2A71B45A00550195 /* ContactListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9632F7C2A71B45A00550195 /* ContactListDelegate.swift */; };
@@ -63,6 +65,8 @@
 		D92B541C2A69B10500FC407B /* ContactListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListViewController.swift; sourceTree = "<group>"; };
 		D92B54212A69BE5500FC407B /* NewContact.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewContact.storyboard; sourceTree = "<group>"; };
 		D92B54262A69BE6200FC407B /* NewContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContactViewController.swift; sourceTree = "<group>"; };
+		D942255E2A9E82E4005EA1D5 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		D942255F2A9E82E4005EA1D5 /* ContactTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
 		D95BFF9E2A72FD1B0044E4DE /* EditContact.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditContact.storyboard; sourceTree = "<group>"; };
 		D95BFFA32A72FD3C0044E4DE /* EditContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContactViewController.swift; sourceTree = "<group>"; };
 		D9632F7C2A71B45A00550195 /* ContactListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListDelegate.swift; sourceTree = "<group>"; };
@@ -194,6 +198,7 @@
 		D92B54012A69ACCD00FC407B /* UITableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				D942255D2A9E82BE005EA1D5 /* ContactCell */,
 				D92B54022A69AD3200FC407B /* ContactsTableViewCell.swift */,
 				D92B54032A69AD3200FC407B /* ContactsTableViewCell.xib */,
 			);
@@ -216,6 +221,15 @@
 				D92B54002A69ACC200FC407B /* Extension */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		D942255D2A9E82BE005EA1D5 /* ContactCell */ = {
+			isa = PBXGroup;
+			children = (
+				D942255E2A9E82E4005EA1D5 /* ContactTableViewCell.swift */,
+				D942255F2A9E82E4005EA1D5 /* ContactTableViewCell.xib */,
+			);
+			path = ContactCell;
 			sourceTree = "<group>";
 		};
 		D95BFF9D2A72FD010044E4DE /* EditContact */ = {
@@ -348,6 +362,7 @@
 			files = (
 				D92B54182A69B0D300FC407B /* ContactList.storyboard in Resources */,
 				D92B53B72A69A6C900FC407B /* LaunchScreen.storyboard in Resources */,
+				D94225612A9E82E4005EA1D5 /* ContactTableViewCell.xib in Resources */,
 				D92B53B42A69A6C900FC407B /* Assets.xcassets in Resources */,
 				D92B54222A69BE5500FC407B /* NewContact.storyboard in Resources */,
 				D92B54052A69AD3200FC407B /* ContactsTableViewCell.xib in Resources */,
@@ -382,6 +397,7 @@
 				D92B53AD2A69A6C800FC407B /* SceneDelegate.swift in Sources */,
 				D9632F7D2A71B45A00550195 /* ContactListDelegate.swift in Sources */,
 				D95BFFA42A72FD3C0044E4DE /* EditContactViewController.swift in Sources */,
+				D94225602A9E82E4005EA1D5 /* ContactTableViewCell.swift in Sources */,
 				D9DC9C962A70464A00DB1443 /* HelperController.swift in Sources */,
 				D92B54272A69BE6200FC407B /* NewContactViewController.swift in Sources */,
 				D92B541D2A69B10500FC407B /* ContactListViewController.swift in Sources */,

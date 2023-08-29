@@ -38,18 +38,35 @@ class NewContactViewController: HelpController {
     }
     
     private func setupTextFields() {
+        let textFieldsColor:UIColor = UIColor.systemGray
+        
         nameTextField.attributedPlaceholder = NSAttributedString(
                     string: "Name",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray]
+            attributes: [NSAttributedString.Key.foregroundColor: textFieldsColor]
                 )
+        nameTextField.layer.borderColor = textFieldsColor.cgColor
+        nameTextField.layer.borderWidth = 1.5
+        nameTextField.borderStyle = .roundedRect
+        nameTextField.layer.cornerRadius = 10.0
+        nameTextField.layer.masksToBounds = true
+        
         lastNameTextField.attributedPlaceholder = NSAttributedString(
                     string: "Last Name",
-                    attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray]
+                    attributes: [NSAttributedString.Key.foregroundColor: textFieldsColor]
                 )
+        lastNameTextField.layer.borderColor = textFieldsColor.cgColor
+        lastNameTextField.layer.borderWidth = 1.5
+        lastNameTextField.borderStyle = .roundedRect
+        lastNameTextField.layer.cornerRadius = 10.0
+        
         phoneTextField.attributedPlaceholder = NSAttributedString(
                     string: "Phone",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray]
+            attributes: [NSAttributedString.Key.foregroundColor: textFieldsColor]
                 )
+        phoneTextField.layer.borderColor = textFieldsColor.cgColor
+        phoneTextField.layer.borderWidth = 1.5
+        phoneTextField.borderStyle = .roundedRect
+        phoneTextField.layer.cornerRadius = 10.0
     }
     
     //MARK: setup NavBar
