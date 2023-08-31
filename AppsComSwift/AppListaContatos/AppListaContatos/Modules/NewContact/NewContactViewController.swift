@@ -58,6 +58,7 @@ class NewContactViewController: HelpController {
         lastNameTextField.layer.borderWidth = 1.5
         lastNameTextField.borderStyle = .roundedRect
         lastNameTextField.layer.cornerRadius = 10.0
+        lastNameTextField.layer.masksToBounds = true
         
         phoneTextField.attributedPlaceholder = NSAttributedString(
                     string: "Phone",
@@ -67,6 +68,7 @@ class NewContactViewController: HelpController {
         phoneTextField.layer.borderWidth = 1.5
         phoneTextField.borderStyle = .roundedRect
         phoneTextField.layer.cornerRadius = 10.0
+        phoneTextField.layer.masksToBounds = true
     }
     
     //MARK: setup NavBar

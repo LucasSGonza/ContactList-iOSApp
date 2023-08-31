@@ -13,6 +13,7 @@ class ContactTableViewCell: UITableViewCell {
     @IBOutlet weak var pencilImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
+    @IBOutlet weak var favoriteImageView: UIImageView!
     
     private weak var delegate:EditContactDelegate?
     private var contact:Contact?
@@ -24,7 +25,6 @@ class ContactTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     
@@ -39,9 +39,27 @@ class ContactTableViewCell: UITableViewCell {
         pencilImageView.addGestureRecognizer(tap)
     }
     
-    //MARK: Func for trashIMG action
+    //MARK: go to EditContact
     @objc func pencilSelected() {
         guard let contact = contact else { return }
         delegate?.goToEditContact(contact)
     }
+    
+    //MARK: Favorite func
+    @objc func favoriteSelected() {
+        guard let contact = contact else { return }
+        
+        if contact.isFavorite {
+            contact.isFavorite = false
+            favoriteImageView.image = UIImage(systemName: "star")
+            favoriteImageView.isHidden = true
+            favoriteImageView.isUserInteractionEnabled = true
+        } else {
+            contact.isFavorite = true
+            favoriteImageView.image = UIImage(systemName: "star.fill")
+            favoriteImageView.isHidden = false
+            favoriteImageView.isUserInteractionEnabled = false
+        }
+    }
+    
 }

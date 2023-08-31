@@ -19,7 +19,8 @@ class EditContactViewController: HelpController {
     //MARK:Pass & Receive Data
     private var contactList:[Contact] = []
     private var delegate:ContactListDelegate?
-    private var contact:Contact?
+    private var contact:Contact = Contact()
+    private var aceptChanges:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,9 +28,9 @@ class EditContactViewController: HelpController {
         setupNavigationBar()
         setupIconActions()
         
-        guard let contact = contact else {return }
-        print(contact.isFavorite)
-        favoriteImageView.image = contact.isFavorite ? UIImage(systemName: "bookmark.fill") : UIImage(systemName: "bookmark")
+        print(contact.showInfos())
+        //guard let contact = contact else {return }
+        favoriteImageView.image = contact.isFavorite ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
     }
     
     //MARK: InitView
@@ -38,11 +39,6 @@ class EditContactViewController: HelpController {
         self.contactList = contactList
         self.delegate = delegate
     }
-    
-//    private func myContact() -> Contact? {
-//        guard let contact = contact else { return nil}
-//        return contact
-//    }
     
     //MARK: Icon actions
     private func setupIconActions() {
@@ -61,7 +57,7 @@ class EditContactViewController: HelpController {
     //MARK: TextFields
     private func setupTextFields() {
         //procura Array pelo id
-        guard let contact = contact else { return }
+        //guard let contact = contact else { return }
         self.nameTextField.text = contact.getName()
         self.lastNameTextField.text = contact.getLastName()
         self.phoneTextField.text = contact.getPhone()
@@ -98,21 +94,26 @@ class EditContactViewController: HelpController {
     //MARK: goBack
     //volta para dashboard
     @objc private func goBack() {
-        guard let delegate = delegate else { return }
-        delegate.setContactList(contactList)
-        self.navigationController?.popViewController(animated: true)
-        //self.dismiss(animated: true, completion: nil)
+        if aceptChanges {
+            guard let delegate = delegate else { return }
+            delegate.setContactList(contactList)
+            self.navigationController?.popViewController(animated: true)
+        } else {
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     //MARK: confirmEdition
     //confirma a edição do contato
     @objc private func confirmEdition() {
-        guard let firstName = nameTextField.text, let lastName = lastNameTextField.text, let phone = phoneTextField.text, let contact = contact else { return }
+        
+        guard let firstName = nameTextField.text, let lastName = lastNameTextField.text, let phone = phoneTextField.text else { return }
         
         if !firstName.isEmpty || !lastName.isEmpty {
-            let newContact = Contact(name: firstName, lastName: lastName, phone: phone)
+            let newContact = Contact(name: firstName, lastName: lastName, phone: phone, favorite: contact.isFavorite)
             contactList[contact.getID()] = newContact
-            setupAlert(title: "Success", message: "Contact updated!")
+            self.aceptChanges = true
+            setupAlert(title: "Success", message: "Contact updated!", completion: { self.goBack() })
         } else {
             setupAlert(title: "ERROR", message: "At least inform a 'Name' or a 'Last Name' for the contact")
         }
@@ -121,14 +122,14 @@ class EditContactViewController: HelpController {
     //MARK: favorite
     //favorita ou desfavorita o contato
     @objc private func favoriteContact() {
-        guard let contact = contact else {return }
+        //guard let contact = contact else {return }
         
         if contact.isFavorite {//contact is favorite? when click will become not favorite
             contact.isFavorite = false
-            favoriteImageView.image = UIImage(systemName: "bookmark")
+            favoriteImageView.image = UIImage(systemName: "star")
         } else {
             contact.isFavorite = true
-            favoriteImageView.image = UIImage(systemName: "bookmark.fill")
+            favoriteImageView.image = UIImage(systemName: "star.fill")
         }
         print(contact.isFavorite)
     }
@@ -137,11 +138,11 @@ class EditContactViewController: HelpController {
     //deletar contato
     @objc private func deleteContact() {
         print(contactList)
-        guard let contact = contact else { return }
+        //guard let contact = contact else { return }
         contactList.removeAll(where: {$0.getID() == contact.getID()})
+        aceptChanges = true
         setupAlert(title: "Sucess!", message: "Contact deleted with success", completion: { self.goBack() })
         print(contactList)
-        
     }
 
 }

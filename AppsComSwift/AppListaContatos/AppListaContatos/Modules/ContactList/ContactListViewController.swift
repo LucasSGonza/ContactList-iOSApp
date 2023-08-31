@@ -21,12 +21,16 @@ class ContactListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var listImageView: UIImageView!
+    @IBOutlet weak var favoriteImageView: UIImageView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
         setupSearchBar()
         setupTableView()
+        setupIconActions()
         // Do any additional setup after loading the view.
     }
     
@@ -36,10 +40,28 @@ class ContactListViewController: UIViewController {
         tableView.reloadData()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-//        tableView.visibleCells.forEach { cell in
-//            cell.contentView.backgroundColor = .none
-//        }
+    //MARK: setup ImageView
+    private func setupIconActions() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(changeList))
+        listImageView.addGestureRecognizer(tap)
+    }
+    
+    @objc private func changeList() {
+        // se o favorito nao estiver selecionado, selecioná-lo
+        if favoriteImageView.image == UIImage(systemName: "star") {
+            listImageView.image = UIImage(systemName: "text.book.closed.fill")
+            favoriteImageView.image = UIImage(systemName: "star.fill")
+            
+            filterData = filterData.filter { $0.isFavorite }
+            tableView.reloadData()
+        } else {
+            listImageView.image = UIImage(systemName: "text.book.closed")
+            favoriteImageView.image = UIImage(systemName: "star")
+            
+            filterData.removeAll()
+            filterData.append(contentsOf: contactList)
+            tableView.reloadData()
+        }
     }
     
     //MARK: setup TableView
@@ -47,6 +69,7 @@ class ContactListViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "ContactTableViewCell", bundle: nil), forCellReuseIdentifier: "ContactCell")
+        tableView.tableFooterView = UIView() //somente cria linhas de separação quando existem células na tableView
     }
     
     //MARK: setup NavBar
@@ -62,13 +85,6 @@ class ContactListViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = newContactButton
     }
     
-    //MARK: go to NewContactVC
-    @objc private func goToNewContact() {
-        let newContact = UIStoryboard(name: "NewContact", bundle: nil).instantiateViewController(withIdentifier: "NewContact") as! NewContactViewController
-        newContact.initView(contactList, delegate: self)
-        self.navigationController?.pushViewController(newContact, animated: true)
-    }
-    
     //MARK: setup searchBar
     private func setupSearchBar() {
         searchBar.isTranslucent = true
@@ -76,6 +92,13 @@ class ContactListViewController: UIViewController {
         searchBar.searchTextField.backgroundColor = UIColor(named: "searchBarColor")
         searchBar.tintColor = UIColor(named: "adaptDarkLightMode")
         searchBar.delegate = self /*necessario tal qual na tableView*/
+    }
+    
+    //MARK: go to NewContactVC
+    @objc private func goToNewContact() {
+        let newContact = UIStoryboard(name: "NewContact", bundle: nil).instantiateViewController(withIdentifier: "NewContact") as! NewContactViewController
+        newContact.initView(contactList, delegate: self)
+        self.navigationController?.pushViewController(newContact, animated: true)
     }
     
 }
@@ -116,7 +139,27 @@ extension ContactListViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContactCell", for: indexPath) as! ContactTableViewCell
         let contact = filterData[indexPath.row]
+        
         cell.bind(item: contact, delegate: self)
+        
+        //cell.accessoryType = .none //icone que fica na direita de cada cell
+        
+        //tentei usar ternário e da erro
+        if contact.isFavorite {
+            //cell.iconImageView.tintColor = UIColor.systemYellow
+            cell.favoriteImageView.isHidden = false
+            cell.favoriteImageView.image = UIImage(systemName: "star.fill")
+        } else {
+            //cell.iconImageView.tintColor = UIColor(named: "adaptGreenColor")
+            cell.favoriteImageView.isHidden = true
+            cell.favoriteImageView.image = UIImage(systemName: "star")
+        }
+        
+        //cell.layer.borderColor = UIColor(named: "adaptGreenColor")?.cgColor ?? UIColor.systemGreen.cgColor
+        //cell.layer.borderWidth = 1.5
+        //cell.layer.cornerRadius = 10.0
+        cell.layer.masksToBounds = true
+        
         return cell
     }
     
@@ -136,6 +179,7 @@ extension ContactListViewController: UITableViewDelegate, UITableViewDataSource 
     }
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        print("deletando...")
         if editingStyle == .delete {
             tableView.beginUpdates()
             filterData.remove(at: indexPath.row)
@@ -144,7 +188,6 @@ extension ContactListViewController: UITableViewDelegate, UITableViewDataSource 
             tableView.endUpdates()
         }
     }
-    
 }
 
 //MARK: ContactList Delegate

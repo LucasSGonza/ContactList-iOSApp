@@ -16,10 +16,11 @@ class Contact {
     public var isFavorite:Bool = false
     
     //init padrão
-    init(name:String, lastName:String, phone:String) {
+    init(name:String, lastName:String, phone:String, favorite:Bool) {
         self.name = name
         self.lastName = lastName
         self.phone = phone
+        self.isFavorite = favorite
     }
     
     init() {

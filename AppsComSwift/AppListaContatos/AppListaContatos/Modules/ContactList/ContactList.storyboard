@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact List" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yeY-kf-47t">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact List" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yeY-kf-47t">
                                 <rect key="frame" x="11" y="64" width="172" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="172" id="Fza-NI-aaf"/>
@@ -40,8 +40,8 @@
                                 <color key="backgroundColor" name="backgroundColor"/>
                                 <color key="separatorColor" systemColor="systemGray2Color"/>
                             </tableView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="text.book.closed" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xzw-WN-tpa">
-                                <rect key="frame" x="346" y="64" width="63" height="36"/>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="text.book.closed" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="xzw-WN-tpa">
+                                <rect key="frame" x="338" y="64" width="63" height="36"/>
                                 <color key="backgroundColor" name="backgroundColor"/>
                                 <color key="tintColor" name="adaptGreenColor"/>
                                 <constraints>
@@ -49,18 +49,29 @@
                                     <constraint firstAttribute="width" constant="63" id="zqc-RO-aS0"/>
                                 </constraints>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="HPF-7O-3Ir">
+                                <rect key="frame" x="384" y="84.5" width="20" height="20"/>
+                                <color key="backgroundColor" name="backgroundColor"/>
+                                <color key="tintColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="EwJ-iq-Kmh"/>
+                                    <constraint firstAttribute="width" constant="20" id="hcH-Wr-jiQ"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hSH-hS-PYe"/>
                         <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
-                            <constraint firstItem="hSH-hS-PYe" firstAttribute="trailing" secondItem="xzw-WN-tpa" secondAttribute="trailing" constant="5" id="7gx-eg-epc"/>
+                            <constraint firstItem="hSH-hS-PYe" firstAttribute="trailing" secondItem="xzw-WN-tpa" secondAttribute="trailing" constant="13" id="7gx-eg-epc"/>
                             <constraint firstItem="Vyw-VY-NXm" firstAttribute="leading" secondItem="hSH-hS-PYe" secondAttribute="leading" id="M4D-T3-HZA"/>
                             <constraint firstItem="Vyw-VY-NXm" firstAttribute="trailing" secondItem="hSH-hS-PYe" secondAttribute="trailing" id="R0S-tk-VYC"/>
                             <constraint firstItem="hSH-hS-PYe" firstAttribute="trailing" secondItem="UMM-WD-FiZ" secondAttribute="trailing" id="TsE-gD-iTB"/>
                             <constraint firstItem="Vyw-VY-NXm" firstAttribute="centerX" secondItem="IbO-zp-pKN" secondAttribute="centerX" id="UEv-eH-beX"/>
+                            <constraint firstItem="hSH-hS-PYe" firstAttribute="trailing" secondItem="HPF-7O-3Ir" secondAttribute="trailing" constant="10" id="V8U-DK-GEc"/>
                             <constraint firstItem="yeY-kf-47t" firstAttribute="top" secondItem="hSH-hS-PYe" secondAttribute="top" constant="20" id="bc3-hb-WzW"/>
                             <constraint firstItem="Vyw-VY-NXm" firstAttribute="top" secondItem="yeY-kf-47t" secondAttribute="bottom" constant="5" id="d0d-2e-cUa"/>
                             <constraint firstItem="xzw-WN-tpa" firstAttribute="top" secondItem="hSH-hS-PYe" secondAttribute="top" constant="20" id="dR1-CF-r6O"/>
+                            <constraint firstItem="HPF-7O-3Ir" firstAttribute="top" secondItem="hSH-hS-PYe" secondAttribute="top" constant="41" id="kWT-sU-6MU"/>
                             <constraint firstItem="yeY-kf-47t" firstAttribute="leading" secondItem="hSH-hS-PYe" secondAttribute="leading" constant="11" id="lBA-pI-dHK"/>
                             <constraint firstItem="UMM-WD-FiZ" firstAttribute="top" secondItem="Vyw-VY-NXm" secondAttribute="bottom" constant="5" id="sb5-lu-2Dr"/>
                             <constraint firstItem="UMM-WD-FiZ" firstAttribute="leading" secondItem="hSH-hS-PYe" secondAttribute="leading" id="xJV-fS-HuD"/>
@@ -68,6 +79,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="favoriteImageView" destination="HPF-7O-3Ir" id="ZTf-gy-MH9"/>
+                        <outlet property="listImageView" destination="xzw-WN-tpa" id="pvK-7k-mum"/>
                         <outlet property="searchBar" destination="Vyw-VY-NXm" id="PdT-pJ-pSK"/>
                         <outlet property="tableView" destination="UMM-WD-FiZ" id="zdD-OE-5oT"/>
                     </connections>
@@ -78,6 +91,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="star" catalog="system" width="128" height="116"/>
         <image name="text.book.closed" catalog="system" width="115" height="128"/>
         <namedColor name="adaptDarkLightMode">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -90,6 +104,9 @@
         </namedColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
