@@ -1,9 +1,8 @@
 # JovemAprendizIntelbras
-<p> 
-  Repositório voltado para <b>organizar, registrar e manter</b> todos os conhecimentos adquiridos e desenvolvidos durante minha trajetória como <b>Jovem Aprendiz na     Intelbras</b>
-</p>
+<div>
+	<p>Repositório voltado para <b>organizar, registrar e manter</b> todos os conhecimentos adquiridos e desenvolvidos durante minha trajetória como <b>Jovem Aprendiz na Intelbras</b></p>
+</div>
 
-<hr>
 <details>
 <summary><h2>Dicas sobre Git <img src='https://git-scm.com/images/logos/downloads/Git-Icon-1788C.svg' width=30px>:</h2></summary
 
@@ -130,22 +129,21 @@ ou seja, utlizando o ‘ _ ‘,vc retira a necessidade de, quando for chamar a f
 
 ‘ ?? ‘ —> utiliza-se quando a variável é do tipo opcional, dessa forma, após as ??, coloca-se um valor padrão para a mesma.
 
-	This operator is generally used to provide a default value when an expression or variable produces an 		optional result. for ex:
-		let i: Int? = 5
-		let j: Int? = nil
+This operator is generally used to provide a default value when an expression or variable produces an optional result. for ex:
+	let i: Int? = 5
+	let j: Int? = nil
+	let value1 = i ?? 9 //value1 will be 5 non-optional
+	let value2 = j ?? 9 //value2 will be 9 non-optional
 
-		let value1 = i ?? 9 //value1 will be 5 non-optional
-		let value2 = j ?? 9 //value2 will be 9 non-optional
-
-	You can chain multiple of these operators as such:
-		let value3 = j ?? i ?? 9 //value3 will be 5 non-optional
+You can chain multiple of these operators as such:
+	let value3 = j ?? i ?? 9 //value3 will be 5 non-optional
 </pre>
 	
-* Concatenação => 
-	<pre>
-	print (“Média: “, media) => usar + da erro. O “+” iria concatenar apenas se tudo fosse String.
-	Dica: utilizamos “\(valor)” para inserirmos o valor de uma variável ou constante dentro de uma string (Interpolação).
-	</pre>
+<h3>Concatenação => </h3>
+<pre>
+print (“Média: “, media) => usar + da erro. O “+” iria concatenar apenas se tudo fosse String.
+Dica: utilizamos “\(valor)” para inserirmos o valor de uma variável ou constante dentro de uma string (Interpolação).
+</pre>
 	
 <hr>
 
