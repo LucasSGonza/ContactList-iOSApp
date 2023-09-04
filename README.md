@@ -102,7 +102,7 @@ link: https://blog.betrybe.com/git/git-checkout/#1</pre>
 <div id='swift'>
 	<details>
 		<summary style='font-size:x-large'>
-		<img src='https://img.shields.io/badge/Swift-FA7343?style=flat&logo=swift&logoColor=white' width='73px'></summary>
+		<img src='https://img.shields.io/badge/Swift-FA7343?style=flat&logo=swift&logoColor=white' width='73px'></summary><br>
 		<div id="caracteristicaslinguagem">
 			<details>
 			<summary style='font-size:medium'>📚 Características da Linguagem</summary>
