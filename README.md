@@ -103,8 +103,8 @@ link: https://blog.betrybe.com/git/git-checkout/#1</pre>
 	<details>
 		<summary style='font-size:x-large'>
 		<img src='https://img.shields.io/badge/Swift-FA7343?style=flat&logo=swift&logoColor=white' width='73px'></summary><br>
-		<div id="caracteristicaslinguagem">
-			<details>
+		<div>
+			<details id="caracteristicaslinguagem">
 			<summary style='font-size:medium'>📚 Características da Linguagem</summary>
 			<pre>
 🔸 Tipagem --> tipo da variável é definido baseado no 1º valor que ela receber. Uma vez definido o tipo, este não poderá ser modificado<br>
@@ -500,4 +500,5 @@ class Employee: Greet {<br>
 			</details>
 		</div>
 	</details>
+	<a href='#top'>Back to top</a>
 </div>
