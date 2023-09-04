@@ -497,8 +497,8 @@ class Employee: Greet {<br>
 				<pre>
 🔸Delegates are a design pattern that allows one object to send messages to another object when a specific event happens.<br>
 🔸Imagine an object A calls an object B to perform an action. Once the action is complete, object A should know that B has completed the task and take necessary action, this can be achieved with the help of delegates!</pre>
+				<a href='#top'>Back to top</a>
 			</details>
 		</div>
 	</details>
-	<a href='#top'>Back to top</a>
 </div>
