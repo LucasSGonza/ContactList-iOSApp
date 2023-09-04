@@ -30,9 +30,9 @@
 				▪ <b>git add .</b><pre>seleciona todos os arquivos locais </pre>
 				▪ <b>git push origin '{branch}'</b><pre>especifica a branch na qual receberá o push</pre>
 				▪ <b>git remote add origin '{link repositorio}'</b><pre>é usado para adicionar um repositório remoto como uma referência em seu repositório local. Ele define a conexão entre o seu repositório local e o repositório remoto, permitindo que você envie e receba alterações entre os dois</pre>
-				▪ <b>git branch</b><pre>realizar operações com branches (criar, listar, renomear ou excluir) link: https://blog.betrybe.com/git/git-branch/#1</pre>
+				▪ <b>git branch</b><pre>realizar operações com branches (criar, listar, renomear ou excluir) link: <a href='https://blog.betrybe.com/git/git-branch/#1'>https://blog.betrybe.com/git/git-branch/#1</a></pre>
 				▪ <b>git checkout</b><pre>alterar a branch ou restaurar arquivos (da pra usar o 'git checkout -b {nome branch}' para criar e já entrar nessa nova branch (ramificação) criada). 
-link: https://blog.betrybe.com/git/git-checkout/#1</pre>
+link: <a href='https://blog.betrybe.com/git/git-checkout/#1'>https://blog.betrybe.com/git/git-checkout/#1</a></pre>
 				▪ <b>git status</b><pre>dá todas as informações necessárias sobre a branch atual</pre>
 				▪ <b>git reset</b><pre>desfaz alterações (commits)</pre>
 				▪ <b>git rm</b><pre>remove arquivos</pre>
