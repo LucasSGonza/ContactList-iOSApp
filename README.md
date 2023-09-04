@@ -70,30 +70,30 @@ link: https://blog.betrybe.com/git/git-checkout/#1</pre>
 		<summary style='font-size:x-large'>🔗 Links</summary>
 		<h4>🌎Links Gerais</h4>
 		<pre>
-➡ <a>https://gitfichas.com/</a><br>
-➡ <a>https://comandosgit.github.io/</a><br>
-➡ <a>https://www.freecodecamp.org/portuguese/news/10-comandos-do-git-que-todo-desenvolvedor-deveria-conhecer/</a><br>
-➡ <a>https://medium.com/@rafaelpiresvb/programação-reativa-com-reactivex-no-swift-e-kotlin-71e8a78fe07f</a><br>
-➡ <a>https://replit.com/@LucasSGonza</a><br>
-➡ <a>https://updatedcode.wordpress.com/2016/06/13/3-swift-colecoes-e-tuplas/</a><br>
-➡ <a>https://www.hackingwithswift.com/example-code/system/how-do-you-read-from-the-command-line</a><br>
-➡ <a>https://www.youtube.com/playlist?list=PLJ0AcghBBWShgIH122uw7H9T9-NIaFpP-</a><br>
-➡ <a>https://www.youtube.com/watch?v=EFYdfF9r6cM</a><br>
-➡ <a>https://www.codecademy.com/learn/learn-swift/modules/learn-swift-hello-world/cheatsheet</a><br>
-➡ <a>https://www.codingame.com/playgrounds/66493/swift---variaveis-tipos-tuplas-enumeracoes-e-operadores</a><br>
-➡ <a>https://macmagazine.com.br/sobre/quaddro-macmagazine/</a><br>
-➡ <a>https://tiagoaguiar.co/xcode-shortcuts-teclas-de-atalho#:~:text=cmd%20%2B%20%5B%20%3A%3A%20unindent&text=Um%20bom%20desenvolvedor%20de%20software,atalho%20dentro%20do%20seu%20Xcode</a><br>
-➡ <a>https://www.tutorialspoint.com/swift-program-to-get-input-from-the-user#</a><br>
-➡ <a>https://www.codecademy.com/learn/learn-swift/modules/learn-swift-hello-world/cheatsheet</a>
+➡ <a href='https://gitfichas.com/'>https://gitfichas.com/</a><br>
+➡ <a href='https://comandosgit.github.io/'>https://comandosgit.github.io/</a><br>
+➡ <a href='https://www.freecodecamp.org/portuguese/news/10-comandos-do-git-que-todo-desenvolvedor-deveria-conhecer/'>https://www.freecodecamp.org/portuguese/news/10-comandos-do-git-que-todo-desenvolvedor-deveria-conhecer/</a><br>
+➡ <a href='https://medium.com/@rafaelpiresvb/programação-reativa-com-reactivex-no-swift-e-kotlin-71e8a78fe07f'>https://medium.com/@rafaelpiresvb/programação-reativa-com-reactivex-no-swift-e-kotlin-71e8a78fe07f</a><br>
+➡ <a href='https://replit.com/@LucasSGonza'>https://replit.com/@LucasSGonza</a><br>
+➡ <a href='https://updatedcode.wordpress.com/2016/06/13/3-swift-colecoes-e-tuplas/'>https://updatedcode.wordpress.com/2016/06/13/3-swift-colecoes-e-tuplas/</a><br>
+➡ <a href='https://www.hackingwithswift.com/example-code/system/how-do-you-read-from-the-command-line'>https://www.hackingwithswift.com/example-code/system/how-do-you-read-from-the-command-line</a><br>
+➡ <a href='https://www.youtube.com/playlist?list=PLJ0AcghBBWShgIH122uw7H9T9-NIaFpP-'>https://www.youtube.com/playlist?list=PLJ0AcghBBWShgIH122uw7H9T9-NIaFpP-</a><br>
+➡ <a href='https://www.youtube.com/watch?v=EFYdfF9r6cM'>https://www.youtube.com/watch?v=EFYdfF9r6cM</a><br>
+➡ <a href='https://www.codecademy.com/learn/learn-swift/modules/learn-swift-hello-world/cheatsheet'>https://www.codecademy.com/learn/learn-swift/modules/learn-swift-hello-world/cheatsheet</a><br>
+➡ <a href='https://www.codingame.com/playgrounds/66493/swift---variaveis-tipos-tuplas-enumeracoes-e-operadores'>https://www.codingame.com/playgrounds/66493/swift---variaveis-tipos-tuplas-enumeracoes-e-operadores</a><br>
+➡ <a href='https://macmagazine.com.br/sobre/quaddro-macmagazine/'>https://macmagazine.com.br/sobre/quaddro-macmagazine/</a><br>
+➡ <a href='https://tiagoaguiar.co/xcode-shortcuts-teclas-de-atalho#:~:text=cmd%20%2B%20%5B%20%3A%3A%20unindent&text=Um%20bom%20desenvolvedor%20de%20software,atalho%20dentro%20do%20seu%20Xcode'>https://tiagoaguiar.co/xcode-shortcuts-teclas-de-atalho#:~:text=cmd%20%2B%20%5B%20%3A%3A%20unindent&text=Um%20bom%20desenvolvedor%20de%20software,atalho%20dentro%20do%20seu%20Xcode</a><br>
+➡ <a href='https://www.tutorialspoint.com/swift-program-to-get-input-from-the-user#'>https://www.tutorialspoint.com/swift-program-to-get-input-from-the-user#</a><br>
+➡ <a href='https://www.codecademy.com/learn/learn-swift/modules/learn-swift-hello-world/cheatsheet'>https://www.codecademy.com/learn/learn-swift/modules/learn-swift-hello-world/cheatsheet</a>
   		</pre>
 		<h4>📱 Desenvolvimento Mobile<h4>
 		<pre>
-➡ <a>https://www.alura.com.br/artigos/ios-swift-diferencas-construcao-layouts-storyboard-xib-view-code?gclid=CjwKCAjwp6CkBhB_EiwAlQVyxTN_Ww64Fd-mqoph6pqmOBo-G1BNj3CfPyQqXxegOwGjbAr8yUsJPBoCj5kQAvD_BwE</a><br>
-➡ <a>https://medium.com/good-morning-swift/ios-view-controller-life-cycle-2a0f02e74ff5</a><br>
-➡ <a>https://caiocnoronha.medium.com/como-passar-entre-p%C3%A1ginas-no-xcode-f7613820d912</a><br>
-➡ <a>https://www.youtube.com/watch?v=XzyF36Wun3U</a><br>
-➡ <a>https://www.youtube.com/watch?v=DxCydBmOqXU</a><br>
-➡ <a>https://www.youtube.com/watch?v=09TeUXjzpKs</a><br></pre>
+➡ <a href='https://www.alura.com.br/artigos/ios-swift-diferencas-construcao-layouts-storyboard-xib-view-code?gclid=CjwKCAjwp6CkBhB_EiwAlQVyxTN_Ww64Fd-mqoph6pqmOBo-G1BNj3CfPyQqXxegOwGjbAr8yUsJPBoCj5kQAvD_BwE'>https://www.alura.com.br/artigos/ios-swift-diferencas-construcao-layouts-storyboard-xib-view-code?gclid=CjwKCAjwp6CkBhB_EiwAlQVyxTN_Ww64Fd-mqoph6pqmOBo-G1BNj3CfPyQqXxegOwGjbAr8yUsJPBoCj5kQAvD_BwE</a><br>
+➡ <a href='https://medium.com/good-morning-swift/ios-view-controller-life-cycle-2a0f02e74ff5'>https://medium.com/good-morning-swift/ios-view-controller-life-cycle-2a0f02e74ff5</a><br>
+➡ <a href='https://caiocnoronha.medium.com/como-passar-entre-p%C3%A1ginas-no-xcode-f7613820d912'>https://caiocnoronha.medium.com/como-passar-entre-p%C3%A1ginas-no-xcode-f7613820d912</a><br>
+➡ <a href='https://www.youtube.com/watch?v=XzyF36Wun3U'>https://www.youtube.com/watch?v=XzyF36Wun3U</a><br>
+➡ <a href='https://www.youtube.com/watch?v=DxCydBmOqXU'>https://www.youtube.com/watch?v=DxCydBmOqXU</a><br>
+➡ <a href='https://www.youtube.com/watch?v=09TeUXjzpKs'>https://www.youtube.com/watch?v=09TeUXjzpKs</a><br></pre>
 	</details>
 </div>
 
@@ -114,7 +114,9 @@ link: https://blog.betrybe.com/git/git-checkout/#1</pre>
 usar ‘ _ ‘ (underline) significa que o valor não é necessário ser citado. Exemplo: <br>
 * for _ in 0…2 { print(‘Ola Mundo’) } —> irá simplesmente realizar o código do loop 3x
 * func calcMedia (_ nota1: Double, _ nota2: Double ) { //codigo } <br>
---> nesse caso, por padrao as funções em swift utilizam de ‘label’ (tag identificador) para cada parâmetro, ou seja, utlizando o ‘ _ ‘,vc retira a necessidade de, quando for chamar a função, ter que colocar as labels, no caso os nomes utilizados, no exemplo citado sendo nota1, nota2
+--> nesse caso, por padrao as funções em swift utilizam de ‘label’ (tag identificador) para cada parâmetro, ou seja, utlizando o ‘ _ ‘,vc 
+retira a necessidade de, quando for chamar a função, 
+ter que colocar as labels, no caso os nomes utilizados, no exemplo citado sendo nota1, nota2
 </pre>
 🔸 Programando com 'Opcionais': deve-se tomar cuidado ❗<pre>
 ‘ ?? ‘ —> utiliza-se quando a variável é do tipo opcional, dessa forma, após as ??, coloca-se um valor padrão para a mesma.<br>
@@ -149,7 +151,8 @@ Dica: utilizamos “\(valor)” para inserirmos o valor de uma variável ou cons
 * let num: Int = 1; </pre>
 				<h4>💱 Conversão de dados <i>(type casting)</i></h4>
 				<pre>
-Como foi citado anteriormente nas <a href=#caracteristicaslinguagem>'Características da linguagem'</a>, uma vez declarado o tipo da variável, não é mais possível trocar seu tipo. Contudo, ainda pode ser feita uma 'adaptação':<br>
+Como foi citado anteriormente nas <a href=#caracteristicaslinguagem>'Características da linguagem'</a>, uma vez declarado o tipo da variável, não é mais possível trocar seu tipo. 
+Contudo, ainda pode ser feita uma 'adaptação':<br>
 Sintaxe 1: tipoDado(variável);
 Ex:
 Let x = 10;
@@ -160,7 +163,8 @@ print(name) —> “10”</pre>
 🍺 IS --> funciona como um if, no caso como se fosse uma afirmação, que retornará um booleano. Ex:<pre>
 nota is Double //true
 nome is Int //false</pre>
-🍷 AS --> funciona como uma atribuição (como em SQL), no caso indicando um tipo para a variável/objeto caso este não esteja explícito. É utilizado juntamente dos operadores '!' e '?', assim como nas opcionais. Ex:<pre>
+🍷 AS --> funciona como uma atribuição (como em SQL), no caso indicando um tipo para a variável/objeto caso este não esteja explícito. É utilizado juntamente dos operadores '!' e '?', 
+assim como nas opcionais. Ex:<pre>
 //forçar o desempacotamento (usado quando se tem certeza do tipo da variável)
 nome as! String<br>
 //tentará mudar o tipo para String, mas retornará nil caso não consiga
@@ -169,7 +173,7 @@ email as? String</pre>
 				<h4>🎮 Operadores Lógicos</h4>
 				<pre>No geral, igual as outras linguagens (<,>,//, ==, !=, !, +=, -=, …, &&, ||)
 link:
-<a>https://docs.swift.org/swift-book/documentation/the-swift-programming-language/basicoperators/</a>
+<a href='https://docs.swift.org/swift-book/documentation/the-swift-programming-language/basicoperators/'>https://docs.swift.org/swift-book/documentation/the-swift-programming-language/basicoperators/</a>
 </pre>
 				<h4>❓ Operadores Condicionais</h4>
 				<pre>
@@ -190,7 +194,8 @@ Operador ternário: sintaxe --> expressão ? valor-seTrue : valor-seFalse;
 				<h4>🤠 Array</h4>
 				<pre>
 🔸 Sintaxe padrão => let numbers = [1,2,3]
-🔸 Possuí a sintaxe de criação de uma matriz em Java (utilizando colchetes) e compartilha da característica de conter apenas valores de um MESMO TIPO. Nesse sentido, caso queira definir o tipo de dado da Array durante a criação dela, basta definir somente uma vez, diferentemente da Tupla, que caso for definir o tipo, precisa ser para cada valor contido nela.
+🔸 Possuí a sintaxe de criação de uma matriz em Java (utilizando colchetes) e compartilha da característica de conter apenas valores de um MESMO TIPO. Nesse sentido, 
+caso queira definir o tipo de dado da Array durante a criação dela, basta definir somente uma vez, diferentemente da Tupla, que caso for definir o tipo, precisa ser para cada valor contido nela.
 🔸 Pode ser inicializado vazia
 🔸 Alguns métodos usuais (alguns funcionam para tuplas tbm):
 ➡ append() -> adiciona na Array
@@ -206,7 +211,7 @@ Operador ternário: sintaxe --> expressão ? valor-seTrue : valor-seFalse;
 				</pre>
 				<h4>📒 Dictionary</h4>
 				<label>Link:
-				<a>https://www.codecademy.com/learn/learn-swift/modules/learn-swift-dictionaries/cheatsheet</a>
+				<a href='https://www.codecademy.com/learn/learn-swift/modules/learn-swift-dictionaries/cheatsheet'>https://www.codecademy.com/learn/learn-swift/modules/learn-swift-dictionaries/cheatsheet</a>
 				<pre>
 🔸 Funciona muito semelhante a uma Array, mas utiliza do conceito de chave-valor (key-value), semelhante a um JSON
 🔸 É necessário definir na criação o tipo da chave e do valor
@@ -283,16 +288,18 @@ let r = 0..<5 // exclusive (não incluí o limite)</pre>
 <pre>
 	for item in items {	// Do this	}
 </pre>
-◽ Nessa sintaxe, deixa mais claro a possibilidade de utilizar do for para iterar uma Array, da mesma forma que um forEach(). A vantagem do for, seria da possibilidade de iterar por uma Array de Array’s, ou seja, cada item da Array a ser iterada é uma outra Array
+◽ Nessa sintaxe, deixa mais claro a possibilidade de utilizar do for para iterar uma Array, da mesma forma que um forEach(). A vantagem do for, seria da possibilidade de 
+iterar por uma Array de Array’s, ou seja, cada item da Array a ser iterada é uma outra Array
 </pre>
 Links:
-<a>https://www.programiz.com/swift-programming/for-in-loop</a>
-<a>https://www.appypie.com/loops-swift-how-to</a>
-<a>https://www.hackingwithswift.com/sixty/4/1/for-loops</a>
+<a href='https://www.programiz.com/swift-programming/for-in-loop'>https://www.programiz.com/swift-programming/for-in-loop</a>
+<a href='https://www.appypie.com/loops-swift-how-to'>https://www.appypie.com/loops-swift-how-to</a>
+<a href='https://www.hackingwithswift.com/sixty/4/1/for-loops'>https://www.hackingwithswift.com/sixty/4/1/for-loops</a>
 </pre>
 				<h4>⏸ 'Break' e 'Continue' ▶</h4>
 				<pre>
-🔸 Break —> utilizado para literalmente quebrar/parar algo, geralmente uma iteração em um loop ou no caso de utilizar de switch/case, por exemplo. Quando utilizado em loops, muito comum ser utilizado dentro de if’s (verificações), para não ser necessário validar tudo de algo (array por ex) quando já satisfez oq era procurado<br>
+🔸 Break —> utilizado para literalmente quebrar/parar algo, geralmente uma iteração em um loop ou no caso de utilizar de switch/case, por exemplo. Quando utilizado em loops, 
+muito comum ser utilizado dentro de if’s (verificações), para não ser necessário validar tudo de algo (array por ex) quando já satisfez oq era procurado<br>
 🔹 Continue —> pula uma iteração e passa para a próxima instrução ou bloco de código.
 </pre>
 				<h4>👔 Functions</h4>
@@ -304,13 +311,14 @@ Links:
 func calcMedia (nota1: Double, nota2: Double) -> Double { }
 </pre>
 🔸 Por padrão, caso for omitido, o return é vazio<br>
-🔸 Nos parâmetros, os nomes das ‘variaveis de parâmetro’ funcionam como labels, ou seja, caso não for utilizado um ‘ _ ‘ antes do nome da variavel, na hora de chamar o método e passar os argumentos, seria necessário citar os labels. EX:
+🔸 Nos parâmetros, os nomes das ‘variaveis de parâmetro’ funcionam como labels, ou seja, caso não for utilizado um ‘ _ ‘ antes do nome da variavel, na hora de chamar o 
+método e passar os argumentos, seria necessário citar os labels. EX:
 <pre>
 calcMedia(nota1: 7, nota2: 10)
 </pre>
 </pre>
 				<h4>📜 Closure</h4>
-				<a>https://www.programiz.com/swift-programming/closures</a>
+				<a href='https://www.programiz.com/swift-programming/closures'>https://www.programiz.com/swift-programming/closures</a>
 				<pre>
 🔸 Funciona quase como uma Arroy function em JavaScript, no sentido de que a Closure é uma função resumida. EX:
 <pre>
@@ -335,7 +343,8 @@ func somar (a: Int, b: Int) -> Int {
 - Pode ser passada como parâmetro de outras funções (callback function), como em um map por exemplo</pre>
 				<h4>❓ Opcionais</h4><pre>
 🔸 Uma condição dada aos tipos de varíaveis na qual permite a ausência de valor (nil)
-🔸 Resumidademente, permite valores nulos (tipo nulo [nil]) a variáveis , com tipos declarados (String, Int, Double, ...), visto que normalmente isso não seria permitido (ex: atribuir nil a uma variável que espera um valor Int)<br>
+🔸 Resumidademente, permite valores nulos (tipo nulo [nil]) a variáveis , com tipos declarados (String, Int, Double, ...), visto que normalmente isso 
+não seria permitido (ex: atribuir nil a uma variável que espera um valor Int)<br>
 🔸 sintaxe -->  <i><b>var variavel: tipoVariavel? , ex: let nota: Int?</b></i><br>
 🔸 Como esse tipo de variável permite valores nulos, é necessário fazer algo para que, caso tente acessar um valor nulo, o programa nao dê problema. Para isso, existem 2 respostas padrão:
 <pre>
@@ -346,7 +355,8 @@ func somar (a: Int, b: Int) -> Int {
 ▪ usado quando temos certeza de que a variável, mesmo que opcional, terá um valor informado (e não será nil) durante a compilação
 ▪ utiliza ! ao fim da variável
 </pre></pre>
-🔸 <b>CUIDADO</b> => caso seja passado um nil e seja usado '!' para forçar, o programa dará fatal error. Para não acontecer este problema, existem maneiras de verificar se realmente é possível forçar um desembrulo da variável:<br>
+🔸 <b>CUIDADO</b> => caso seja passado um nil e seja usado '!' para forçar, o programa dará fatal error. Para não acontecer este problema, existem maneiras de verificar 
+se realmente é possível forçar um desembrulo da variável:<br>
 <b>🌝 if let</b> 
 🔹 faz uma verificação if para ver se a variável possuí valor.
 🔹 sintaxe --> <pre>
@@ -355,17 +365,21 @@ if let product = dict[id] { return product } else { return "nenhum produto encon
 🔹 muito semelhante ao 'if let' mas realiza as operações em ordem trocada: primeiro verifica o erro, para ent seguir com o sucesso (true)<br>
 🔹 sintaxe --><pre> 
 guard let product = dict[id] else { return "nenhum produto encontrado" } return product</pre>
-🔹 QUANDO USAR --> semelhante ao NOT NULL em SQL, ou seja, geralmente utilizado após verificar se é necessário ou não existir um valor. In fact, esse é um dos motivos para existir esse tipo, visto que serve para tratar, por exemplo, valores nulos vindo de um BD, visto que no BD podem existir campos que permitem serem nulos, fazendo com que em nosso sistema realizassemos a mesma lógica, definindo algumas variáveis como <i>opcionais</i>.<br>
+🔹 QUANDO USAR --> semelhante ao NOT NULL em SQL, ou seja, geralmente utilizado após verificar se é necessário ou não existir um valor. In fact, esse é um dos motivos 
+para existir esse tipo, visto que serve para tratar, por exemplo, valores nulos vindo de um BD, visto que no BD podem existir campos que permitem serem nulos, fazendo 
+com que em nosso sistema realizassemos a mesma lógica, definindo algumas variáveis como <i>opcionais</i>.<br>
 É possível definir mais condições ao utilizar o if let e guard let, utilizando ' , ' EX:<pre>
 	if let user = loadUsername(), let password = decryptPassword() {
     	authenticate(user, password)
 	}</pre></pre>
 				<h4>📖 Enum</h4>
 				<label>Link:
-				<a>https://www.youtube.com/watch?v=pgHzqTXwkLI&t=6s</a>
+				<a href='https://www.youtube.com/watch?v=pgHzqTXwkLI&t=6s'>https://www.youtube.com/watch?v=pgHzqTXwkLI&t=6s</a>
 				<pre>
-🔸 Basicamente é uma lista de itens. Contudo, cada item é um 'case' (o mesmo utilizado em swift), logo, podem ser atribuídos códigos para cada case utilizando um switch (fora da estrutura do enum)<br>
-🔸 O tipo do enum não precisa necessariamente ser especificado, além dele poder armazenar valores de qualquer tipo e os tipos destes valores poderem ser diferentes para cada membro do enum (logo, deve-se avaliar se vale a pena limitar o tipo do enum ou de seus case's)<br>
+🔸 Basicamente é uma lista de itens. Contudo, cada item é um 'case' (o mesmo utilizado em swift), logo, podem ser atribuídos códigos para cada case 
+utilizando um switch (fora da estrutura do enum)<br>
+🔸 O tipo do enum não precisa necessariamente ser especificado, além dele poder armazenar valores de qualquer tipo e os tipos destes valores poderem ser diferentes 
+para cada membro do enum (logo, deve-se avaliar se vale a pena limitar o tipo do enum ou de seus case's)<br>
 🔹 Life hack: se definir a enum para Int e nos cases não definirmos uma sequencia, os valores serão auto-incrementais. Ex:<pre>
 enum Dia: Int { case Domingo = 1, Segunda, Terça, .... } Dia.Segunda.rawValue //2</pre>
 🔸 <i>Raw Value</i> => 'método' para pegar o valor do case
@@ -376,27 +390,32 @@ enum Dia: Int { case Domingo = 1, Segunda, Terça, .... } Dia.Segunda.rawValue /
 🔸 É do tipo 'Reference Type', assim como as 'Class'</pre>
 				<h4>🏡Struct</h4>
 				<pre>
-🔸 Muito semelhante ao conceito de classes de Java e JS, mas é mais simples, visto que o Struct não permite herança, além de existir um 'class' em Swift, ent deve-se tomar cuidado para não misturar os conceitos<br>
-🔸 Outra diferença para as classes, é que o Struct trabalha com o tipo VALOR. Nesse sentido, é possível criar apenas uma instância de objeto e dps criar novas variáveis e atribuir o VALOR sendo o primeiro objeto instanciado.<br>
+🔸 Muito semelhante ao conceito de classes de Java e JS, mas é mais simples, visto que o Struct não permite herança, além de existir um 'class' em Swift, ent deve-se tomar 
+cuidado para não misturar os conceitos<br>
+🔸 Outra diferença para as classes, é que o Struct trabalha com o tipo VALOR. Nesse sentido, é possível criar apenas uma instância de objeto e dps criar novas variáveis e 
+atribuir o VALOR sendo o primeiro objeto instanciado.<br>
 🔸 Em resumo, os objetos do tipo Struct, não são necessariamente únicos, pois podem ser feitas CÓPIAS de um único objeto criado<br>
 🔸 Logo, é do tipo 'Value Type', assim como Arrays, Dictionarys, Tuplas<br>
 🔹 sintaxe<pre>let player1 = Player()</pre></pre>
 				<h4>👑 Class</h4>
 				<pre>
 🔸 De forma geral, são os mesmos conceitos, técnicas e lógicas de classes das vistas em Java.<br>
-🔸 Trabalham com REFERÊNCIA, ou seja, cada instância será um local da memória diferente, portanto deve-se atentar ao modo de como será instanciado um objeto (visto que pode ser feita REFERÊNCIA ao mesmo local de memória). De modo geral, o processo é o seguinte: <pre>
+🔸 Trabalham com REFERÊNCIA, ou seja, cada instância será um local da memória diferente, portanto deve-se atentar ao modo de como será instanciado um objeto 
+(visto que pode ser feita REFERÊNCIA ao mesmo local de memória). De modo geral, o processo é o seguinte: <pre>
 	1. instânciar um objeto (ex: let jogador1 = Jogador())
 	2. caso eu queira instanciar um novo objeto da class Jogador, eu devo instanciar novamente um novo objeto, e não tentar fazer o seguinte:<br>
-	let jogador2 = jogador1</pre>Nesse caso, tanto jogador1 quanto jogador2 estao fazendo REFERÊNCIA ao mesmo espaço de memória e, portanto, ao mesmo objeto. Logo, qualquer alteração das propriedades desse objeto serão observadas em ambas as variáveis<br>
+	let jogador2 = jogador1</pre>Nesse caso, tanto jogador1 quanto jogador2 estao fazendo REFERÊNCIA ao mesmo espaço de memória e, portanto, ao mesmo objeto. 
+Logo, qualquer alteração das propriedades desse objeto serão observadas em ambas as variáveis<br>
 🔹 sintaxe --> var pessoa : Pessoa = Pessoa()
 				</pre>
 				<h4>😲Semelhanças e Diferenças entre 'Class' e 'Struct'</h4>
 				<label>Link:
-				<a>https://www.youtube.com/watch?v=tKSNjg9Cb_g&list=PLZPWdr0WUuJ93mjCDaxLM8ZOi_5BwG7iC&index=6</a>
+				<a href='https://www.youtube.com/watch?v=tKSNjg9Cb_g&list=PLZPWdr0WUuJ93mjCDaxLM8ZOi_5BwG7iC&index=6'>https://www.youtube.com/watch?v=tKSNjg9Cb_g&list=PLZPWdr0WUuJ93mjCDaxLM8ZOi_5BwG7iC&index=6</a>
 				<pre>
 🔸 Tanto em Struct quanto em Class, deve-se atentar a alguns casos:<pre>
 🔹 Caso nao definir um valor inicial para um atributo, deve ser criado um metodo inicializador (construtor)<br>
-🔹 Nao pode criar um metodo construtor vazio -> visto que esse conceito acontece quando definimos valores iniciais aos atributos, permitindo que instanciemos um objeto sem ter que definir seus atributos logo de cara<br>
+🔹 Nao pode criar um metodo construtor vazio -> visto que esse conceito acontece quando definimos valores iniciais aos atributos, permitindo que instanciemos um 
+objeto sem ter que definir seus atributos logo de cara<br>
 🔹 Se nao quiser criar um metodo construtor, deve-se definir um valor inicial para cada atributo (geralmente é tipo "", 0, ...)</pre>
 🔸 Método Inicializador (mesmo conceito do método construtor de Java)<pre>
 init (parameters) {
@@ -414,7 +433,7 @@ OBS:
 🔸 o encapsulamento do Swift funciona apenas se a classe e sua instância estiverem em arquivos separados.</pre>
 				<h4>🧐'willSet' e 'didSet'</h4>
 				<label>Link:
-				<a>https://www.codingem.com/didset-and-willset-in-swift/</a>
+				<a href='https://www.codingem.com/didset-and-willset-in-swift/'>https://www.codingem.com/didset-and-willset-in-swift/</a>
 				<pre>
 🔸 Os observadores 'didSet' e 'willSet' provêm uma maneira de responder corretamente quando uma propriedade tem seu valor definido/alterado. 
 🔸 O observador willSet é chamado antes de o valor ser atribuído a uma propriedade
@@ -440,16 +459,18 @@ To access these parameters, you do not need to declare them anywhere. They are a
 🔸 Mesmo princípio das outras linguagens, portanto permite o compartilhamento (herança/herdar) os métodos e atributos entre classes<br>
 🔸 sintaxe <pre>classeFilha : classePai</pre>
 🔸 É como se vc estivesse atribuindo a uma classeFilha ser do tipo da classePai<br>
-❗ <i>IMPORTANTE:</i> A subclasse pode ter suas próprias propriedades e métodos, e estes não podem ser acessados pela superclasse, já que o fluxo da herança é sempre da superclasse para a subclasse</pre>
+❗ <i>IMPORTANTE:</i> A subclasse pode ter suas próprias propriedades e métodos, e estes não podem ser acessados pela superclasse, já que o fluxo da herança 
+é sempre da superclasse para a subclasse</pre>
 				<h4>🧬Polimorsfismo</h4>
 <pre>
-🔸 Novamente, funciona a partir do mesmo princípio das outras linguagens, então é a propriedade que permite a subClasse (classeFilha) sobrescrever métodos e propriedades de uma superClasse (classePai)<br>
+🔸 Novamente, funciona a partir do mesmo princípio das outras linguagens, então é a propriedade que permite a subClasse (classeFilha) sobrescrever métodos 
+e propriedades de uma superClasse (classePai)<br>
 🔸 Tanto em Swift quanto em Java utiliza-se da mesma palavra reservada: <i><b>override</b></i><br>
 🔸 Novamente igual em Java, em Swift existe a palavra reservada <i><b>final</b></i> para definir como "final"/irretocável um atributo ou método
 				</pre>
 				<h4>🔖Protocol</h4>
 				<label>Link:
-				<a>https://www.programiz.com/swift-programming/protocols#:~:text=In%20Swift%2C%20a%20protocol%20defines,(or%20any%20other%20types)</a>
+				<a href='https://www.programiz.com/swift-programming/protocols#:~:text=In%20Swift%2C%20a%20protocol%20defines,(or%20any%20other%20types)'>https://www.programiz.com/swift-programming/protocols#:~:text=In%20Swift%2C%20a%20protocol%20defines,(or%20any%20other%20types)</a>
 				<pre>
 🔸 Funciona como uma class abstract em Java, ou seja, sua função é ser um modelo para que outras classes utilizem de seus métodos e atributos, mudando apenas o conteúdo deles<br>
 🔸 A diferença aqui é que o 'protocol' tem sintaxe semelhante a uma function, na qual dentro dele irão os atributos ou functions para serem usados em outros locais<br>
@@ -471,8 +492,8 @@ class Employee: Greet {<br>
 }</b></pre></pre>
 				<h4>⚙ Delegate</h4>
 				<label>Links:<br>
-				<li><a>https://jamesrochabrun.medium.com/implementing-delegates-in-swift-step-by-stepd3211cbac3ef#:~:text=Delegates%20are%20a%20design%20pattern,B%20to%20perform%20an%20action.</a></li>
-				<li><a>https://medium.com/mackmobile/protocol-delegate-em-swift-5f521e19ca56</a></li><br>
+				<li><a href='https://jamesrochabrun.medium.com/implementing-delegates-in-swift-step-by-stepd3211cbac3ef#:~:text=Delegates%20are%20a%20design%20pattern,B%20to%20perform%20an%20action.'>https://jamesrochabrun.medium.com/implementing-delegates-in-swift-step-by-stepd3211cbac3ef#:~:text=Delegates%20are%20a%20design%20pattern,B%20to%20perform%20an%20action.</a></li>
+				<li><a href='https://medium.com/mackmobile/protocol-delegate-em-swift-5f521e19ca56'>https://medium.com/mackmobile/protocol-delegate-em-swift-5f521e19ca56</a></li><br>
 				<pre>
 🔸Delegates are a design pattern that allows one object to send messages to another object when a specific event happens.<br>
 🔸Imagine an object A calls an object B to perform an action. Once the action is complete, object A should know that B has completed the task and take necessary action, this can be achieved with the help of delegates!</pre>
