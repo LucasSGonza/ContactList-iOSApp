@@ -30,6 +30,35 @@ class NewContactViewController: HelpController {
         self.contactList = contactList
     }
     
+    private func setupTextFields() {
+        nameTextField.attributedPlaceholder = NSAttributedString(
+                    string: "Name",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray]
+                )
+        nameTextField.layer.borderColor = UIColor(named: "textFieldColor")?.cgColor ?? UIColor.systemGray.cgColor
+        nameTextField.layer.borderWidth = 1.0
+        nameTextField.layer.cornerRadius = 10
+        nameTextField.layer.masksToBounds = true
+        
+        lastNameTextField.attributedPlaceholder = NSAttributedString(
+                    string: "Last Name",
+                    attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray]
+                )
+        lastNameTextField.layer.borderColor = UIColor(named: "textFieldColor")?.cgColor ?? UIColor.systemGray.cgColor
+        lastNameTextField.layer.borderWidth = 1.0
+        lastNameTextField.layer.cornerRadius = 10
+        lastNameTextField.layer.masksToBounds = true
+        
+        phoneTextField.attributedPlaceholder = NSAttributedString(
+                    string: "Phone",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray]
+                )
+        phoneTextField.layer.borderColor = UIColor(named: "textFieldColor")?.cgColor ?? UIColor.systemGray.cgColor
+        phoneTextField.layer.borderWidth = 1.0
+        phoneTextField.layer.cornerRadius = 10
+        phoneTextField.layer.masksToBounds = true
+    }
+    
     //MARK:TextFields
     private func clearTextFields() {
         nameTextField.text = ""
@@ -37,39 +66,11 @@ class NewContactViewController: HelpController {
         phoneTextField.text = ""
     }
     
-    private func setupTextFields() {
-        let textFieldsColor:UIColor = UIColor.systemGray
-        
-        nameTextField.attributedPlaceholder = NSAttributedString(
-                    string: "Name",
-            attributes: [NSAttributedString.Key.foregroundColor: textFieldsColor]
-                )
-        nameTextField.layer.borderColor = textFieldsColor.cgColor
-        nameTextField.layer.borderWidth = 1.5
-        nameTextField.borderStyle = .roundedRect
-        nameTextField.layer.cornerRadius = 10.0
-        nameTextField.layer.masksToBounds = true
-        
-        lastNameTextField.attributedPlaceholder = NSAttributedString(
-                    string: "Last Name",
-                    attributes: [NSAttributedString.Key.foregroundColor: textFieldsColor]
-                )
-        lastNameTextField.layer.borderColor = textFieldsColor.cgColor
-        lastNameTextField.layer.borderWidth = 1.5
-        lastNameTextField.borderStyle = .roundedRect
-        lastNameTextField.layer.cornerRadius = 10.0
-        lastNameTextField.layer.masksToBounds = true
-        
-        phoneTextField.attributedPlaceholder = NSAttributedString(
-                    string: "Phone",
-            attributes: [NSAttributedString.Key.foregroundColor: textFieldsColor]
-                )
-        phoneTextField.layer.borderColor = textFieldsColor.cgColor
-        phoneTextField.layer.borderWidth = 1.5
-        phoneTextField.borderStyle = .roundedRect
-        phoneTextField.layer.cornerRadius = 10.0
-        phoneTextField.layer.masksToBounds = true
-    }
+//    private func didSelectedTextField() {
+//        nameTextField.delegate?.textFieldDidBeginEditing?(nameTextField)
+//        nameTextField.layer.borderColor = UIColor(named: "adaptGreenColor")?.cgColor
+//        nameTextField.delegate?.textFieldDidEndEditing?(nameTextField)
+//    }
     
     //MARK: setup NavBar
     private func setupNavigationBar() {
@@ -100,17 +101,18 @@ class NewContactViewController: HelpController {
         self.navigationItem.rightBarButtonItem = addContact
     }
     
-    //MARK: objc funcs
+    //MARK:Go back
     @objc private func goBack() {
         delegate?.setContactList(contactList)
         self.navigationController?.popViewController(animated: true)
         //self.dismiss(animated: true, completion: nil)
     }
-
+    
+    //MARK: NewContact
     @objc private func newContact() {
         guard let firstName = nameTextField.text, let lastName = lastNameTextField.text, let phone = phoneTextField.text else { return }
         
-        let contact = Contact()
+        let contact = Contact() //cria um contato vazio e o preenche se houverem campos com informações
         
         if !firstName.isEmpty || !lastName.isEmpty {
             contact.setName(firstName)
@@ -120,7 +122,7 @@ class NewContactViewController: HelpController {
                 contact.setPhone(phone)
             }
             
-            contact.setID(contactList.count)
+            contact.setID(contactList.count) //define um ID para o contato, baseado no tamanho atual da Array
             print(contact.showInfos())
             contactList.append(contact)
             setupAlert(title: "Sucess", message: "Contact created with success!")

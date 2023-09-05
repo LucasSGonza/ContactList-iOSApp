@@ -56,7 +56,6 @@ class EditContactViewController: HelpController {
     
     //MARK: TextFields
     private func setupTextFields() {
-        //procura Array pelo id
         //guard let contact = contact else { return }
         self.nameTextField.text = contact.getName()
         self.lastNameTextField.text = contact.getLastName()
@@ -92,7 +91,6 @@ class EditContactViewController: HelpController {
     }
 
     //MARK: goBack
-    //volta para dashboard
     @objc private func goBack() {
         if aceptChanges {
             guard let delegate = delegate else { return }
@@ -104,23 +102,26 @@ class EditContactViewController: HelpController {
     }
     
     //MARK: confirmEdition
-    //confirma a edição do contato
     @objc private func confirmEdition() {
         
         guard let firstName = nameTextField.text, let lastName = lastNameTextField.text, let phone = phoneTextField.text else { return }
-        
+        //trocar para set's
         if !firstName.isEmpty || !lastName.isEmpty {
+            
             let newContact = Contact(name: firstName, lastName: lastName, phone: phone, favorite: contact.isFavorite)
+            newContact.setID(contact.getID())
+            
+            print(newContact.getID())
             contactList[contact.getID()] = newContact
             self.aceptChanges = true
             setupAlert(title: "Success", message: "Contact updated!", completion: { self.goBack() })
         } else {
             setupAlert(title: "ERROR", message: "At least inform a 'Name' or a 'Last Name' for the contact")
         }
+        
     }
     
-    //MARK: favorite
-    //favorita ou desfavorita o contato
+    //MARK: Favorite contact
     @objc private func favoriteContact() {
         //guard let contact = contact else {return }
         
@@ -134,15 +135,12 @@ class EditContactViewController: HelpController {
         print(contact.isFavorite)
     }
     
-    //MARK: Delete
-    //deletar contato
+    //MARK: Delete contact
     @objc private func deleteContact() {
-        print(contactList)
         //guard let contact = contact else { return }
         contactList.removeAll(where: {$0.getID() == contact.getID()})
         aceptChanges = true
         setupAlert(title: "Sucess!", message: "Contact deleted with success", completion: { self.goBack() })
-        print(contactList)
     }
 
 }

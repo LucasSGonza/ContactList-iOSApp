@@ -27,20 +27,13 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WkQ-be-7sJ">
-                        <rect key="frame" x="76" y="11" width="163" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="163" id="53w-fi-nxL"/>
-                        </constraints>
+                        <rect key="frame" x="76" y="11" width="166" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" name="adaptDarkLightMode"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wuo-d5-EU1">
-                        <rect key="frame" x="76" y="38" width="208" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="163" id="6zy-YP-wxH"/>
-                            <constraint firstAttribute="width" constant="208" id="lgI-xy-6F7"/>
-                        </constraints>
+                        <rect key="frame" x="76" y="38" width="166" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" name="adaptDarkLightMode"/>
                         <nil key="highlightedColor"/>
@@ -70,8 +63,9 @@
                     <constraint firstItem="Jqo-3G-M69" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" constant="15.5" id="CaO-bA-PeV"/>
                     <constraint firstItem="kIu-no-qEl" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Cvr-bg-C6o"/>
                     <constraint firstItem="wuo-d5-EU1" firstAttribute="leading" secondItem="kIu-no-qEl" secondAttribute="trailing" constant="18" id="FDk-YX-XfM"/>
-                    <constraint firstItem="wuo-d5-EU1" firstAttribute="leading" secondItem="kIu-no-qEl" secondAttribute="trailing" constant="18" id="FOe-wg-2Sh"/>
+                    <constraint firstItem="Hri-Or-tUq" firstAttribute="leading" secondItem="wuo-d5-EU1" secondAttribute="trailing" constant="18" id="NpQ-0g-su7"/>
                     <constraint firstItem="wuo-d5-EU1" firstAttribute="top" secondItem="WkQ-be-7sJ" secondAttribute="bottom" constant="6" id="SLM-bp-M6U"/>
+                    <constraint firstItem="Hri-Or-tUq" firstAttribute="leading" secondItem="WkQ-be-7sJ" secondAttribute="trailing" constant="18" id="Vpg-wH-Q7X"/>
                     <constraint firstItem="Jqo-3G-M69" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="37" id="cjK-vb-4oT"/>
                     <constraint firstItem="WkQ-be-7sJ" firstAttribute="leading" secondItem="kIu-no-qEl" secondAttribute="trailing" constant="18" id="szJ-X3-1Fa"/>
                 </constraints>
@@ -90,7 +84,7 @@
     </objects>
     <resources>
         <image name="pencil" catalog="system" width="128" height="113"/>
-        <image name="person.circle" catalog="system" width="32" height="32"/>
+        <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <namedColor name="adaptDarkLightMode">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -114,7 +114,7 @@
     </scenes>
     <resources>
         <image name="person.3.fill" catalog="system" width="128" height="61"/>
-        <image name="person.circle" catalog="system" width="32" height="32"/>
+        <image name="person.circle" catalog="system" width="128" height="121"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="phone.fill" catalog="system" width="128" height="114"/>
         <namedColor name="adaptDarkLightMode">

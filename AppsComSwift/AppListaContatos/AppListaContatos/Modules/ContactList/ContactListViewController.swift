@@ -15,6 +15,7 @@ class ContactListViewController: UIViewController {
      Como a tableView é baseada na minha Array, e eu não devo mexer no meu 'bd'(contactList), eu crio uma array cópia, para que então eu possa alterar seus valores e consequentemente alterar oq esta sendo mostrado na tableView
      */
     private var filterData:[Contact] = []
+    private var isFavoriteListSelected:Bool = false
     
     private var isSelected:Bool = false
     private var selectedIndex:Int?
@@ -23,7 +24,6 @@ class ContactListViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var listImageView: UIImageView!
     @IBOutlet weak var favoriteImageView: UIImageView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,33 +35,7 @@ class ContactListViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        filterData.removeAll()
-        filterData.append(contentsOf: contactList)
-        tableView.reloadData()
-    }
-    
-    //MARK: setup ImageView
-    private func setupIconActions() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(changeList))
-        listImageView.addGestureRecognizer(tap)
-    }
-    
-    @objc private func changeList() {
-        // se o favorito nao estiver selecionado, selecioná-lo
-        if favoriteImageView.image == UIImage(systemName: "star") {
-            listImageView.image = UIImage(systemName: "text.book.closed.fill")
-            favoriteImageView.image = UIImage(systemName: "star.fill")
-            
-            filterData = filterData.filter { $0.isFavorite }
-            tableView.reloadData()
-        } else {
-            listImageView.image = UIImage(systemName: "text.book.closed")
-            favoriteImageView.image = UIImage(systemName: "star")
-            
-            filterData.removeAll()
-            filterData.append(contentsOf: contactList)
-            tableView.reloadData()
-        }
+        setupScreenToDefaultState()
     }
     
     //MARK: setup TableView
@@ -74,7 +48,6 @@ class ContactListViewController: UIViewController {
     
     //MARK: setup NavBar
     private func setupNavigationBar() {
-        //let newContactButton = UIBarButtonItem(title: "New Contact", style: .done, target: self, action: nil)
         navigationItem.title = "Contacts"
         
         let newContactButton = UIBarButtonItem(
@@ -94,6 +67,43 @@ class ContactListViewController: UIViewController {
         searchBar.delegate = self /*necessario tal qual na tableView*/
     }
     
+    //MARK: setup ImageView
+    private func setupIconActions() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(changeList))
+        listImageView.addGestureRecognizer(tap)
+    }
+    
+    //MARK:Default Screen state
+    //reseta a configuração da tela para 'padrão'
+    private func setupScreenToDefaultState() {
+        //default state => imagens não '.fill' , filterData = contactList
+        listImageView.image = UIImage(systemName: "text.book.closed")
+        favoriteImageView.image = UIImage(systemName: "star")
+        filterData.removeAll()
+        filterData.append(contentsOf: contactList)
+        tableView.reloadData()
+    }
+    
+    //MARK:Favorite List
+    @objc private func changeList() {
+        // se o favorito nao estiver selecionado, selecioná-lo
+        if isFavoriteListSelected == false {
+            listImageView.image = UIImage(systemName: "text.book.closed.fill")
+            favoriteImageView.image = UIImage(systemName: "star.fill")
+            filterData = filterData.filter { $0.isFavorite }
+            isFavoriteListSelected = true
+            tableView.reloadData()
+        } else {
+            listImageView.image = UIImage(systemName: "text.book.closed")
+            favoriteImageView.image = UIImage(systemName: "star")
+            isFavoriteListSelected = false
+            filterData.removeAll()
+            filterData.append(contentsOf: contactList)
+            tableView.reloadData()
+        }
+        
+    }
+    
     //MARK: go to NewContactVC
     @objc private func goToNewContact() {
         let newContact = UIStoryboard(name: "NewContact", bundle: nil).instantiateViewController(withIdentifier: "NewContact") as! NewContactViewController
@@ -104,12 +114,18 @@ class ContactListViewController: UIViewController {
 }
 
 // https://medium.com/@himanshunag/searchbar-in-swift-ios-14e66d8ce29d
+//MARK: SearchBar
 extension ContactListViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
+        
         filterData.removeAll()
         filterData.append(contentsOf: contactList)
+        
+        if isFavoriteListSelected {
+            filterData = filterData.filter{ $0.isFavorite }
+        }
         
         if !searchText.isEmpty {
             filterData = filterData.filter {
@@ -142,24 +158,13 @@ extension ContactListViewController: UITableViewDelegate, UITableViewDataSource 
         
         cell.bind(item: contact, delegate: self)
         
-        //cell.accessoryType = .none //icone que fica na direita de cada cell
-        
-        //tentei usar ternário e da erro
         if contact.isFavorite {
-            //cell.iconImageView.tintColor = UIColor.systemYellow
             cell.favoriteImageView.isHidden = false
             cell.favoriteImageView.image = UIImage(systemName: "star.fill")
         } else {
-            //cell.iconImageView.tintColor = UIColor(named: "adaptGreenColor")
             cell.favoriteImageView.isHidden = true
             cell.favoriteImageView.image = UIImage(systemName: "star")
         }
-        
-        //cell.layer.borderColor = UIColor(named: "adaptGreenColor")?.cgColor ?? UIColor.systemGreen.cgColor
-        //cell.layer.borderWidth = 1.5
-        //cell.layer.cornerRadius = 10.0
-        cell.layer.masksToBounds = true
-        
         return cell
     }
     
@@ -177,17 +182,20 @@ extension ContactListViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
     }
-
+    //MARK: Delete Contact
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         print("deletando...")
         if editingStyle == .delete {
             tableView.beginUpdates()
+            
             filterData.remove(at: indexPath.row)
             contactList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            
             tableView.endUpdates()
         }
     }
+    
 }
 
 //MARK: ContactList Delegate
