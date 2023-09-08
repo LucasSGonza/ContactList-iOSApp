@@ -32,7 +32,9 @@ class ContactTableViewCell: UITableViewCell {
     func bind (item:Contact, delegate:EditContactDelegate) {
         self.delegate = delegate
         self.contact = item
-        self.nameLabel.text = item.getName()
+        
+        //verifica se existe nome, se sim, ele é exibido. Se n, exibe o sobrenome (ao menos um dos 2 deve existir --> verificação ocorre no momento da criação de um novo contato, bem como na edição do mesmo) 
+        self.nameLabel.text = item.getName().isEmpty ? item.getLastName() : item.getName()
         self.phoneLabel.text = item.getPhone()
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(pencilSelected))

@@ -17,9 +17,6 @@ class ContactListViewController: UIViewController {
     private var filterData:[Contact] = []
     private var isFavoriteListSelected:Bool = false
     
-    private var isSelected:Bool = false
-    private var selectedIndex:Int?
-    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var listImageView: UIImageView!
@@ -79,9 +76,15 @@ class ContactListViewController: UIViewController {
         //default state => imagens não '.fill' , filterData = contactList
         listImageView.image = UIImage(systemName: "text.book.closed")
         favoriteImageView.image = UIImage(systemName: "star")
+        setupFavoriteListToDefault()
+        tableView.reloadData()
+    }
+    
+    //MARK: Default list state
+    //reseta a listaFiltrada para estado 'padrão' ( = contactList)
+    private func setupFavoriteListToDefault() {
         filterData.removeAll()
         filterData.append(contentsOf: contactList)
-        tableView.reloadData()
     }
     
     //MARK:Favorite List
@@ -90,15 +93,18 @@ class ContactListViewController: UIViewController {
         if isFavoriteListSelected == false {
             listImageView.image = UIImage(systemName: "text.book.closed.fill")
             favoriteImageView.image = UIImage(systemName: "star.fill")
-            filterData = filterData.filter { $0.isFavorite }
+            
             isFavoriteListSelected = true
+            filterData = filterData.filter { $0.isFavorite }
+            
             tableView.reloadData()
         } else {
             listImageView.image = UIImage(systemName: "text.book.closed")
             favoriteImageView.image = UIImage(systemName: "star")
+            
             isFavoriteListSelected = false
-            filterData.removeAll()
-            filterData.append(contentsOf: contactList)
+            setupFavoriteListToDefault()
+            
             tableView.reloadData()
         }
         
@@ -120,8 +126,7 @@ extension ContactListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
         
-        filterData.removeAll()
-        filterData.append(contentsOf: contactList)
+        setupFavoriteListToDefault()
         
         if isFavoriteListSelected {
             filterData = filterData.filter{ $0.isFavorite }
@@ -129,7 +134,7 @@ extension ContactListViewController: UISearchBarDelegate {
         
         if !searchText.isEmpty {
             filterData = filterData.filter {
-                ($0.getName().lowercased().contains(searchText.lowercased())) || ($0.getLastName().lowercased().contains(searchText.lowercased())) || ($0.getPhone().lowercased().contains(searchText.lowercased()))
+                ($0.getName().lowercased().contains(searchText.lowercased())) || ($0.getLastName().lowercased().contains(searchText.lowercased())) || ($0.getPhone().contains(searchText))
             }
         }
         
@@ -146,14 +151,12 @@ extension ContactListViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        if isSelected && selectedIndex == indexPath.row {
-//            return 130
-//        }
-        return 70
+        return 65
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContactCell", for: indexPath) as! ContactTableViewCell
+        
         let contact = filterData[indexPath.row]
         
         cell.bind(item: contact, delegate: self)
@@ -168,16 +171,9 @@ extension ContactListViewController: UITableViewDelegate, UITableViewDataSource 
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        if isSelected == false {
-//            isSelected = true
-//            selectedIndex = indexPath.row
-//        } else {
-//            isSelected = false
-//            selectedIndex = -1
-//        }
-//        tableView.reloadRows(at: [indexPath], with: .automatic)
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("a")
+    }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
@@ -185,12 +181,17 @@ extension ContactListViewController: UITableViewDelegate, UITableViewDataSource 
     //MARK: Delete Contact
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         print("deletando...")
+        
+        //salva o contato a ser deletado pois o indexPath muda conforme a lista tbm muda (favorite ou default)
+        let contactToDelete:Contact = filterData[indexPath.row]
+        
         if editingStyle == .delete {
             tableView.beginUpdates()
             
-            filterData.remove(at: indexPath.row)
-            contactList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            filterData.remove(at: indexPath.row)
+            //filterData sempre estará igual o indexPath, mas a contactList n, uma vez que se a lista estiver filtrada, o index dos itens muda (ainda mais visto que na contactList esse index se mantem padrão)
+            contactList.removeAll(where: {$0.getID() == contactToDelete.getID()})
             
             tableView.endUpdates()
         }
@@ -204,6 +205,7 @@ extension ContactListViewController: ContactListDelegate {
         self.contactList = contactList
     }
 }
+
 //MARK: EditContact Listener
 extension ContactListViewController: EditContactDelegate {
     func goToEditContact(_ contact: Contact) {

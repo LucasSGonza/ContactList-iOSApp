@@ -56,7 +56,7 @@ class EditContactViewController: HelpController {
     
     //MARK: TextFields
     private func setupTextFields() {
-        //guard let contact = contact else { return }
+        self.setupTextFields(nameTextField: self.nameTextField, lastNameTextField: self.lastNameTextField, phoneTextField: self.phoneTextField)
         self.nameTextField.text = contact.getName()
         self.lastNameTextField.text = contact.getLastName()
         self.phoneTextField.text = contact.getPhone()
@@ -104,15 +104,15 @@ class EditContactViewController: HelpController {
     //MARK: confirmEdition
     @objc private func confirmEdition() {
         
+        print(contact.showInfos())
+        
         guard let firstName = nameTextField.text, let lastName = lastNameTextField.text, let phone = phoneTextField.text else { return }
-        //trocar para set's
+
         if !firstName.isEmpty || !lastName.isEmpty {
-            
-            let newContact = Contact(name: firstName, lastName: lastName, phone: phone, favorite: contact.isFavorite)
-            newContact.setID(contact.getID())
-            
-            print(newContact.getID())
-            contactList[contact.getID()] = newContact
+            contact.setName(firstName)
+            contact.setLastName(lastName)
+            contact.setPhone(phone)
+            print("---------\n \(contact.showInfos())")
             self.aceptChanges = true
             setupAlert(title: "Success", message: "Contact updated!", completion: { self.goBack() })
         } else {
