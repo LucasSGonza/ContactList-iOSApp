@@ -77,6 +77,7 @@ class ContactListViewController: UIViewController {
         listImageView.image = UIImage(systemName: "text.book.closed")
         favoriteImageView.image = UIImage(systemName: "star")
         setupFavoriteListToDefault()
+        searchBar.text = ""
         tableView.reloadData()
     }
     
@@ -97,17 +98,14 @@ class ContactListViewController: UIViewController {
             isFavoriteListSelected = true
             filterData = filterData.filter { $0.isFavorite }
             
-            tableView.reloadData()
         } else {
             listImageView.image = UIImage(systemName: "text.book.closed")
             favoriteImageView.image = UIImage(systemName: "star")
             
             isFavoriteListSelected = false
             setupFavoriteListToDefault()
-            
-            tableView.reloadData()
         }
-        
+        tableView.reloadData()
     }
     
     //MARK: go to NewContactVC
@@ -215,3 +213,10 @@ extension ContactListViewController: EditContactDelegate {
         self.navigationController?.pushViewController(editContactVC, animated: true)
     }
 }
+
+/*
+MARK:Problemas
+ 
+ 1. searchBar => quando eu pesquiso por um nome na searchBar, ocorreu um 1 filtro na filterData. Contudo, caso eu selecione o icone para filtrar os favoritos, ocorre um 2° filtro, tendo o 1° filtro de base, ou seja, filtra os contatos favoritos, dentro os contatos procurados na searchBar.
+ 
+ */

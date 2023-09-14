@@ -39,4 +39,29 @@ class HelpController: UIViewController {
         phoneTextField.layer.masksToBounds = true
     }
     
+    func validateInputs(name:String, lastName:String, phone:String) -> Bool {
+        
+        //valida todas os possíveis 'falses' e se passar retorna 'true'
+        
+        /*
+         1° -> verificar se o campo possuí conteudo
+         2° -> verificar o conteudo
+         */
+        
+//        if (name.lowercased().isEmpty || name.lowercased().range(of: "^[a-z]+$", options: .regularExpression) != nil) || (lastName.lowercased().isEmpty || lastName.lowercased().range(of: "^[a-z]+$", options: .regularExpression) == nil) {
+//            return false
+//        }
+//
+//        // validar phone
+//        if phone.isEmpty || phone.range(of: "^[0-9]+$", options: .regularExpression) == nil {
+//            return false
+//        }
+        
+        return true
+    }
+    
+    func validateContact(contact:Contact) {
+        //validar se o contato ja existe
+    }
+    
 }

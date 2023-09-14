@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EditContactViewController: HelpController {
+class EditContactViewController: HelpController, UITextFieldDelegate {
     
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
@@ -29,7 +29,6 @@ class EditContactViewController: HelpController {
         setupIconActions()
         
         print(contact.showInfos())
-        //guard let contact = contact else {return }
         favoriteImageView.image = contact.isFavorite ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
     }
     
@@ -40,7 +39,7 @@ class EditContactViewController: HelpController {
         self.delegate = delegate
     }
     
-    //MARK: Icon actions
+    //MARK: setup Icon actions
     private func setupIconActions() {
         
         let tapFavorite = UITapGestureRecognizer(target: self, action: #selector(favoriteContact))
@@ -54,7 +53,7 @@ class EditContactViewController: HelpController {
     }
     
     
-    //MARK: TextFields
+    //MARK: setup TextFields
     private func setupTextFields() {
         self.setupTextFields(nameTextField: self.nameTextField, lastNameTextField: self.lastNameTextField, phoneTextField: self.phoneTextField)
         self.nameTextField.text = contact.getName()
@@ -62,7 +61,7 @@ class EditContactViewController: HelpController {
         self.phoneTextField.text = contact.getPhone()
     }
     
-    //MARK: Nav Bar
+    //MARK: setup NavBar
     private func setupNavigationBar() {
         
         navigationItem.title = "Edit Contact"
@@ -82,6 +81,7 @@ class EditContactViewController: HelpController {
             target: self,
             action: #selector(confirmEdition))
         doneButton.tintColor = UIColor(named: "buttonsTabBar")
+        doneButton.isEnabled = true
         doneButton.setTitleTextAttributes(
             [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 20.0)],
             for: .normal)
@@ -103,20 +103,19 @@ class EditContactViewController: HelpController {
     
     //MARK: confirmEdition
     @objc private func confirmEdition() {
-        
         print(contact.showInfos())
         
-        guard let firstName = nameTextField.text, let lastName = lastNameTextField.text, let phone = phoneTextField.text else { return }
+        guard let name = nameTextField.text, let lastName = lastNameTextField.text, let phone = phoneTextField.text else { return }
 
-        if !firstName.isEmpty || !lastName.isEmpty {
-            contact.setName(firstName)
+        if validateInputs(name: name, lastName: lastName, phone: phone) {
+            contact.setName(name)
             contact.setLastName(lastName)
             contact.setPhone(phone)
             print("---------\n \(contact.showInfos())")
             self.aceptChanges = true
             setupAlert(title: "Success", message: "Contact updated!", completion: { self.goBack() })
         } else {
-            setupAlert(title: "ERROR", message: "At least inform a 'Name' or a 'Last Name' for the contact")
+            setupAlert(title: "ERROR", message: "Verify the data and try again!")
         }
         
     }

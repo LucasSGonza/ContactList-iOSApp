@@ -81,25 +81,20 @@ class NewContactViewController: HelpController {
     
     //MARK: NewContact
     @objc private func newContact() {
-        guard let firstName = nameTextField.text, let lastName = lastNameTextField.text, let phone = phoneTextField.text else { return }
-        
+        guard let name = nameTextField.text, let lastName = lastNameTextField.text, let phone = phoneTextField.text else { return }
+
         let contact = Contact() //cria um contato vazio e o preenche se houverem campos com informações
         
-        if !firstName.isEmpty || !lastName.isEmpty {
-            contact.setName(firstName)
+        if validateInputs(name: name, lastName: lastName, phone: phone) {
+            contact.setName(name)
             contact.setLastName(lastName)
-            
-            if !phone.isEmpty {
-                contact.setPhone(phone)
-            }
-            
-            contact.setID(contactList.count) //define um ID para o contato, baseado no tamanho atual da Array
-            print(contact.showInfos())
+            contact.setPhone(phone)
+            contact.setID(contactList.count) //praticamente realiza um contactList.count - 1 pois eu defino o ID antes de adicionar o contato na Array, portanto pega o estado dela antes desse novo contato
             contactList.append(contact)
             setupAlert(title: "Sucess", message: "Contact created with success!")
             clearTextFields()
         } else {
-            setupAlert(title: "Error", message: "To create a contact, at least inform a 'Name' or a 'Last Name'")
+            setupAlert(title: "ERROR", message: "Verify the data and try again!")
         }
         
     }
