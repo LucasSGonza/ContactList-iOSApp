@@ -107,7 +107,7 @@ class EditContactViewController: HelpController, UITextFieldDelegate {
         
         guard let name = nameTextField.text, let lastName = lastNameTextField.text, let phone = phoneTextField.text else { return }
 
-        if validateInputs(name: name, lastName: lastName, phone: phone) {
+        if verifyIfInputsAreEmpty(name: name, lastName: lastName, phone: phone) {
             contact.setName(name)
             contact.setLastName(lastName)
             contact.setPhone(phone)
@@ -115,7 +115,7 @@ class EditContactViewController: HelpController, UITextFieldDelegate {
             self.aceptChanges = true
             setupAlert(title: "Success", message: "Contact updated!", completion: { self.goBack() })
         } else {
-            setupAlert(title: "ERROR", message: "Verify the data and try again!")
+            setupAlert(title: "ERROR", message: "Data should not be empty!")
         }
         
     }

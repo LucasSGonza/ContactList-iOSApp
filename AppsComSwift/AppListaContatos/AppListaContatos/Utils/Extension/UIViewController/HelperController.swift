@@ -1,6 +1,7 @@
 import Foundation
 import UIKit
 
+//https://stackoverflow.com/questions/24022479/how-would-i-create-a-uialertview-in-swift
 class HelpController: UIViewController {
     
     func setupAlert(title: String, message:String, completion: (() -> Void)? = nil) {
@@ -20,6 +21,8 @@ class HelpController: UIViewController {
         nameTextField.layer.cornerRadius = 10
         nameTextField.layer.masksToBounds = true
         
+//        nameTextField.addTarget(self, action: #selector(nameValueChanged), for: .editingChanged)
+
         lastNameTextField.attributedPlaceholder = NSAttributedString(
                     string: "Last Name",
                     attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray]
@@ -39,16 +42,21 @@ class HelpController: UIViewController {
         phoneTextField.layer.masksToBounds = true
     }
     
-    func validateInputs(name:String, lastName:String, phone:String) -> Bool {
-        
-        //valida todas os possíveis 'falses' e se passar retorna 'true'
-        
-        /*
-         1° -> verificar se o campo possuí conteudo
-         2° -> verificar o conteudo
-         */
-        
-//        if (name.lowercased().isEmpty || name.lowercased().range(of: "^[a-z]+$", options: .regularExpression) != nil) || (lastName.lowercased().isEmpty || lastName.lowercased().range(of: "^[a-z]+$", options: .regularExpression) == nil) {
+    @objc func nameValueChanged() {
+        print("teste")
+    }
+    
+//    func validateInputs(name:String, lastName:String, phone:String) -> Bool {
+//
+//        //valida todas os possíveis 'falses' e se passar retorna 'true'
+//
+//        /*
+//         1° -> verificar se o campo possuí conteudo
+//         2° -> verificar o conteudo
+//         */
+//        print(name.lowercased().range(of: "^[a-z]+$", options: .regularExpression) ?? "nil")
+//
+//        if (name.lowercased().isEmpty || name.lowercased().range(of: "^[a-z]+$", options: .regularExpression) == nil) || (lastName.lowercased().isEmpty || lastName.lowercased().range(of: "^[a-z]+$", options: .regularExpression) == nil) {
 //            return false
 //        }
 //
@@ -56,12 +64,40 @@ class HelpController: UIViewController {
 //        if phone.isEmpty || phone.range(of: "^[0-9]+$", options: .regularExpression) == nil {
 //            return false
 //        }
+//
+//        return true
+//    }
+    
+    func validateInputs(textField:UITextField) -> Bool {
         
-        return true
+        var flag:Bool = false
+        
+        switch true {
+
+        case textField.placeholder == "Name" || textField.placeholder == "Last Name":
+            if textField.text?.lowercased().range(of: "^[a-z]+$", options: .regularExpression) != nil {
+                flag = true
+            }
+            break
+
+        case textField.placeholder == "Phone":
+            if textField.text?.range(of: "^[0-9]+$", options: .regularExpression) != nil {
+                flag = true
+            }
+            break
+
+        default:
+            break
+        }
+
+        return flag
     }
     
-    func validateContact(contact:Contact) {
-        //validar se o contato ja existe
+    func verifyIfInputsAreEmpty(name:String, lastName:String, phone:String) -> Bool {
+        if (name.isEmpty || lastName.isEmpty || phone.isEmpty) {
+            return false
+        }
+        return true
     }
     
 }

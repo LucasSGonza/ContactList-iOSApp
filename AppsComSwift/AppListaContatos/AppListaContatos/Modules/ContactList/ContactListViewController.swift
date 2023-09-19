@@ -218,5 +218,4 @@ extension ContactListViewController: EditContactDelegate {
 MARK:Problemas
  
  1. searchBar => quando eu pesquiso por um nome na searchBar, ocorreu um 1 filtro na filterData. Contudo, caso eu selecione o icone para filtrar os favoritos, ocorre um 2° filtro, tendo o 1° filtro de base, ou seja, filtra os contatos favoritos, dentro os contatos procurados na searchBar.
- 
  */

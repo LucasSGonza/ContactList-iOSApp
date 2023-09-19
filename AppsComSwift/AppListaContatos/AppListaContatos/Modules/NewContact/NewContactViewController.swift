@@ -12,16 +12,24 @@ class NewContactViewController: HelpController {
     private var contactList:[Contact] = []
     private weak var delegate:ContactListDelegate?
     
-    @IBOutlet weak var iconImageView: UIImageView!
+//    private var flagInputs:[Bool] = []
+    private var areInputsValid:Bool = false
+    
+    @IBOutlet weak var nameIconImageView: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var lastNameIconImageView: UIImageView!
     @IBOutlet weak var lastNameTextField: UITextField!
+    
+    @IBOutlet weak var phoneIconImageView: UIImageView!
     @IBOutlet weak var phoneTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
         setupTextFields(nameTextField: self.nameTextField, lastNameTextField: self.lastNameTextField, phoneTextField: self.phoneTextField)
-        // Do any additional setup after loading the view.
+        setupTextFieldsDelegate()
     }
     
     //MARK:InitView
@@ -30,18 +38,12 @@ class NewContactViewController: HelpController {
         self.contactList = contactList
     }
     
-    //MARK:TextFields
-    private func clearTextFields() {
-        nameTextField.text = ""
-        lastNameTextField.text = ""
-        phoneTextField.text = ""
+    //MARK: SetupTextField Delegate
+    private func setupTextFieldsDelegate(){
+        self.nameTextField.delegate = self
+        self.lastNameTextField.delegate = self
+        self.phoneTextField.delegate = self
     }
-    
-//    private func didSelectedTextField() {
-//        nameTextField.delegate?.textFieldDidBeginEditing?(nameTextField)
-//        nameTextField.layer.borderColor = UIColor(named: "adaptGreenColor")?.cgColor
-//        nameTextField.delegate?.textFieldDidEndEditing?(nameTextField)
-//    }
     
     //MARK: setup NavBar
     private func setupNavigationBar() {
@@ -59,17 +61,25 @@ class NewContactViewController: HelpController {
             for: .normal)
 
         
-        let addContact = UIBarButtonItem(
+        let addContactButton = UIBarButtonItem(
             barButtonSystemItem: .done,
             target: self,
             action: #selector(newContact))
-        addContact.tintColor = UIColor(named: "buttonsTabBar")
-        addContact.setTitleTextAttributes(
+        addContactButton.tintColor = UIColor(named: "buttonsTabBar")
+        addContactButton.setTitleTextAttributes(
             [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 20.0)],
             for: .normal)
+        addContactButton.isEnabled = false
         
         self.navigationItem.leftBarButtonItem = cancelButton
-        self.navigationItem.rightBarButtonItem = addContact
+        self.navigationItem.rightBarButtonItem = addContactButton
+    }
+    
+    //MARK:Clear TextFields
+    private func clearTextFields() {
+        nameTextField.text = ""
+        lastNameTextField.text = ""
+        phoneTextField.text = ""
     }
     
     //MARK:Go back
@@ -85,7 +95,7 @@ class NewContactViewController: HelpController {
 
         let contact = Contact() //cria um contato vazio e o preenche se houverem campos com informações
         
-        if validateInputs(name: name, lastName: lastName, phone: phone) {
+        if verifyIfInputsAreEmpty(name: name, lastName: lastName, phone: phone) {
             contact.setName(name)
             contact.setLastName(lastName)
             contact.setPhone(phone)
@@ -94,7 +104,70 @@ class NewContactViewController: HelpController {
             setupAlert(title: "Sucess", message: "Contact created with success!")
             clearTextFields()
         } else {
-            setupAlert(title: "ERROR", message: "Verify the data and try again!")
+            setupAlert(title: "ERROR", message: "Data should not be empty!")
+        }
+    }
+    
+}
+
+extension NewContactViewController: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.layer.borderColor = UIColor.systemGreen.cgColor
+        
+        switch true {
+        case textField.placeholder == "Name":
+            nameIconImageView.tintColor = UIColor(named: "adaptGreenColor")
+            break
+            
+        case textField.placeholder == "Last Name":
+            lastNameIconImageView.tintColor = UIColor(named: "adaptGreenColor")
+            break
+            
+        case textField.placeholder == "Phone":
+            phoneIconImageView.tintColor = UIColor(named: "adaptGreenColor")
+            break
+            
+        default:
+            break
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        if validateInputs(textField: textField) {
+            textField.layer.borderColor = UIColor(named: "textFieldColor")?.cgColor ?? UIColor.systemGray.cgColor
+            areInputsValid = true
+        } else {
+            textField.layer.borderColor = UIColor.systemRed.cgColor
+            areInputsValid = false
+        }
+        
+//        flagInputs.append(areInputsValid)
+        
+        switch true {
+        case textField.placeholder == "Name":
+            nameIconImageView.tintColor = validateInputs(textField: textField) ? UIColor(named: "adaptGreenColor") : UIColor.systemRed
+            break
+            
+        case textField.placeholder == "Last Name":
+            lastNameIconImageView.tintColor = validateInputs(textField: textField) ? UIColor(named: "adaptGreenColor") : UIColor.systemRed
+            break
+            
+        case textField.placeholder == "Phone":
+            phoneIconImageView.tintColor = validateInputs(textField: textField) ? UIColor(named: "adaptGreenColor") : UIColor.systemRed
+            break
+            
+        default:
+            break
+        }
+        
+//        print(flagInputs)
+        
+        if areInputsValid {
+            self.navigationItem.rightBarButtonItem?.isEnabled = true
+        } else {
+            self.navigationItem.rightBarButtonItem?.isEnabled = false
         }
         
     }
