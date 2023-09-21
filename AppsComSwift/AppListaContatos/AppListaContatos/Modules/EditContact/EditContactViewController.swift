@@ -9,9 +9,22 @@ import UIKit
 
 class EditContactViewController: HelpController, UITextFieldDelegate {
     
+    private var isNameValid:Bool = false
+    private var isLastNameValid:Bool = true
+    private var isPhoneValid:Bool = false
+    
+    @IBOutlet weak var nameIconImageView: UIImageView!
+    @IBOutlet weak var lastNameIconImageView: UIImageView!
+    @IBOutlet weak var phoneIconImageView: UIImageView!
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var lastNameLabel: UILabel!
+    @IBOutlet weak var phoneLabel: UILabel!
+    
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
+    
     @IBOutlet weak var favoriteImageView: UIImageView!
     @IBOutlet weak var trashImageView: UIImageView!
     @IBOutlet weak var phoneImageView: UIImageView!
@@ -27,6 +40,7 @@ class EditContactViewController: HelpController, UITextFieldDelegate {
         setupTextFields()
         setupNavigationBar()
         setupIconActions()
+        setupValidation()
         
         print(contact.showInfos())
         favoriteImageView.image = contact.isFavorite ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
@@ -52,6 +66,10 @@ class EditContactViewController: HelpController, UITextFieldDelegate {
 //        phoneImageView.addGestureRecognizer(tapCall)
     }
     
+    //MARK:Hide or not save btt
+    private func canSave() {
+        self.navigationItem.rightBarButtonItem?.isEnabled = (isNameValid && isLastNameValid && isPhoneValid)
+    }
     
     //MARK: setup TextFields
     private func setupTextFields() {
@@ -76,18 +94,18 @@ class EditContactViewController: HelpController, UITextFieldDelegate {
             [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 20.0)],
             for: .normal)
         
-        let doneButton = UIBarButtonItem(
+        let confirmEditionButton = UIBarButtonItem(
             barButtonSystemItem: .done,
             target: self,
             action: #selector(confirmEdition))
-        doneButton.tintColor = UIColor(named: "buttonsTabBar")
-        doneButton.isEnabled = true
-        doneButton.setTitleTextAttributes(
+        confirmEditionButton.tintColor = UIColor(named: "buttonsTabBar")
+        confirmEditionButton.isEnabled = true
+        confirmEditionButton.setTitleTextAttributes(
             [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 20.0)],
             for: .normal)
         
         self.navigationItem.leftBarButtonItem = cancelButton
-        self.navigationItem.rightBarButtonItem = doneButton
+        self.navigationItem.rightBarButtonItem = confirmEditionButton
     }
 
     //MARK: goBack
@@ -106,18 +124,13 @@ class EditContactViewController: HelpController, UITextFieldDelegate {
         print(contact.showInfos())
         
         guard let name = nameTextField.text, let lastName = lastNameTextField.text, let phone = phoneTextField.text else { return }
-
-        if verifyIfInputsAreEmpty(name: name, lastName: lastName, phone: phone) {
-            contact.setName(name)
-            contact.setLastName(lastName)
-            contact.setPhone(phone)
-            print("---------\n \(contact.showInfos())")
-            self.aceptChanges = true
-            setupAlert(title: "Success", message: "Contact updated!", completion: { self.goBack() })
-        } else {
-            setupAlert(title: "ERROR", message: "Data should not be empty!")
-        }
         
+        contact.setName(name)
+        contact.setLastName(lastName)
+        contact.setPhone(phone)
+        print("---------\n \(contact.showInfos())")
+        self.aceptChanges = true
+        setupAlert(title: "Success", message: "Contact updated!", completion: { self.goBack() })
     }
     
     //MARK: Favorite contact
@@ -142,4 +155,82 @@ class EditContactViewController: HelpController, UITextFieldDelegate {
         setupAlert(title: "Sucess!", message: "Contact deleted with success", completion: { self.goBack() })
     }
 
+}
+
+//MARK: Validation TextFields
+extension EditContactViewController {
+    
+    private func setupValidation() {
+        nameTextField.addTarget(self, action: #selector(validateName), for: .editingChanged)
+        lastNameTextField.addTarget(self, action: #selector(validateLastName), for: .editingChanged)
+        phoneTextField.addTarget(self, action: #selector(validatePhone), for: .editingChanged)
+    }
+    
+    //MARK: Validate Name
+    @objc func validateName() {
+        guard let nameText = nameTextField.text else { return }
+        
+        if nameText.isEmpty {
+            errorTextField(textField: nameTextField, icon: nameIconImageView)
+            nameLabel.isHidden = false
+            nameLabel.text = "Field cannot be empty"
+            isNameValid = false
+        } else if !nameText.isNameValid() {
+            errorTextField(textField: nameTextField, icon: nameIconImageView)
+            nameLabel.isHidden = false
+            nameLabel.text = "Name must only contain letters"
+            isNameValid = false
+        } else {
+            normalTextField(textField: nameTextField, icon: nameIconImageView)
+            nameLabel.isHidden = true
+            isNameValid = true
+        }
+        canSave()
+    }
+    
+    //MARK: Validate Last Name !
+    @objc func validateLastName() {
+        guard let lastNameText = lastNameTextField.text else { return }
+        
+        if lastNameText.isEmpty {
+            errorTextField(textField: lastNameTextField, icon: lastNameIconImageView)
+            lastNameLabel.isHidden = false
+            lastNameLabel.text = "Field cannot be empty"
+            isLastNameValid = false
+        } else if !lastNameText.isNameValid() {
+            errorTextField(textField: lastNameTextField, icon: lastNameIconImageView)
+            lastNameLabel.isHidden = false
+            lastNameLabel.text = "Last name must only contain letters"
+            isLastNameValid = false
+        } else {
+            normalTextField(textField: lastNameTextField, icon: lastNameIconImageView)
+            lastNameLabel.isHidden = true
+            isLastNameValid = true
+        }
+        canSave()
+
+    }
+    
+    //MARK: Validate Phone
+    @objc func validatePhone() {
+        guard let phoneText = phoneTextField.text else { return }
+        
+        if phoneText.isEmpty {
+            errorTextField(textField: phoneTextField, icon: phoneIconImageView)
+            phoneLabel.isHidden = false
+            phoneLabel.text = "Field cannot be empty"
+            isPhoneValid = false
+        } else if !phoneText.isPhoneValid() {
+            errorTextField(textField: phoneTextField, icon: phoneIconImageView)
+            phoneLabel.isHidden = false
+            phoneLabel.text = "Phone must only contain numbers"
+            isPhoneValid = false
+        } else {
+            normalTextField(textField: phoneTextField, icon: phoneIconImageView)
+            phoneLabel.isHidden = true
+            isPhoneValid = true
+        }
+        canSave()
+    }
+    
 }
