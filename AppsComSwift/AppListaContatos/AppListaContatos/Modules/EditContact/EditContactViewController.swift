@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EditContactViewController: HelpController, UITextFieldDelegate {
+class EditContactViewController: HelpController {
     
     private var isNameValid:Bool = false
     private var isLastNameValid:Bool = true
@@ -41,6 +41,7 @@ class EditContactViewController: HelpController, UITextFieldDelegate {
         setupNavigationBar()
         setupIconActions()
         setupValidation()
+        setupTextFieldsDelegate()
         
         print(contact.showInfos())
         favoriteImageView.image = contact.isFavorite ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
@@ -157,6 +158,34 @@ class EditContactViewController: HelpController, UITextFieldDelegate {
 
 }
 
+//MARK: UITextFieldDelegate
+extension EditContactViewController: UITextFieldDelegate {
+    
+    func setupTextFieldsDelegate() {
+        nameTextField.delegate = self
+        lastNameTextField.delegate = self
+        phoneTextField.delegate = self
+    }
+    
+    //https://www.hackingwithswift.com/example-code/uikit/how-to-limit-the-number-of-characters-in-a-uitextfield-or-uitextview#:~:text=If%20you%20have%20a%20UITextField,shouldChangeTextIn%20(for%20text%20views).
+    //limit the characters in the textFields
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        // get the current text, or use an empty string if that failed
+        let currentText = textField.text ?? ""
+
+        // attempt to read the range they are trying to change, or exit if we can't
+        guard let stringRange = Range(range, in: currentText) else { return false }
+
+        // add their new text to the existing text
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+
+        // make sure the result is under 16 characters
+        return updatedText.count <= 20
+    }
+    
+}
+
+
 //MARK: Validation TextFields
 extension EditContactViewController {
     
@@ -178,7 +207,7 @@ extension EditContactViewController {
         } else if !nameText.isNameValid() {
             errorTextField(textField: nameTextField, icon: nameIconImageView)
             nameLabel.isHidden = false
-            nameLabel.text = "Name must only contain letters"
+            nameLabel.text = "First name must only contain letters and no unnecessary empty spaces"
             isNameValid = false
         } else {
             normalTextField(textField: nameTextField, icon: nameIconImageView)
@@ -200,7 +229,7 @@ extension EditContactViewController {
         } else if !lastNameText.isNameValid() {
             errorTextField(textField: lastNameTextField, icon: lastNameIconImageView)
             lastNameLabel.isHidden = false
-            lastNameLabel.text = "Last name must only contain letters"
+            lastNameLabel.text = "Last name must only contain letters and no unnecessary empty spaces"
             isLastNameValid = false
         } else {
             normalTextField(textField: lastNameTextField, icon: lastNameIconImageView)
