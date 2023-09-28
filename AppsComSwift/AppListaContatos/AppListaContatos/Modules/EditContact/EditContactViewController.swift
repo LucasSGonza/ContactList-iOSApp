@@ -10,7 +10,7 @@ import UIKit
 class EditContactViewController: HelpController {
     
     private var isNameValid:Bool = false
-    private var isLastNameValid:Bool = true
+    private var isLastNameValid:Bool = false
     private var isPhoneValid:Bool = false
     
     @IBOutlet weak var nameIconImageView: UIImageView!
@@ -204,12 +204,12 @@ extension EditContactViewController {
             nameLabel.isHidden = false
             nameLabel.text = "Field cannot be empty"
             isNameValid = false
-        } else if !nameText.isNameValid() {
-            errorTextField(textField: nameTextField, icon: nameIconImageView)
-            nameLabel.isHidden = false
-            nameLabel.text = "First name must only contain letters and no unnecessary empty spaces"
-            isNameValid = false
-        } else {
+//        } else if !nameText.isNameValid() {
+//            errorTextField(textField: nameTextField, icon: nameIconImageView)
+//            nameLabel.isHidden = false
+//            nameLabel.text = "First name must only contain letters and no unnecessary empty spaces"
+//            isNameValid = false
+//        } else {
             normalTextField(textField: nameTextField, icon: nameIconImageView)
             nameLabel.isHidden = true
             isNameValid = true
@@ -226,11 +226,11 @@ extension EditContactViewController {
             lastNameLabel.isHidden = false
             lastNameLabel.text = "Field cannot be empty"
             isLastNameValid = false
-        } else if !lastNameText.isNameValid() {
-            errorTextField(textField: lastNameTextField, icon: lastNameIconImageView)
-            lastNameLabel.isHidden = false
-            lastNameLabel.text = "Last name must only contain letters and no unnecessary empty spaces"
-            isLastNameValid = false
+//        } else if !lastNameText.isNameValid() {
+//            errorTextField(textField: lastNameTextField, icon: lastNameIconImageView)
+//            lastNameLabel.isHidden = false
+//            lastNameLabel.text = "Last name must only contain letters and no unnecessary empty spaces"
+//            isLastNameValid = false
         } else {
             normalTextField(textField: lastNameTextField, icon: lastNameIconImageView)
             lastNameLabel.isHidden = true

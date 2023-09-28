@@ -15,7 +15,7 @@ class NewContactViewController: HelpController {
     private weak var delegate:ContactListDelegate?
     
     private var isNameValid:Bool = false
-    private var isLastNameValid:Bool = true
+    private var isLastNameValid:Bool = false
     private var isPhoneValid:Bool = false
     
     @IBOutlet weak var nameIconImageView: UIImageView!
@@ -110,18 +110,18 @@ extension NewContactViewController: UITextFieldDelegate {
     }
     
     //https://www.hackingwithswift.com/example-code/uikit/how-to-limit-the-number-of-characters-in-a-uitextfield-or-uitextview#:~:text=If%20you%20have%20a%20UITextField,shouldChangeTextIn%20(for%20text%20views).
-    //limit the characters in the textFields
+    //limit the characters in the textFields -> basicamente irá 'ficar trocando' sempre o textField pra quando chegar no limite estabelecido, poder ainda conseguir fazer alterações
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         // get the current text, or use an empty string if that failed
         let currentText = textField.text ?? ""
 
         // attempt to read the range they are trying to change, or exit if we can't
         guard let stringRange = Range(range, in: currentText) else { return false }
-
+        
         // add their new text to the existing text
         let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
 
-        // make sure the result is under 16 characters
+        // make sure the result is under x characters
         return updatedText.count <= 20
     }
     
@@ -145,11 +145,11 @@ extension NewContactViewController {
             nameLabel.isHidden = false
             nameLabel.text = "Field cannot be empty"
             isNameValid = false
-        } else if !nameText.isNameValid() {
-            errorTextField(textField: nameTextField, icon: nameIconImageView)
-            nameLabel.isHidden = false
-            nameLabel.text = "Name must only contain letters and no unnecessary empty spaces"
-            isNameValid = false
+//        } else if !nameText.isNameValid() {
+//            errorTextField(textField: nameTextField, icon: nameIconImageView)
+//            nameLabel.isHidden = false
+//            nameLabel.text = "Name must only contain letters and no unnecessary empty spaces"
+//            isNameValid = false
         } else {
             normalTextField(textField: nameTextField, icon: nameIconImageView)
             nameLabel.isHidden = true
@@ -168,11 +168,11 @@ extension NewContactViewController {
             lastNameLabel.isHidden = false
             lastNameLabel.text = "Field cannot be empty"
             isLastNameValid = false
-        } else if !lastNameText.isNameValid() {
-            errorTextField(textField: lastNameTextField, icon: lastNameIconImageView)
-            lastNameLabel.isHidden = false
-            lastNameLabel.text = "Last name must only contain letters and no unnecessary empty spaces"
-            isLastNameValid = false
+//        } else if !lastNameText.isNameValid() {
+//            errorTextField(textField: lastNameTextField, icon: lastNameIconImageView)
+//            lastNameLabel.isHidden = false
+//            lastNameLabel.text = "Last name must only contain letters and no unnecessary empty spaces"
+//            isLastNameValid = false
         } else {
             normalTextField(textField: lastNameTextField, icon: lastNameIconImageView)
             lastNameLabel.isHidden = true

@@ -14,17 +14,17 @@ import Foundation
 
 extension String {
     
-    func isNameValid() -> Bool {
-        let regex = "^[a-zA-Z]+( [a-zA-Z-0-9]+)*$"
-        let predicate = NSPredicate(format: "SELF MATCHES %@", regex)
-        
-        return predicate.evaluate(with: self)
-    }
+//    func isNameValid() -> Bool {
+//        let regex = "^[a-zA-Z]+( [a-zA-Z-0-9]+)*$"
+//        let predicate = NSPredicate(format: "SELF MATCHES %@", regex)
+//
+//        return predicate.evaluate(with: self)
+//    }
     
     func isPhoneValid() -> Bool {
         let regex = "^([1-9]{2})+(?:[2-8]|9[0-9])+[0-9]{3}+[0-9]{4}+$"
         let predicate = NSPredicate(format: "SELF MATCHES %@", regex)
-        
+
         return predicate.evaluate(with: self)
     }
     

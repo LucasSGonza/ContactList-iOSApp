@@ -18,9 +18,9 @@ class HelpController: UIViewController {
                     string: "Name",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray]
                 )
-        nameTextField.layer.borderColor = UIColor(named: "textFieldColor")?.cgColor ?? UIColor.systemGray.cgColor
+        nameTextField.layer.borderColor = UIColor(named: "textFieldBorderColor")?.cgColor ?? UIColor.systemGray.cgColor
         nameTextField.layer.borderWidth = 1.0
-        nameTextField.layer.cornerRadius = 10
+        nameTextField.layer.cornerRadius = 5
         nameTextField.layer.masksToBounds = true
         
         /*-----------------*/
@@ -29,9 +29,9 @@ class HelpController: UIViewController {
                     string: "Last Name",
                     attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray]
                 )
-        lastNameTextField.layer.borderColor = UIColor(named: "textFieldColor")?.cgColor ?? UIColor.systemGray.cgColor
+        lastNameTextField.layer.borderColor = UIColor(named: "textFieldBorderColor")?.cgColor ?? UIColor.systemGray.cgColor
         lastNameTextField.layer.borderWidth = 1.0
-        lastNameTextField.layer.cornerRadius = 10
+        lastNameTextField.layer.cornerRadius = 5
         lastNameTextField.layer.masksToBounds = true
         
         /*-----------------*/
@@ -40,10 +40,11 @@ class HelpController: UIViewController {
                     string: "Phone",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray]
                 )
-        phoneTextField.layer.borderColor = UIColor(named: "textFieldColor")?.cgColor ?? UIColor.systemGray.cgColor
+        phoneTextField.layer.borderColor = UIColor(named: "textFieldBorderColor")?.cgColor ?? UIColor.systemGray.cgColor
         phoneTextField.layer.borderWidth = 1.0
-        phoneTextField.layer.cornerRadius = 10
+        phoneTextField.layer.cornerRadius = 5
         phoneTextField.layer.masksToBounds = true
+        phoneTextField.keyboardType = .phonePad
     }
     
     //MARK:Setup Visual TF validation
