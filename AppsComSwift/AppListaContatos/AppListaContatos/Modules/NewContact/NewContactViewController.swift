@@ -33,7 +33,7 @@ class NewContactViewController: HelpController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
-        setupTextFields(nameTextField: self.nameTextField, lastNameTextField: self.lastNameTextField, phoneTextField: self.phoneTextField)
+        setupTextFieldsVisual(nameTextField: self.nameTextField, lastNameTextField: self.lastNameTextField, phoneTextField: self.phoneTextField)
         setupValidation()
         setupTextFieldsDelegate()
     }
@@ -145,13 +145,8 @@ extension NewContactViewController {
             nameLabel.isHidden = false
             nameLabel.text = "Field cannot be empty"
             isNameValid = false
-//        } else if !nameText.isNameValid() {
-//            errorTextField(textField: nameTextField, icon: nameIconImageView)
-//            nameLabel.isHidden = false
-//            nameLabel.text = "Name must only contain letters and no unnecessary empty spaces"
-//            isNameValid = false
         } else {
-            normalTextField(textField: nameTextField, icon: nameIconImageView)
+            validTextField(textField: nameTextField, icon: nameIconImageView)
             nameLabel.isHidden = true
             isNameValid = true
         }
@@ -168,13 +163,8 @@ extension NewContactViewController {
             lastNameLabel.isHidden = false
             lastNameLabel.text = "Field cannot be empty"
             isLastNameValid = false
-//        } else if !lastNameText.isNameValid() {
-//            errorTextField(textField: lastNameTextField, icon: lastNameIconImageView)
-//            lastNameLabel.isHidden = false
-//            lastNameLabel.text = "Last name must only contain letters and no unnecessary empty spaces"
-//            isLastNameValid = false
         } else {
-            normalTextField(textField: lastNameTextField, icon: lastNameIconImageView)
+            validTextField(textField: lastNameTextField, icon: lastNameIconImageView)
             lastNameLabel.isHidden = true
             isLastNameValid = true
         }
@@ -194,10 +184,10 @@ extension NewContactViewController {
         } else if !phoneText.isPhoneValid() {
             errorTextField(textField: phoneTextField, icon: phoneIconImageView)
             phoneLabel.isHidden = false
-            phoneLabel.text = "Phone must only contain numbers"
+            phoneLabel.text = "Please provide a valid phone number"
             isPhoneValid = false
         } else {
-            normalTextField(textField: phoneTextField, icon: phoneIconImageView)
+            validTextField(textField: phoneTextField, icon: phoneIconImageView)
             phoneLabel.isHidden = true
             isPhoneValid = true
         }

@@ -35,13 +35,6 @@ class ContactListViewController: UIViewController {
         setupScreenToDefaultState()
     }
     
-    
-    @IBAction func goToTeste(_ sender: Any) {
-        let testeVC = UIStoryboard(name: "TesteScrollView", bundle: nil).instantiateViewController(withIdentifier: "TesteScrollViewController") as! TesteScrollViewController
-        self.navigationController?.pushViewController(testeVC, animated: true)
-    }
-    
-    
     //MARK: setup TableView
     private func setupTableView() {
         tableView.delegate = self

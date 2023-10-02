@@ -12,7 +12,7 @@ class HelpController: UIViewController {
     }
     
     //MARK: Setup TextFields Visual
-    func setupTextFields(nameTextField:UITextField, lastNameTextField:UITextField, phoneTextField:UITextField) {
+    func setupTextFieldsVisual(nameTextField:UITextField, lastNameTextField:UITextField, phoneTextField:UITextField) {
         
         nameTextField.attributedPlaceholder = NSAttributedString(
                     string: "Name",
@@ -48,10 +48,16 @@ class HelpController: UIViewController {
     }
     
     //MARK:Setup Visual TF validation
-    func normalTextField(textField: UITextField, icon: UIImageView) {
+    func normalTextField(textField: UITextField, icon: UIImageView){
+        textField.layer.borderColor = UIColor(named: "textFieldBorderColor")?.cgColor ?? UIColor.systemGray.cgColor
+        icon.tintColor = UIColor(named: "adaptGreenColor")
+    }
+    
+    func validTextField(textField: UITextField, icon: UIImageView) {
         textField.layer.borderColor = UIColor.systemGreen.cgColor
         icon.tintColor = UIColor(named: "adaptGreenColor")
     }
+    
     func errorTextField(textField: UITextField, icon: UIImageView) {
         textField.layer.borderColor = UIColor.systemRed.cgColor
         icon.tintColor = UIColor.systemRed

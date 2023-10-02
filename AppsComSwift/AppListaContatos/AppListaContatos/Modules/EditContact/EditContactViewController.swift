@@ -5,29 +5,42 @@
 //  Created by Squad Apps on 27/07/23.
 //
 
+//LINKS ABAIXO SERÃO RETIRADOS DAQUI
+
+//ScrollView: https://www.youtube.com/watch?v=orONrVT6CAg
+/*
+ UI/UX:
+ 
+- https://fonts.google.com/icons
+- https://developer.apple.com/design/human-interface-guidelines/text-fields
+- https://m2.material.io/components/text-fields/ios
+ 
+ */
+
 import UIKit
 
 class EditContactViewController: HelpController {
     
-    private var isNameValid:Bool = false
-    private var isLastNameValid:Bool = false
-    private var isPhoneValid:Bool = false
-    
-    @IBOutlet weak var nameIconImageView: UIImageView!
-    @IBOutlet weak var lastNameIconImageView: UIImageView!
-    @IBOutlet weak var phoneIconImageView: UIImageView!
-    
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var lastNameLabel: UILabel!
-    @IBOutlet weak var phoneLabel: UILabel!
-    
-    @IBOutlet weak var phoneTextField: UITextField!
-    @IBOutlet weak var lastNameTextField: UITextField!
-    @IBOutlet weak var nameTextField: UITextField!
+    private var favoriteChanged:Bool = false
+    private var isNameValid:Bool = true
+    private var isLastNameValid:Bool = true
+    private var isPhoneValid:Bool = true
     
     @IBOutlet weak var favoriteImageView: UIImageView!
     @IBOutlet weak var trashImageView: UIImageView!
     @IBOutlet weak var phoneImageView: UIImageView!
+    
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var nameIconImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var lastNameTextField: UITextField!
+    @IBOutlet weak var lastNameIconImageView: UIImageView!
+    @IBOutlet weak var lastNameLabel: UILabel!
+    
+    @IBOutlet weak var phoneTextField: UITextField!
+    @IBOutlet weak var phoneIconImageView: UIImageView!
+    @IBOutlet weak var phoneLabel: UILabel!
     
     //MARK:Pass & Receive Data
     private var contactList:[Contact] = []
@@ -42,6 +55,7 @@ class EditContactViewController: HelpController {
         setupIconActions()
         setupValidation()
         setupTextFieldsDelegate()
+        self.navigationItem.rightBarButtonItem?.isEnabled = false
         
         print(contact.showInfos())
         favoriteImageView.image = contact.isFavorite ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
@@ -69,12 +83,13 @@ class EditContactViewController: HelpController {
     
     //MARK:Hide or not save btt
     private func canSave() {
-        self.navigationItem.rightBarButtonItem?.isEnabled = (isNameValid && isLastNameValid && isPhoneValid)
+        self.navigationItem.rightBarButtonItem?.isEnabled = favoriteChanged && (isNameValid && isLastNameValid && isPhoneValid)
     }
     
     //MARK: setup TextFields
     private func setupTextFields() {
-        self.setupTextFields(nameTextField: self.nameTextField, lastNameTextField: self.lastNameTextField, phoneTextField: self.phoneTextField)
+        self.setupTextFieldsVisual(nameTextField: self.nameTextField, lastNameTextField: self.lastNameTextField, phoneTextField: self.phoneTextField)
+        
         self.nameTextField.text = contact.getName()
         self.lastNameTextField.text = contact.getLastName()
         self.phoneTextField.text = contact.getPhone()
@@ -145,6 +160,8 @@ class EditContactViewController: HelpController {
             contact.isFavorite = true
             favoriteImageView.image = UIImage(systemName: "star.fill")
         }
+        favoriteChanged = true
+        canSave()
         print(contact.isFavorite)
     }
     
@@ -204,17 +221,13 @@ extension EditContactViewController {
             nameLabel.isHidden = false
             nameLabel.text = "Field cannot be empty"
             isNameValid = false
-//        } else if !nameText.isNameValid() {
-//            errorTextField(textField: nameTextField, icon: nameIconImageView)
-//            nameLabel.isHidden = false
-//            nameLabel.text = "First name must only contain letters and no unnecessary empty spaces"
-//            isNameValid = false
-//        } else {
-            normalTextField(textField: nameTextField, icon: nameIconImageView)
+        } else {
+            validTextField(textField: nameTextField, icon: nameIconImageView)
             nameLabel.isHidden = true
             isNameValid = true
         }
-        canSave()
+        
+        canSave() //verifica como ficará o estado do botao, apos toda a validação
     }
     
     //MARK: Validate Last Name !
@@ -226,18 +239,13 @@ extension EditContactViewController {
             lastNameLabel.isHidden = false
             lastNameLabel.text = "Field cannot be empty"
             isLastNameValid = false
-//        } else if !lastNameText.isNameValid() {
-//            errorTextField(textField: lastNameTextField, icon: lastNameIconImageView)
-//            lastNameLabel.isHidden = false
-//            lastNameLabel.text = "Last name must only contain letters and no unnecessary empty spaces"
-//            isLastNameValid = false
         } else {
-            normalTextField(textField: lastNameTextField, icon: lastNameIconImageView)
+            validTextField(textField: lastNameTextField, icon: lastNameIconImageView)
             lastNameLabel.isHidden = true
             isLastNameValid = true
         }
+        
         canSave()
-
     }
     
     //MARK: Validate Phone
@@ -252,13 +260,14 @@ extension EditContactViewController {
         } else if !phoneText.isPhoneValid() {
             errorTextField(textField: phoneTextField, icon: phoneIconImageView)
             phoneLabel.isHidden = false
-            phoneLabel.text = "Phone must only contain numbers"
+            phoneLabel.text = "Please provide a valid phone number"
             isPhoneValid = false
         } else {
-            normalTextField(textField: phoneTextField, icon: phoneIconImageView)
+            validTextField(textField: phoneTextField, icon: phoneIconImageView)
             phoneLabel.isHidden = true
             isPhoneValid = true
         }
+        
         canSave()
     }
     

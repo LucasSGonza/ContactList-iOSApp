@@ -24,8 +24,6 @@
 		D9442D032AC35E4100D82C92 /* FloatingLabelInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9442D022AC35E4100D82C92 /* FloatingLabelInput.swift */; };
 		D95BFF9F2A72FD1B0044E4DE /* EditContact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D95BFF9E2A72FD1B0044E4DE /* EditContact.storyboard */; };
 		D95BFFA42A72FD3C0044E4DE /* EditContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95BFFA32A72FD3C0044E4DE /* EditContactViewController.swift */; };
-		D95F8B222AC60FF00084F00C /* TesteScrollView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D95F8B212AC60FF00084F00C /* TesteScrollView.storyboard */; };
-		D95F8B272AC610270084F00C /* TesteScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D95F8B262AC610270084F00C /* TesteScrollViewController.swift */; };
 		D9632F7D2A71B45A00550195 /* ContactListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9632F7C2A71B45A00550195 /* ContactListDelegate.swift */; };
 		D9DC9C962A70464A00DB1443 /* HelperController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DC9C952A70464900DB1443 /* HelperController.swift */; };
 /* End PBXBuildFile section */
@@ -71,8 +69,6 @@
 		D9442D022AC35E4100D82C92 /* FloatingLabelInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingLabelInput.swift; sourceTree = "<group>"; };
 		D95BFF9E2A72FD1B0044E4DE /* EditContact.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditContact.storyboard; sourceTree = "<group>"; };
 		D95BFFA32A72FD3C0044E4DE /* EditContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContactViewController.swift; sourceTree = "<group>"; };
-		D95F8B212AC60FF00084F00C /* TesteScrollView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TesteScrollView.storyboard; sourceTree = "<group>"; };
-		D95F8B262AC610270084F00C /* TesteScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TesteScrollViewController.swift; sourceTree = "<group>"; };
 		D9632F7C2A71B45A00550195 /* ContactListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListDelegate.swift; sourceTree = "<group>"; };
 		D9DC9C952A70464900DB1443 /* HelperController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -164,7 +160,6 @@
 		D92B53DE2A69A74000FC407B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				D95F8B202AC60FA10084F00C /* TesteScrollView */,
 				D95BFF9D2A72FD010044E4DE /* EditContact */,
 				D92B53E12A69A79E00FC407B /* NewContact */,
 				D92B53E02A69A76200FC407B /* ContactList */,
@@ -252,15 +247,6 @@
 				D95BFFA32A72FD3C0044E4DE /* EditContactViewController.swift */,
 			);
 			path = EditContact;
-			sourceTree = "<group>";
-		};
-		D95F8B202AC60FA10084F00C /* TesteScrollView */ = {
-			isa = PBXGroup;
-			children = (
-				D95F8B212AC60FF00084F00C /* TesteScrollView.storyboard */,
-				D95F8B262AC610270084F00C /* TesteScrollViewController.swift */,
-			);
-			path = TesteScrollView;
 			sourceTree = "<group>";
 		};
 		D9632F5A2A719EFF00550195 /* Protocols */ = {
@@ -386,7 +372,6 @@
 				D92B53B72A69A6C900FC407B /* LaunchScreen.storyboard in Resources */,
 				D94225612A9E82E4005EA1D5 /* ContactTableViewCell.xib in Resources */,
 				D92B53B42A69A6C900FC407B /* Assets.xcassets in Resources */,
-				D95F8B222AC60FF00084F00C /* TesteScrollView.storyboard in Resources */,
 				D92B54222A69BE5500FC407B /* NewContact.storyboard in Resources */,
 				D95BFF9F2A72FD1B0044E4DE /* EditContact.storyboard in Resources */,
 			);
@@ -414,7 +399,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9442D032AC35E4100D82C92 /* FloatingLabelInput.swift in Sources */,
-				D95F8B272AC610270084F00C /* TesteScrollViewController.swift in Sources */,
 				D92B540D2A69ADBD00FC407B /* Contact.swift in Sources */,
 				D92B53AB2A69A6C800FC407B /* AppDelegate.swift in Sources */,
 				D94213992ABCBA7F00BCED54 /* String.swift in Sources */,
