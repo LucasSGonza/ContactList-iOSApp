@@ -51,17 +51,18 @@ class ContactTableViewCell: UITableViewCell {
     @objc func favoriteSelected() {
         guard let contact = contact else { return }
         
-        if contact.isFavorite {
-            contact.isFavorite = false
+        if contact.getIsFavorite() {
+            contact.setFavorite(false)
             favoriteImageView.image = UIImage(systemName: "star")
             favoriteImageView.isHidden = true
             favoriteImageView.isUserInteractionEnabled = true
         } else {
-            contact.isFavorite = true
+            contact.setFavorite(true)
             favoriteImageView.image = UIImage(systemName: "star.fill")
             favoriteImageView.isHidden = false
             favoriteImageView.isUserInteractionEnabled = false
         }
+        
     }
     
 }

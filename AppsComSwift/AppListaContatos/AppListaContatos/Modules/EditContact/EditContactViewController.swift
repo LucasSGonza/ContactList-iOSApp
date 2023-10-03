@@ -58,7 +58,11 @@ class EditContactViewController: HelpController {
         self.navigationItem.rightBarButtonItem?.isEnabled = false
         
         print(contact.showInfos())
-        favoriteImageView.image = contact.isFavorite ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
+        favoriteImageView.image = contact.getIsFavorite() ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.aceptChanges = false
     }
     
     //MARK: InitView
@@ -83,7 +87,7 @@ class EditContactViewController: HelpController {
     
     //MARK:Hide or not save btt
     private func canSave() {
-        self.navigationItem.rightBarButtonItem?.isEnabled = favoriteChanged && (isNameValid && isLastNameValid && isPhoneValid)
+        self.navigationItem.rightBarButtonItem?.isEnabled = (isNameValid && isLastNameValid && isPhoneValid)
     }
     
     //MARK: setup TextFields
@@ -141,6 +145,8 @@ class EditContactViewController: HelpController {
         
         guard let name = nameTextField.text, let lastName = lastNameTextField.text, let phone = phoneTextField.text else { return }
         
+        favoriteChanged ? contact.setFavorite(true) : contact.setFavorite(false)
+        
         contact.setName(name)
         contact.setLastName(lastName)
         contact.setPhone(phone)
@@ -151,25 +157,21 @@ class EditContactViewController: HelpController {
     
     //MARK: Favorite contact
     @objc private func favoriteContact() {
-        //guard let contact = contact else {return }
-        
-        if contact.isFavorite {//contact is favorite? when click will become not favorite
-            contact.isFavorite = false
+        if favoriteChanged {//contact is favorite? when click will become not favorite
+            favoriteChanged = false
             favoriteImageView.image = UIImage(systemName: "star")
         } else {
-            contact.isFavorite = true
+            favoriteChanged = true
             favoriteImageView.image = UIImage(systemName: "star.fill")
         }
-        favoriteChanged = true
         canSave()
-        print(contact.isFavorite)
     }
     
     //MARK: Delete contact
     @objc private func deleteContact() {
         //guard let contact = contact else { return }
         contactList.removeAll(where: {$0.getID() == contact.getID()})
-        aceptChanges = true
+        self.aceptChanges = true
         setupAlert(title: "Sucess!", message: "Contact deleted with success", completion: { self.goBack() })
     }
 

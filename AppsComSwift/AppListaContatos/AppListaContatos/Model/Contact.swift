@@ -13,7 +13,7 @@ class Contact {
     private var name:String = ""
     private var lastName:String = ""
     private var phone:String = ""
-    public var isFavorite:Bool = false
+    private var isFavorite:Bool = false
     
     //init padrão
     init(name:String, lastName:String, phone:String, favorite:Bool) {
@@ -64,6 +64,13 @@ class Contact {
     }
     func setID(_ id:Int) {
         self.id = id
+    }
+    
+    func getIsFavorite() -> Bool {
+        return isFavorite
+    }
+    func setFavorite(_ isFavorite:Bool) {
+        self.isFavorite = isFavorite
     }
     
 }

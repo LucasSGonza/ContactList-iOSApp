@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D90C1F222ACCAAE100D19446 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D90C1F212ACCAAE100D19446 /* Images.xcassets */; };
 		D92B53AB2A69A6C800FC407B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92B53AA2A69A6C800FC407B /* AppDelegate.swift */; };
 		D92B53AD2A69A6C800FC407B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92B53AC2A69A6C800FC407B /* SceneDelegate.swift */; };
 		D92B53B42A69A6C900FC407B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D92B53B32A69A6C900FC407B /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D90C1F212ACCAAE100D19446 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D92B53A72A69A6C800FC407B /* AppListaContatos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppListaContatos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D92B53AA2A69A6C800FC407B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D92B53AC2A69A6C800FC407B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 		D92D21E92A6EEAE800EA7233 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				D90C1F212ACCAAE100D19446 /* Images.xcassets */,
 				D92B53B32A69A6C900FC407B /* Assets.xcassets */,
 				D92B54002A69ACC200FC407B /* Extension */,
 			);
@@ -370,6 +373,7 @@
 			files = (
 				D92B54182A69B0D300FC407B /* ContactList.storyboard in Resources */,
 				D92B53B72A69A6C900FC407B /* LaunchScreen.storyboard in Resources */,
+				D90C1F222ACCAAE100D19446 /* Images.xcassets in Resources */,
 				D94225612A9E82E4005EA1D5 /* ContactTableViewCell.xib in Resources */,
 				D92B53B42A69A6C900FC407B /* Assets.xcassets in Resources */,
 				D92B54222A69BE5500FC407B /* NewContact.storyboard in Resources */,

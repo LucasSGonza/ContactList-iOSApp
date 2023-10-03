@@ -8,6 +8,10 @@
 import Foundation
 import UIKit
 
+//https://www.smashingmagazine.com/2019/11/performing-ios-animations-views-uikit-uiview/
+//https://github.com/quacklabs/FloatingLabelInputSwift/blob/master/FloatingLabelInput/FloatingLabelInput.swift
+//https://medium.com/sprinthub/creating-a-custom-floating-label-style-text-field-in-swift-f9f6aeaf39fe
+
 class FloatingLabelInput: UITextField {
     
     var floatingLabel: UILabel = UILabel(frame: CGRect.zero) // Label

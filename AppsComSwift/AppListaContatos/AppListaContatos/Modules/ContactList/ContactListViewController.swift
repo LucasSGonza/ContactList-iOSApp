@@ -19,15 +19,13 @@ class ContactListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var listImageView: UIImageView!
-    @IBOutlet weak var favoriteImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
         setupSearchBar()
         setupTableView()
-        setupIconActions()
+//        setupIconActions()
         // Do any additional setup after loading the view.
     }
     
@@ -47,16 +45,26 @@ class ContactListViewController: UIViewController {
     private func setupNavigationBar() {
         navigationItem.title = "Contacts"
         
+        let favoriteButton = UIBarButtonItem(
+            image: UIImage(named: "star"),
+            style: .done,
+            target: self,
+            action: #selector(changeList)
+        )
+    
         let newContactButton = UIBarButtonItem(
             barButtonSystemItem: .add,
             target: self,
-            action: #selector(goToNewContact))
+            action: #selector(goToNewContact)
+        )
         
+        self.navigationItem.leftBarButtonItem = favoriteButton
         self.navigationItem.rightBarButtonItem = newContactButton
     }
     
     //MARK: setup searchBar
     private func setupSearchBar() {
+        searchBar.showsCancelButton = false
         searchBar.isTranslucent = true
         searchBar.backgroundColor = UIColor(named: "backgroundColor")
         searchBar.searchTextField.backgroundColor = UIColor(named: "searchBarColor")
@@ -64,18 +72,9 @@ class ContactListViewController: UIViewController {
         searchBar.delegate = self /*necessario tal qual na tableView*/
     }
     
-    //MARK: setup ImageView
-    private func setupIconActions() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(changeList))
-        listImageView.addGestureRecognizer(tap)
-    }
-    
     //MARK:Default Screen state
     //reseta a configuração da tela para 'padrão'
     private func setupScreenToDefaultState() {
-        //default state => imagens não '.fill' , filterData = contactList
-        listImageView.image = UIImage(systemName: "text.book.closed")
-        favoriteImageView.image = UIImage(systemName: "star")
         setupFavoriteListToDefault()
         searchBar.text = ""
         tableView.reloadData()
@@ -92,16 +91,12 @@ class ContactListViewController: UIViewController {
     @objc private func changeList() {
         // se o favorito nao estiver selecionado, selecioná-lo
         if isFavoriteListSelected == false {
-            listImageView.image = UIImage(systemName: "text.book.closed.fill")
-            favoriteImageView.image = UIImage(systemName: "star.fill")
-            
             isFavoriteListSelected = true
-            filterData = filterData.filter { $0.isFavorite }
-            
+            self.navigationItem.leftBarButtonItem?.image = UIImage(named: "starFilled")
+            filterData = filterData.filter { $0.getIsFavorite() }
+
         } else {
-            listImageView.image = UIImage(systemName: "text.book.closed")
-            favoriteImageView.image = UIImage(systemName: "star")
-            
+            self.navigationItem.leftBarButtonItem?.image = UIImage(named: "star")
             isFavoriteListSelected = false
             setupFavoriteListToDefault()
         }
@@ -121,13 +116,22 @@ class ContactListViewController: UIViewController {
 //MARK: SearchBar
 extension ContactListViewController: UISearchBarDelegate {
     
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        self.searchBar.showsCancelButton = true
+    }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.searchBar.showsCancelButton = false
+        self.view.endEditing(true)
+    }
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
         
         setupFavoriteListToDefault()
         
         if isFavoriteListSelected {
-            filterData = filterData.filter{ $0.isFavorite }
+            filterData = filterData.filter{ $0.getIsFavorite() }
         }
         
         if !searchText.isEmpty {
@@ -159,7 +163,7 @@ extension ContactListViewController: UITableViewDelegate, UITableViewDataSource 
         
         cell.bind(item: contact, delegate: self)
         
-        if contact.isFavorite {
+        if contact.getIsFavorite() {
             cell.favoriteImageView.isHidden = false
             cell.favoriteImageView.image = UIImage(systemName: "star.fill")
         } else {
