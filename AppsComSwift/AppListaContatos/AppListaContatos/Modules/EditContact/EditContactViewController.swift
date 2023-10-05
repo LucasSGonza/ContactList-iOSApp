@@ -22,6 +22,7 @@ import UIKit
 class EditContactViewController: HelpController {
     
     private var favoriteChanged:Bool = false
+    private var isFavorite:Bool = false
     private var isNameValid:Bool = true
     private var isLastNameValid:Bool = true
     private var isPhoneValid:Bool = true
@@ -55,10 +56,10 @@ class EditContactViewController: HelpController {
         setupIconActions()
         setupValidation()
         setupTextFieldsDelegate()
+        setupFavoriteIcon()
         self.navigationItem.rightBarButtonItem?.isEnabled = false
         
         print(contact.showInfos())
-        favoriteImageView.image = contact.getIsFavorite() ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -85,9 +86,15 @@ class EditContactViewController: HelpController {
 //        phoneImageView.addGestureRecognizer(tapCall)
     }
     
-    //MARK:Hide or not save btt
-    private func canSave() {
-        self.navigationItem.rightBarButtonItem?.isEnabled = (isNameValid && isLastNameValid && isPhoneValid)
+    //MARK: setupFavoriteIcon
+    private func setupFavoriteIcon() {
+        if contact.getIsFavorite() {
+            isFavorite = true
+            favoriteImageView.image = UIImage(systemName: "star.fill")
+        } else {
+            isFavorite = false
+            favoriteImageView.image = UIImage(systemName: "star")
+        }
     }
     
     //MARK: setup TextFields
@@ -127,6 +134,11 @@ class EditContactViewController: HelpController {
         self.navigationItem.leftBarButtonItem = cancelButton
         self.navigationItem.rightBarButtonItem = confirmEditionButton
     }
+    
+    //MARK:Hide or not save btt
+    private func canSave() {
+        self.navigationItem.rightBarButtonItem?.isEnabled = (isNameValid && isLastNameValid && isPhoneValid)
+    }
 
     //MARK: goBack
     @objc private func goBack() {
@@ -139,13 +151,26 @@ class EditContactViewController: HelpController {
         }
     }
     
+    //MARK: Favorite contact
+    @objc private func favoriteContact() {
+        if isFavorite {//contact is favorite? when click will become not favorite
+            isFavorite = false
+            favoriteImageView.image = UIImage(systemName: "star")
+        } else {
+            isFavorite = true
+            favoriteImageView.image = UIImage(systemName: "star.fill")
+        }
+        favoriteChanged = true
+        canSave()
+    }
+    
     //MARK: confirmEdition
     @objc private func confirmEdition() {
         print(contact.showInfos())
         
         guard let name = nameTextField.text, let lastName = lastNameTextField.text, let phone = phoneTextField.text else { return }
         
-        favoriteChanged ? contact.setFavorite(true) : contact.setFavorite(false)
+        isFavorite ? contact.setFavorite(true) : contact.setFavorite(false)
         
         contact.setName(name)
         contact.setLastName(lastName)
@@ -153,18 +178,6 @@ class EditContactViewController: HelpController {
         print("---------\n \(contact.showInfos())")
         self.aceptChanges = true
         setupAlert(title: "Success", message: "Contact updated!", completion: { self.goBack() })
-    }
-    
-    //MARK: Favorite contact
-    @objc private func favoriteContact() {
-        if favoriteChanged {//contact is favorite? when click will become not favorite
-            favoriteChanged = false
-            favoriteImageView.image = UIImage(systemName: "star")
-        } else {
-            favoriteChanged = true
-            favoriteImageView.image = UIImage(systemName: "star.fill")
-        }
-        canSave()
     }
     
     //MARK: Delete contact
