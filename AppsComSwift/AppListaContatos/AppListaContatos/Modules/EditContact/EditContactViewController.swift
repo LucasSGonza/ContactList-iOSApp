@@ -82,8 +82,8 @@ class EditContactViewController: HelpController {
         let tapTrash = UITapGestureRecognizer(target: self, action: #selector(deleteContact))
         trashImageView.addGestureRecognizer(tapTrash)
         
-//        let tapCall = UITapGestureRecognizer(target: self, action: #selector(callContact))
-//        phoneImageView.addGestureRecognizer(tapCall)
+        let tapCall = UITapGestureRecognizer(target: self, action: #selector(callContact))
+        phoneImageView.addGestureRecognizer(tapCall)
     }
     
     //MARK: setupFavoriteIcon
@@ -162,6 +162,15 @@ class EditContactViewController: HelpController {
         }
         favoriteChanged = true
         canSave()
+    }
+    
+    @objc private func callContact() {
+        if let phone = phoneTextField.text, isPhoneValid {
+            if let phoneCallURL = URL(string: "tel://\(phone)"),
+            UIApplication.shared.canOpenURL(phoneCallURL) {
+                UIApplication.shared.open(phoneCallURL)
+            }
+        }
     }
     
     //MARK: confirmEdition
@@ -267,22 +276,42 @@ extension EditContactViewController {
     @objc func validatePhone() {
         guard let phoneText = phoneTextField.text else { return }
         
-        if phoneText.isEmpty {
+        switch true {
+        
+        case phoneText.isEmpty:
             errorTextField(textField: phoneTextField, icon: phoneIconImageView)
             phoneLabel.isHidden = false
             phoneLabel.text = "Field cannot be empty"
             isPhoneValid = false
-        } else if !phoneText.isPhoneValid() {
+            break
+            
+        case !phoneText.isPhoneValid():
             errorTextField(textField: phoneTextField, icon: phoneIconImageView)
             phoneLabel.isHidden = false
             phoneLabel.text = "Please provide a valid phone number"
             isPhoneValid = false
-        } else {
+            break
+            
+        case phoneText == contact.getPhone(): //case nothing change
+            normalTextField(textField: phoneTextField, icon: phoneIconImageView)
+            phoneLabel.isHidden = true
+            isPhoneValid = false
+            break
+            
+        case searchForContact(contactList: self.contactList, phoneNumber: phoneText):
+            errorTextField(textField: phoneTextField, icon: phoneIconImageView)
+            phoneLabel.isHidden = false
+            phoneLabel.text = "This phone number already exist in your contact list!"
+            isPhoneValid = false
+            break
+            
+        default:
             validTextField(textField: phoneTextField, icon: phoneIconImageView)
             phoneLabel.isHidden = true
             isPhoneValid = true
+            break
+    
         }
-        
         canSave()
     }
     
