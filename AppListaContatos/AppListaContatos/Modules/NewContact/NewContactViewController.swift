@@ -84,10 +84,10 @@ class NewContactViewController: HelpController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    //MARK: NewContact
+    //MARK: add a new Contact
     @objc private func newContact() {
         guard let name = nameTextField.text, let lastName = lastNameTextField.text, let phone = phoneTextField.text else { return }
-
+        
         let contact = Contact() //cria um contato vazio e o preenche se houverem campos com informações
         
         contact.setName(name)
@@ -182,21 +182,36 @@ extension NewContactViewController {
     @objc func validatePhone() {
         guard let phoneText = phoneTextField.text else { return }
         
-        if phoneText.isEmpty {
+        switch true {
+        
+        case phoneText.isEmpty:
             errorTextField(textField: phoneTextField, icon: phoneIconImageView)
             phoneLabel.isHidden = false
             phoneLabel.text = "Field cannot be empty"
             isPhoneValid = false
-        } else if !phoneText.isPhoneValid() {
+            break
+            
+        case !phoneText.isPhoneValid():
             errorTextField(textField: phoneTextField, icon: phoneIconImageView)
             phoneLabel.isHidden = false
             phoneLabel.text = "Please provide a valid phone number"
             isPhoneValid = false
-        } else {
+            break
+            
+        case searchForContact(contactList: self.contactList, phoneNumber: phoneText):
+            errorTextField(textField: phoneTextField, icon: phoneIconImageView)
+            phoneLabel.isHidden = false
+            phoneLabel.text = "This phone number already exist in your contact list!"
+            isPhoneValid = false
+            break
+        
+        default:
             validTextField(textField: phoneTextField, icon: phoneIconImageView)
             phoneLabel.isHidden = true
             isPhoneValid = true
+            break
         }
+        
         canSave()
     }
 }

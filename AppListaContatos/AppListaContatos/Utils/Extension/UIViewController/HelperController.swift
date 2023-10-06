@@ -64,3 +64,12 @@ class HelpController: UIViewController {
     }
     
 }
+
+//MARK: Validate contact in Array
+extension HelpController {
+    
+    func searchForContact(contactList: [Contact], phoneNumber: String) -> Bool {
+        return contactList.contains{$0.getPhone() == phoneNumber}
+    }
+    
+}
