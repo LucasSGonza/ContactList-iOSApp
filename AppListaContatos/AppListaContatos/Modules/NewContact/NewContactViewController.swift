@@ -115,7 +115,6 @@ extension NewContactViewController: UITextFieldDelegate {
         return true
     }
     
-    //https://www.hackingwithswift.com/example-code/uikit/how-to-limit-the-number-of-characters-in-a-uitextfield-or-uitextview#:~:text=If%20you%20have%20a%20UITextField,shouldChangeTextIn%20(for%20text%20views).
     //limit the characters in the textFields -> basicamente irá 'ficar trocando' sempre o textField pra quando chegar no limite estabelecido, poder ainda conseguir fazer alterações
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         // get the current text, or use an empty string if that failed

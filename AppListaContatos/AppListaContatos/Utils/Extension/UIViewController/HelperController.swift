@@ -1,13 +1,25 @@
 import Foundation
 import UIKit
 
-//https://stackoverflow.com/questions/24022479/how-would-i-create-a-uialertview-in-swift
 class HelpController: UIViewController {
     
     //MARK: Setup Alert
     func setupAlert(title: String, message:String, completion: (() -> Void)? = nil) {
         let alert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in completion?() }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func setupDecisionAlert(title: String, message:String?, completion: (() -> Void)? = nil, completion2: (() -> Void)? = nil) {
+        
+        let alert: UIAlertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+            completion2?()
+            completion?()
+        }))
+    
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler:nil))
         self.present(alert, animated: true, completion: nil)
     }
     
@@ -50,12 +62,12 @@ class HelpController: UIViewController {
     //MARK:Setup Visual TF validation
     func normalTextField(textField: UITextField, icon: UIImageView){
         textField.layer.borderColor = UIColor(named: "textFieldBorderColor")?.cgColor ?? UIColor.systemGray.cgColor
-        icon.tintColor = UIColor(named: "adaptGreenColor")
+        icon.tintColor = UIColor(named: "adaptGreenColor") ?? UIColor.systemGreen
     }
     
     func validTextField(textField: UITextField, icon: UIImageView) {
-        textField.layer.borderColor = UIColor.systemGreen.cgColor
-        icon.tintColor = UIColor(named: "adaptGreenColor")
+        textField.layer.borderColor = UIColor(named: "adaptGreenColor")?.cgColor ?? UIColor.systemGreen.cgColor
+        icon.tintColor = UIColor(named: "adaptGreenColor") ?? UIColor.systemGreen
     }
     
     func errorTextField(textField: UITextField, icon: UIImageView) {

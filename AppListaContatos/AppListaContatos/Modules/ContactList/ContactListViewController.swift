@@ -77,6 +77,8 @@ class ContactListViewController: UIViewController {
     private func setupScreenToDefaultState() {
         setupFavoriteListToDefault()
         searchBar.text = ""
+        self.searchBar.showsCancelButton = false
+        self.view.endEditing(true)
         tableView.reloadData()
     }
     
@@ -100,6 +102,11 @@ class ContactListViewController: UIViewController {
             isFavoriteListSelected = false
             setupFavoriteListToDefault()
         }
+        
+        self.searchBar.text = ""
+        self.searchBar.showsCancelButton = false
+        self.view.endEditing(true)
+        
         tableView.reloadData()
     }
     
@@ -112,7 +119,6 @@ class ContactListViewController: UIViewController {
     
 }
 
-// https://medium.com/@himanshunag/searchbar-in-swift-ios-14e66d8ce29d
 //MARK: SearchBar
 extension ContactListViewController: UISearchBarDelegate {
     
@@ -180,6 +186,7 @@ extension ContactListViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
     }
+    
     //MARK: Delete Contact
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         print("deletando...")
@@ -217,9 +224,3 @@ extension ContactListViewController: EditContactDelegate {
         self.navigationController?.pushViewController(editContactVC, animated: true)
     }
 }
-
-/*
-MARK:Problemas
- 
- 1. searchBar => quando eu pesquiso por um nome na searchBar, ocorreu um 1 filtro na filterData. Contudo, caso eu selecione o icone para filtrar os favoritos, ocorre um 2° filtro, tendo o 1° filtro de base, ou seja, filtra os contatos favoritos, dentro os contatos procurados na searchBar.
- */

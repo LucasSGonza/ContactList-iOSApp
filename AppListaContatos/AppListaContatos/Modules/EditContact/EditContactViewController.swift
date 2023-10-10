@@ -5,18 +5,6 @@
 //  Created by Squad Apps on 27/07/23.
 //
 
-//LINKS ABAIXO SERÃO RETIRADOS DAQUI
-
-//ScrollView: https://www.youtube.com/watch?v=orONrVT6CAg
-/*
- UI/UX:
- 
-- https://fonts.google.com/icons
-- https://developer.apple.com/design/human-interface-guidelines/text-fields
-- https://m2.material.io/components/text-fields/ios
- 
- */
-
 import UIKit
 
 class EditContactViewController: HelpController {
@@ -79,7 +67,7 @@ class EditContactViewController: HelpController {
         let tapFavorite = UITapGestureRecognizer(target: self, action: #selector(favoriteContact))
         favoriteImageView.addGestureRecognizer(tapFavorite)
         
-        let tapTrash = UITapGestureRecognizer(target: self, action: #selector(deleteContact))
+        let tapTrash = UITapGestureRecognizer(target: self, action: #selector(deleteContactObjc))
         trashImageView.addGestureRecognizer(tapTrash)
         
         let tapCall = UITapGestureRecognizer(target: self, action: #selector(callContact))
@@ -190,11 +178,14 @@ class EditContactViewController: HelpController {
     }
     
     //MARK: Delete contact
-    @objc private func deleteContact() {
-        //guard let contact = contact else { return }
+    @objc private func deleteContactObjc() {
+        setupDecisionAlert(title: "Alert", message: "Are you sure that you want to delete this contact?", completion: { self.goBack()}, completion2: self.deleteContact)
+//        setupAlert(title: "Sucess!", message: "Contact deleted with success", completion: { self.goBack() })
+    }
+    
+    private func deleteContact() {
         contactList.removeAll(where: {$0.getID() == contact.getID()})
         self.aceptChanges = true
-        setupAlert(title: "Sucess!", message: "Contact deleted with success", completion: { self.goBack() })
     }
 
 }
@@ -208,7 +199,6 @@ extension EditContactViewController: UITextFieldDelegate {
         phoneTextField.delegate = self
     }
     
-    //https://www.hackingwithswift.com/example-code/uikit/how-to-limit-the-number-of-characters-in-a-uitextfield-or-uitextview#:~:text=If%20you%20have%20a%20UITextField,shouldChangeTextIn%20(for%20text%20views).
     //limit the characters in the textFields
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         // get the current text, or use an empty string if that failed
@@ -225,7 +215,6 @@ extension EditContactViewController: UITextFieldDelegate {
     }
     
 }
-
 
 //MARK: Validation TextFields
 extension EditContactViewController {

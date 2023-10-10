@@ -7,3 +7,4 @@ protocol ContactListDelegate: AnyObject {
 protocol EditContactDelegate:AnyObject {
     func goToEditContact(_ contact:Contact)
 }
+
